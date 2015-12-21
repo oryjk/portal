@@ -4,3 +4,4 @@ build/
 portal.ipr
 portal.iws
 .idea/
+.gradle/
