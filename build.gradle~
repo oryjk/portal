@@ -9,7 +9,7 @@ targetCompatibility = 1.8
 
 
 repositories {
-    maven { url 'http://repo1.maven.org/maven2' }
+    maven { url 'http://maven.oschina.net/content/groups/public/' }
 }
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
