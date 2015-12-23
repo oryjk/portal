@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.news.dao.NewsMapper">
+    <resultMap id="newsMap" type="com.news.bean.News">
+        <id property="news_id" column="id" />
+        <result property="article" column="article"/>
+        <result property="title" column="title"/>
+        <result property="date" column="date"/>
+        <result property="categroy_id" column="categroy_id"/>
+        <result property="state" column="state"/>
+    </resultMap>
+
+    <!--增-->
+    <insert id="insertNews" parameterType="com.news.bean.News">
+        INSERT INTO news (article,title,date,categroy_id,state) VALUES(#{article},#{title},now(),
+        #{categroy_id},#{state})
+    </insert>
+    <!--删-->
+    <delete id="deleteNews" parameterType="int">
+        UPDATE  news SET state=0  WHERE id=#{news_id}
+    </delete>
+    <!--改-->
+    <update id="updateNews" parameterType="com.news.bean.News">
+        UPDATE news SET article=#{article}, title=#{title}, categroy_id=#{categroy_id}, state=#{state}
+        WHERE id=#{news_id}
+    </update>
+    <!--查所有-->
+    <select id="selectAllNews" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state from news
+    </select>
+    <!--查id-->
+    <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
+        SELECT id,article,title,date,categroy_id,state FROM news where id=#{news_id}
+    </select>
+    <!--按日期取n条记录-->
+    <select id="selectDateNews" parameterType="int" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state FROM news ORDER BY date DESC LIMIT #{number}
+
+
+    </select>
+
+
+</mapper>
