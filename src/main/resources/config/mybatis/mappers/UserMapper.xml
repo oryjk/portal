@@ -6,7 +6,7 @@
 
     <select id="findAll"
             resultType="com.user.bean.User">
-        select * from test
+        select * from user
     </select>
 
 </mapper>
