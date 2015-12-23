@@ -9,4 +9,7 @@
         select * from user
     </select>
 
+    <select id="findByUsername"  parameterType="String"   resultType="com.user.bean.User">
+        select * from user u where u.username like #{username}
+    </select>
 </mapper>

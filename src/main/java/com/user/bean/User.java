@@ -11,24 +11,24 @@ public class User implements Serializable{
     private String username;
     private  String password;
 
-    public String getPassword() {
-        return password;
-    }
-
     public Integer getId() {
         return id;
-    }
-
-    public String getUserName() {
-        return username;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setUserName(String username) {
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public void setPassword(String password) {

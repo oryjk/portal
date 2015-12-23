@@ -26,8 +26,9 @@ public class TestUser {
     public void testUser(){
 
        //List<User> list=userMapper.findAll();
-        List list = mediaMapper.selectAllMedia();
-        System.out.print(list);
+        List<User> list = userMapper.findByUsername("张三");
+        //List list = mediaMapper.selectAllMedia();
+        System.out.print("2222222222222222222222222222"+list.get(0).getUsername());
 
 
     }
