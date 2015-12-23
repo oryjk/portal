@@ -10,7 +10,7 @@
 <link href="${bootstrapCss}" rel="stylesheet" />
 <link href="${coreCss}" rel="stylesheet" />
 </head>
-
+sdfdssddddddddddddddddd
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
@@ -75,6 +75,6 @@
 <script src="${coreJs}"></script>
 <script src="${bootstrapJs}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
+WERRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 </body>
 </html>

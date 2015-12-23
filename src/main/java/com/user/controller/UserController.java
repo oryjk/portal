@@ -18,19 +18,11 @@ public class UserController {
 
 
 
-    @RequestMapping("")
+    @RequestMapping("/query")
     public ModelAndView  query(ModelAndView modelAndView){
 
-
-
-
-
-
-        modelAndView.addObject("");
-
-        modelAndView.setViewName("");
-
-
+  System.out.print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        modelAndView.setViewName("user");
         return modelAndView;
     }
 
