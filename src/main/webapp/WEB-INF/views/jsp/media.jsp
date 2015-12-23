@@ -11,6 +11,8 @@
 <link href="${coreCss}" rel="stylesheet" />
 </head>
 <body>
-222222
+<c:forEach var="media" items="${media}">
+    ${media.url}
+</c:forEach>
 </body>
 </html>

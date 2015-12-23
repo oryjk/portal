@@ -17,6 +17,7 @@ public class MediaController {
     @RequestMapping("/media")
     public ModelAndView query(ModelAndView modelAndView){
         modelAndView.setViewName("media");
+        modelAndView.addObject("media", mediaService.findAll());
         return  modelAndView;
     }
 }
