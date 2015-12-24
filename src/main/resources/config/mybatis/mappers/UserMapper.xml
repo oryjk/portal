@@ -4,12 +4,50 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.user.dao.UserMapper">
 
+   <!-- ***************************   查询     ************************-->
+  <!-- 根据所有-->
     <select id="findAll"
             resultType="com.user.bean.User">
         select * from user
     </select>
-
-    <select id="findByUsername"  parameterType="String"   resultType="com.user.bean.User">
-        select * from user u where u.username like #{username}
+  
+  <!-- 根据用户名查询密码-->
+    <select id="selectUserByName"
+            parameterType="java.lang.String" resultType="com.user.bean.User">
+        select * from user where username like '%${value}%' and type=1
     </select>
+
+  <!-- 根据type值为1查询用户信息 --> 
+    <select id="selectShowUser"
+            parameterType="int" resultType="com.user.bean.User">
+        select * from user where type = 1
+    </select>
+    
+  <!-- 根据type值为0查询用户信息 -->
+    <select id="selectHideUser"
+            parameterType="int" resultType="com.user.bean.User">
+        select * from user where type = 0
+    </select>
+    
+    
+    
+    <!-- ***************************   修改   ************************-->            
+    <!-- 根据ID修改用户名和密码 -->
+    <update id="updateUserById" parameterType="com.user.bean.User" >
+        update user set username=#{username},password=#{password} where id =#{id} and type=1
+    </update>
+    
+    <!-- 根据ID修改Type -->
+    <update id="updateUserTypeById" parameterType="com.user.bean.User" >
+        update user set type=#{type} where id =#{id} 
+    </update>
+    
+    
+    <!-- ***************************   增加     ************************-->           
+    <!-- 插入用户名和密码 -->
+    <insert id="insertUser" parameterType="com.user.bean.User">
+       insert into user (type,username,password) values(#{type},#{username},#{password})
+    </insert>
+    
+  
 </mapper>

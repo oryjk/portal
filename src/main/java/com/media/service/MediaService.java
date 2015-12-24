@@ -13,20 +13,11 @@ import java.util.List;
 /**
  * Created by liqiang on 15-12-23.
  */
-@Service
-public class MediaService {
-    @Autowired
-    private MediaMapper mediaMapper;
-
-
-
-
-    public void delMediaDateById(int i){
-        mediaMapper.deleteMedia(i);
-    }
-
-    public List<Media> findAll(){
-        return mediaMapper.selectAllMedia();
-    }
+public interface MediaService {
+    void insertMedia(Media media);
+    void deleteMedia(int id);
+    void updateMedia(Media media);
+    List<Media> selectAllMedia();
+    Media selectMediaById(int id);
 
 }

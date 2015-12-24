@@ -33,6 +33,7 @@ public class TestNews {
 
     @Test
     public  void TestDeleteNews(){
+
         newsMapper.deleteNews(3);
     }
 
@@ -63,6 +64,13 @@ public class TestNews {
     public void TestSelectDateNews(){
         List list =newsMapper.selectDateNews(4);
 
+        System.out.print(list);
+    }
+    @Test
+    public  void TestSelectNewsTitle(){
+        News news=new News();
+        news.setTitle("7");
+        List list=newsMapper.selectNewsTitle(news);
         System.out.print(list);
     }
 
