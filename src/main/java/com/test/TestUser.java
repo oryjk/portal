@@ -1,12 +1,7 @@
 package com.test;
 
-import com.alibaba.fastjson.JSONObject;
 import com.media.dao.MediaMapper;
-import com.menu.bean.Menu;
-import com.menu.dao.MenuMapper;
-import com.menu.service.MenuService;
 import com.user.dao.UserMapper;
-import com.user.bean.User;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.List;
 
-//@Ignore
+@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring-core-config.xml")
 public class TestUser {
@@ -29,7 +24,6 @@ public class TestUser {
     @Autowired
     private MediaMapper mediaMapper;
     @Autowired
-    private MenuMapper menuMapper;
 
     @Test
     public void testUser(){
@@ -39,8 +33,6 @@ public class TestUser {
         // List list = mediaMapper.selectAllMedia();
        // System.out.print("2222222222222222222222222222"+list.get(0).getUsername());
 
-        List<Menu> menus = menuMapper.findAll();
-        LOGGER.debug("end find menus" +   JSONObject.toJSONString(menus));
     }
 
 
