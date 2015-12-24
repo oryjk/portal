@@ -10,7 +10,7 @@
 <html>
 <head>
 	<meta charset=utf-8 />
-	<title>JS Bin</title>
+	<title>dianjinzi</title>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/themes/default/easyui.css">
 	<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
 	<!--[if IE]>
@@ -33,10 +33,10 @@
 <body class="easyui-layout">
 
 <div id="north" data-options="region:'north',border:false">
-	<h1>URL Roles Control</h1>
+
 </div>
 
-<div id="west" data-options="region:'west',split:true,title:'Menu'">
+<div id="west" data-options="region:'west',split:true,title:'选项单'">
 	<jsp:include page="../common/menu.jsp"></jsp:include>
 </div>
 
@@ -45,10 +45,10 @@
 </div>
 
 <div id="south" data-options="region:'south',border:false">
-	<a href="javascript:;" id="about">1111</a>
+
 </div>
 
-<div id="data" data-options="region:'center',title:'Main Title'">
+<div id="data" data-options="region:'center',title:'工作'">
 	<jsp:include page="../news/index.jsp"></jsp:include>
 </div>
 </body>
