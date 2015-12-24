@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=GB2312"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
@@ -10,7 +10,6 @@
 <head>
 	<meta charset=utf-8 />
 	<title>JS Bin</title>
-	<script src="<%=basePath%>resources/core/plugins/jquery-1.8.3.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/themes/default/easyui.css">
 	<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
 	<!--[if IE]>
@@ -41,7 +40,7 @@
 </div>
 
 <div id="east" data-options="region:'east',split:true,collapsed:true,title:'Roles'">
-	east region
+	east
 </div>
 
 <div id="south" data-options="region:'south',border:false">
@@ -49,8 +48,9 @@
 </div>
 
 <div id="data" data-options="region:'center',title:'Main Title'">
-
+	<jsp:include page="../news/index.jsp"></jsp:include>
 </div>
 </body>
+
 
 </html>

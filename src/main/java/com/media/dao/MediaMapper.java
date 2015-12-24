@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * Created by dianjinzi on 23/12/15.
+ * Created by wangyirui on 23/12/15.
  */
 @Component
 public interface MediaMapper  extends SqlMapper{

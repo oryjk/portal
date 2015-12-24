@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.news.dao.NewsMapper">
+    <resultMap id="newsCategroyMap" type="com.newscategroy.bean.NewsCategroy">
+        <id property="newsCategroy_id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="url" column="url"/>
+    </resultMap>
+    <!--增-->
+    <insert id="insertNewsCategroy" parameterType="com.newscategroy.bean.NewsCategroy">
+        INSERT INTO newscategroy (name,url) VALUES(#{name},#{url})
+    </insert>
+    <!--删-->
+    <delete id="deleteNewsCategroy" parameterType="int">
+        DELETE FROM newscategroy  WHERE id=#{newsCategroy_id}
+    </delete>
+    <!--改-->
+    <update id="updateNewsCategroy" parameterType="com.newscategroy.bean.NewsCategroy">
+        UPDATE newscategroy SET name=#{name},url=#{url} WHERE id=#{newsCategroy_id}
+    </update>
+    <!--查所有-->
+    <select id="selectAllNewsCategroy" resultMap="newsCategroyMap">
+        SELECT id,name,url from newscategroy
+    </select>
+    <!--查id-->
+    <select id="selectNewsCategroyById" parameterType="int" resultType="com.newscategroy.bean.NewsCategroy">
+        SELECT id,name,url FROM newscategroy where id=#{newsCategroy_id}
+    </select>
+
+</mapper>

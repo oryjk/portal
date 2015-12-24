@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=GB2312"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
@@ -84,9 +84,9 @@
 
 </body>
 
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<!-- jQuery鏂囦欢銆傚姟蹇呭湪bootstrap.min.js 涔嬪墠寮曞叆 -->
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<!-- 鏈�鏂扮殑 Bootstrap 鏍稿績 JavaScript 鏂囦欢 -->
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </html>
