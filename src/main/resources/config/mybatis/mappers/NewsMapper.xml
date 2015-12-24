@@ -34,9 +34,13 @@
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state}
     </select>
-    <!--查id-->
+    <!--id查-->
     <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND id=#{news_id}
+    </select>
+    <!--title查-->
+    <select id="selectNewsTitle" parameterType="com.news.bean.News" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND title like '%${title}%'
     </select>
     <!--按日期取n条记录-->
     <select id="selectDateNews" parameterType="int" resultMap="newsMap">

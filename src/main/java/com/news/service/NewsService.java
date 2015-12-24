@@ -1,16 +1,13 @@
-package com.news.dao;
+package com.news.service;
 
-import com.base.mapper.SqlMapper;
 import com.news.bean.News;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 /**
- * Created by dianjinzi on 23/12/15.
+ * Created by dianjinzi on 24/12/15.
  */
-@Component
-public interface NewsMapper extends SqlMapper{
+public interface NewsService {
     void insertNews(News news);
     void deleteNews(int id);
     void updateNews(News news);
@@ -18,5 +15,5 @@ public interface NewsMapper extends SqlMapper{
     List<News> selectAllNews(int state);
     News selectNewsById(int id);
     List<News> selectDateNews(int number);
-    List<News> selectNewsTitle(News news);
+    List<News> selectNewsTitle(String title);
 }
