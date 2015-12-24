@@ -5,3 +5,7 @@ portal.ipr
 portal.iws
 .idea/
 .gradle/
+/bin/
+
+src/main/webapp/resources/zhongxinkeji/node_modules
+src/main/webapp/resources/zhongxinkeji/gulpfile.js

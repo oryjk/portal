@@ -14,4 +14,6 @@ import java.util.List;
 public interface UserMapper extends SqlMapper{
 
      List<User> findAll();
+
+     List<User> findByUsername(String username);
 }
