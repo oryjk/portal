@@ -115,13 +115,13 @@ p{
 
 a:link,
 a:visited {
-    color:#014a99;
+    color:white;
     text-decoration: none;
 }
 
 a:hover,
 a:active {
-    color: #014a99;
+    color: white;
     text-decoration: underline;
 }
 
@@ -189,124 +189,66 @@ a {
 /*  header   up
 ******************************/
 .content{
-    min-height: 650px;
+    width: 1000px;
+    margin: 20px auto;
 }
-.banner img{
-    width: 100%;
-    display: block;
+.list{
+    height: 38px;
+    background: #f3f3f3;
+}
+.about1{
+    float: left;
+    line-height: 26px;
+    text-align: center;
+    margin:5px 0 0 30px ;
+    width: 66px;
+    height: 26px;
+    background:url("../img/btn-c.png") repeat-x;
+}
+.about-left{
+    width: 66px;
+    float: left;
+    background: url("../img/aa_03.jpg") no-repeat left 0;
+}
+.about-right{
+    width: 66px;
+    float: right;
+    background: url("../img/aa_07.jpg") no-repeat right 0;
+}
+.about2{
+    float: left;
+    line-height: 26px;
+    text-align: center;
+    margin:5px 0 0 30px ;
+    width: 66px;
+    height: 26px;
+}
+.about2:link,
+.about2:visited {
+    color:#014a99;
+    text-decoration: none;
+}
+
+.about2:hover,
+.about2:active {
+    color: #014a99;
+    text-decoration:none;
+    border-top: 2px solid #014a99;
 }
 .substance{
-    width: 1000px;
-    min-height: 600px;
-    margin: 30px auto 0 auto;
+    margin-top: 35px;
 }
-.title1{
-    margin-top: 9px;
-    padding-left: 25px;
-    color: #014a99;
-    font-size: 17px;
-}
-.title1-right{
-    float: right;
-   display: inline;
-}
-.title1 h2{
-    display: inline;
-}
-.substance1,
-.substance2{
-    margin-top: 6px;
-    padding: 24px 0 15px 0;
-    border-top: 1px dashed #cccccc;
-    overflow: hidden;
-}
-.substance1{
-    border-top: 1px solid #014a99;
-}
-.title{
-    padding-left: 25px;
+.substance img{
     float: left;
-}
-.time{
     padding-right: 20px;
-    float: right;
 }
-.substance-font{
-    text-indent: 0;
-    width: 800px;
-    float: left;
-    padding: 13px 0 0 25px;
-
-}
-.box-all{
-    margin-top: 30px;
-    padding-bottom: 10px;
-    border: 1px solid #cccccc;
-    height: 210px;
-}
-.box1,
-.box{
-    width: 450px;
-    padding: 22px 0 0 10px;
-    min-height: 190px;
-    float: left;
-}
-.box1{
-    padding: 22px 20px 0 0;
-    float: right;
-}
-.box-top{
-    height: 18px;
-}
-.box-top h2{
-    padding-left: 15px;
-    color: #014a99;
-    display: inline;
-    float: left;
-}
-.box-top a{
-    height: 18px;
-    display: inline;
-    float: right;
-}
-.box-content{
-    margin-top: 7px;
-    padding-top: 13px;
-    border-top: 1px dashed #cccccc;
-}
-.box1 ul,
-.box ul{
-    border-top: 1px dashed #cccccc;
-    margin-top: 7px;
-    padding-top: 6.5px;
-}
-.box1 ul li,
-.box ul li{
-    height: 18px;
-    padding-left: 10px;
-    margin-top: 13px;
-}
-.box1 ul li a,
-.box ul li a{
-    display: inline;
-}
-.time{
-    float: right;
-}
-
-
-
-
-
-
-
 
 
 
 /*  footer
 *************************************/
 .footer {
-    margin-top: 20px;
+    margin-top: 50px;
     clear: both;
     background: #515151;
     font-size: 12px;
