@@ -6,7 +6,6 @@
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
 	<meta charset=utf-8 />
