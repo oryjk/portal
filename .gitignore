@@ -6,4 +6,5 @@ portal.iws
 .idea/
 .gradle/
 /bin/
-portal/src/main/webapp/resources/zhongxinkeji/node_modules
+
+src/main/webapp/resources/zhongxinkeji/node_modules
