@@ -14,7 +14,8 @@ public interface NewsMapper extends SqlMapper{
     void insertNews(News news);
     void deleteNews(int id);
     void updateNews(News news);
-    List<News> selectAllNews();
+    List<News> selectTrueAllNews();
+    List<News> selectAllNews(int state);
     News selectNewsById(int id);
     List<News> selectDateNews(int number);
 }

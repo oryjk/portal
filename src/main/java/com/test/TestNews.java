@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import java.util.List;
 
 /**
- * Created by dianjinzi on 23/12/15.
+ * Created by wangyirui on 23/12/15.
  */
 @Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -48,7 +48,10 @@ public class TestNews {
     }
     @Test
     public void TestSelectAllNews(){
-        List list =newsMapper.selectAllNews();
+
+        List list1=newsMapper.selectTrueAllNews();
+        List list =newsMapper.selectAllNews(1);
+        System.out.print(list1);
         System.out.print(list);
     }
     @Test
