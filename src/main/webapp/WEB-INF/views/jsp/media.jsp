@@ -5,14 +5,12 @@
 <head>
 <title>Gradle + Spring MVC</title>
 
-<spring:url value="/resources/core/css/hello.css" var="coreCss" />
-<spring:url value="/resources/core/css/bootstrap.min.css" var="bootstrapCss" />
-<link href="${bootstrapCss}" rel="stylesheet" />
-<link href="${coreCss}" rel="stylesheet" />
 </head>
-<body>
+
+<body style="width:300px;height:500px">
 <c:forEach var="media" items="${media}">
     ${media.url}
 </c:forEach>
+
 </body>
 </html>
