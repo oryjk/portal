@@ -31,27 +31,5 @@
 	</style>
 </head>
 
-<body class="easyui-layout">
-
-<div id="north" data-options="region:'north',border:false">
-	<h1>URL Roles Control</h1>
-</div>
-
-<div id="west" data-options="region:'west',split:true,title:'Menu'">
-	<jsp:include page="../common/menu.jsp"></jsp:include>
-</div>
-
-<div id="east" data-options="region:'east',split:true,collapsed:true,title:'Roles'">
-	east region
-</div>
-
-<div id="south" data-options="region:'south',border:false">
-	<a href="javascript:;" id="about">1111</a>
-</div>
-
-<div id="data" data-options="region:'center',title:'Main Title'">
-
-</div>
-</body>
 
 </html>
