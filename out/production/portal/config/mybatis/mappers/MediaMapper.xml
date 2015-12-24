@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.media.dao.MediaMapper">
+    <resultMap id="MediaMap" type="com.media.bean.Media">
+        <id property="id" column=""/>
+        <result property="url" column=""/>
+        <result property="type" column=""/>
+        <result property="relation" column=""/>
+    </resultMap>
+
+    <!--增-->
+    <insert id="insertMedia" parameterType="com.media.bean.Media">
+        INSERT INTO media (url,type,relation) VALUES(#{url},#{type},#{relation})
+    </insert>
+    <!--删-->
+    <delete id="deleteMedia" parameterType="int">
+        DELETE FROM media  WHERE id=#{id}
+    </delete>
+    <!--改-->
+    <update id="updateMedia" parameterType="com.media.bean.Media">
+        UPDATE media SET url=#{url}, type=#{type}, relation=#{relation} WHERE id=#{id}
+    </update>
+    <!--查所有-->
+    <select id="selectAllMedia" resultMap="MediaMap">
+        SELECT id,url,type,relation from media
+    </select>
+    <!--查id-->
+    <select id="selectMediaById" parameterType="int" resultType="com.media.bean.Media">
+        SELECT id,url,type,relation from media where id=#{id}
+    </select>
+</mapper>
