@@ -8,7 +8,7 @@
 <title>新闻详细内容查看</title>
 </head>
 <body>
-<!-- header -->
+<!-- 头部 -->
 <div class="header">
     <div class="header-nav">
         <a href="#" class="header-left">
@@ -23,7 +23,7 @@
         </ul>
     </div>
 </div>
-<!-- content -->
+<!-- 内容 -->
 <div class="content" >
     <div class="news">
         <a href="#"> 新闻资讯</a>&nbsp;&nbsp;>&nbsp;&nbsp;<a class="news-in" href="#">最新动态</a>
@@ -55,7 +55,7 @@
         </p>
     </div>
 </div>
-<!--footer-->
+<!-- 脚本 -->
 <div class="footer">
     <div class="footer-content">
         <div class="footer-left">
