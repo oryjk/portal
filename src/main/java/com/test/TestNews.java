@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by wangyirui on 23/12/15.
  */
-@Ignore
+//@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring-core-config.xml")
 public class TestNews {
@@ -56,7 +56,6 @@ public class TestNews {
     }
     @Test
     public void TestSelectAllNews(){
-
         List list1=newsMapper.selectTrueAllNews();
         List list =newsMapper.selectAllNews(1);
         System.out.print(list1);

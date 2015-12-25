@@ -40,7 +40,7 @@
         SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE state=1 AND id=#{companyintro_id}
     </select>
     <!--按日期取n条记录-->
-    <select id="selectDateCompanyIntro" parameterType="int" resultMap="aboutusMap">
+    <select id="selectDateCompanyIntro" parameterType="int" resultMap="companyintroMap">
         SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
 </mapper>

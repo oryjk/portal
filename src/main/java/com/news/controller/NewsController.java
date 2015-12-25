@@ -49,7 +49,7 @@ public class NewsController {
     @ResponseBody
     public String findAllByLike() {
         LOGGER.debug("view is news find by condition or all");
-        List<News> newsesList= newsService.selectAllNews(1);
+        List<News> newsesList= newsService.selectTrueAllNews();
         LOGGER.debug("news json is" + JSONObject.toJSONString(newsesList));
         Map<String,Object> jsonMap = new HashMap<String, Object>();
         jsonMap.put("rows",newsesList);
