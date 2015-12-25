@@ -10,11 +10,9 @@
 <head>
 	<meta charset=utf-8 />
 	<title>dianjinzi</title>
+	<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-11.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/themes/default/easyui.css">
 	<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
-	<!--[if IE]>
-	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/css/main.css">
 	<style>
 		article, aside, figure, footer, header,
@@ -26,6 +24,10 @@
 		.north{
 			height:100px;
 		}
+		button{
+			height:30px;
+			font-size: 12px;
+		}
 	</style>
 </head>
 
@@ -36,7 +38,7 @@
 </div>
 
 <div id="west" data-options="region:'west',split:true,title:'选项单'">
-	<jsp:include page="../common/menu.jsp"></jsp:include>
+	<jsp:include page="../../common/menu.jsp"></jsp:include>
 </div>
 
 <div id="east" data-options="region:'east',split:true,collapsed:true,title:'Roles'">
@@ -52,5 +54,5 @@
 </div>
 </body>
 
-
+<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/locale/easyui-lang-zh_CN.js"></script>
 </html>

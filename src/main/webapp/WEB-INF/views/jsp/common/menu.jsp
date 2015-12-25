@@ -10,8 +10,6 @@
 <head>
 	<base href="<%=basePath%>">
 	<meta http-equiv="pragma" content="no-cache">
-	<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-1.8.3.min.js"></script>
-	<script src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/layer.js"></script>
 	<link rel="stylesheet" href="<%=basePath%>resources/core/plugins/zTree_v3-master/css/zTreeStyle/zTreeStyle.css" type="text/css">
 	<script src="<%=basePath%>resources/core/plugins/zTree_v3-master/js/jquery.ztree.core-3.5.min.js"></script>
 	<SCRIPT type="text/javascript">
@@ -35,10 +33,22 @@
 			}
 		};
 
-		var zNodes;
-		$.getJSON("<%=basePath%>resources/core/json/menu.json",function(data){
-			zNodes = (data);
-		})
+		zNodes = [
+				{ "id":1, "pId":0, "name":"首页模块"},
+				{ "id":11, "pId":1, "name":"首页"},
+				{ "id":111, "pId":11, "name":"首页简介", "url_path":"index"},
+				{ "id":112, "pId":11, "name":"简介修改"},
+				{ "id":113, "pId":11, "name":"简介添加"},
+				{ "id":2, "pId":0, "name":"绝当淘"},
+				{ "id":21, "pId":2, "name":"添加", "url_path":"http://www.baidu.com"},
+				{ "id":22, "pId":2, "name":"修改"},
+				{ "id":3, "pId":0, "name":"收益淘"},
+				{ "id":32, "pId":3, "name":"添加"},
+				{ "id":33, "pId":3, "name":"修改"},
+				{ "id":4, "pId":0, "name":"新闻咨询"},
+			    { "id":413, "pId":4, "name":"查看", "url_path":"news"},
+			    { "id":411, "pId":4, "name":"添加", "url_path":"newsAdd"},
+		]
 
 		function beforeClick(treeId, node) {
 			if (node.isParent) {
@@ -93,7 +103,7 @@
 		//-->
 	</SCRIPT>
 	<style type="text/css">
-		.ztree li a.level0 {width:200px;height: 20px; text-align: center; display:block; background-color: #0B61A4; border:1px silver solid;}
+		.ztree li a.level0 {width:200px;height: 25px; text-align: center; display:block; background-color: #0B61A4; border:1px silver solid;text-decoration: none}
 		.ztree li a.level0.cur {background-color: #66A3D2; }
 		.ztree li a.level0 span {display: block; color: white; padding-top:3px; font-size:12px; font-weight: bold;word-spacing: 2px;}
 		.ztree li a.level0 span.button {	float:right; margin-left: 10px; visibility: visible;display:none;}
@@ -102,7 +112,6 @@
 </HEAD>
 
 <BODY>
-
 <div class="content_wrap">
 	<div class="zTreeDemoBackground left">
 		<ul id="treeDemo" class="ztree"></ul>

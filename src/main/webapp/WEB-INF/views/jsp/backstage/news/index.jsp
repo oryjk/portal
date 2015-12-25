@@ -7,16 +7,10 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset=utf-8 />
-    <link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/themes/default/easyui.css">
-    <script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
-</head>
 
-<body>
-    <table id="tc"></table>
+<body style="width:100%">
+    <table  class="easyui-datagrid" id="tc" title="新闻" style="width:700px;height:400px"></table>
     <script src="<%=basePath%>resources/core/js/news/news.js"></script>
 </body>
 
