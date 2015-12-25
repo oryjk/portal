@@ -4,8 +4,7 @@ v1.4.1
 2010-03-01
 Author: Richard Clark - http://richclarkdesign.com
                                */
-/*begin reset
-****************************************/
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -104,25 +103,25 @@ input, select {
     vertical-align: middle;
 }
 
-/*end reset
-****************************************/
-
-/*begin general
-****************************************/
 h2 {
     font-size: 18px;
 }
 
+p{
+    font-size: 13px;
+    text-indent: 30px;
+    line-height:200%;
+}
 
 a:link,
 a:visited {
-    color:#014a99;
+    color:white;
     text-decoration: none;
 }
 
 a:hover,
 a:active {
-    color: #014a99;
+    color: white;
     text-decoration: underline;
 }
 
@@ -130,17 +129,8 @@ a:active {
 li{
     list-style: none;
 }
-
-
-p {
-    font-size: 13px;
-    line-height:200%;
-    text-indent: 2em;
-}
-/*end general
+/*    reset
 ****************************************/
-
-
 .header {
     height: 67px;
     border-bottom: 2px solid #014a99;
@@ -198,82 +188,73 @@ a {
 
 /*  header   up
 ******************************/
-
 .content{
-}
-.banner {
-    width: 100%;
-    display: block;
-    /*height: 435px;*/
-}
-.substance {
-    margin: 0 auto;
     width: 1000px;
-    overflow: hidden;
+    min-height:480px;
+    margin: 20px auto;
 }
-.pic li{
-    width: 100%;
+.list{
+    height: 38px;
+    background: #f3f3f3;
 }
-.pic img{
-    width: 100%;
-}
-.left-box,
-.right-box {
-    width: 450px;
-    /*height: 428px;*/
-    overflow: hidden;
-}
-.left-box{
+.about1{
     float: left;
+    line-height: 26px;
+    text-align: center;
+    margin:5px 0 0 30px ;
+    width: 66px;
+    height: 26px;
+    background:url("../img/btn-c.png") repeat-x;
 }
-.right-box{
-    float: right;
-}
-.box{
-    width: 450px;
-    padding-top: 22px;
-    min-height: 190px;
-
-}
-.box-top{
-    height: 18px;
-}
-.box-top h2{
-    display: inline;
+.about-left{
+    width: 66px;
     float: left;
+    background: url("../img/aa_03.jpg") no-repeat left 0;
 }
-.box-top a{
-    height: 18px;
-    display: inline;
+.about-right{
+    width: 66px;
     float: right;
+    background: url("../img/aa_07.jpg") no-repeat right 0;
 }
-.box-content{
-    margin-top: 7px;
-    padding-top: 13px;
-    border-top: 1px dashed #cccccc;
+.about2{
+    float: left;
+    line-height: 26px;
+    text-align: center;
+    margin:5px 0 0 30px ;
+    width: 66px;
+    height: 26px;
 }
-.box ul{
-    border-top: 1px dashed #cccccc;
-    margin-top: 7px;
-    padding-top: 6.5px;
-}
-.box ul li{
-    height: 18px;
-    padding-left: 10px;
-    margin-top: 13px;
-}
-.box ul li a{
-    display: inline;
-}
-.time{
-    float: right;
+.about2:link,
+.about2:visited {
+    color:#014a99;
+    text-decoration: none;
 }
 
-/*    content
-*******************************/
+.about2:hover,
+.about2:active {
+    color: #014a99;
+    text-decoration:none;
+    border-top: 2px solid #014a99;
+}
+.substance{
+    margin-top: 35px;
+}
+.substance img{
+    float: left;
+    padding-right: 20px;
+}
+.substance h3{
+    padding: 10px 0;
+}
+.substance p{
+    padding: 10px 0;
+}
 
+
+/*  footer
+*************************************/
 .footer {
-    margin-top: 20px;
+    margin-top: 50px;
     clear: both;
     background: #515151;
     font-size: 12px;
