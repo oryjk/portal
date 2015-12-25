@@ -4,7 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.news.dao.NewsMapper">
     <resultMap id="newsMap" type="com.news.bean.News">
+<<<<<<< HEAD
         <id property="news_id" column="id" />
+=======
+        <id property="id" column="id" />
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
         <result property="article" column="article"/>
         <result property="title" column="title"/>
         <result property="date" column="date"/>
@@ -32,12 +36,25 @@
     </select>
     <!--查实际所有-->
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">
+<<<<<<< HEAD
         SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state}
     </select>
     <!--查id-->
     <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND id=#{news_id}
     </select>
+=======
+        SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state} ORDER BY date DESC
+    </select>
+    <!--id查-->
+    <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
+        SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND id=#{news_id}
+    </select>
+    <!--title查-->
+    <select id="selectNewsTitle" parameterType="com.news.bean.News" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND title like '%${title}%'
+    </select>
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
     <!--按日期取n条记录-->
     <select id="selectDateNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 ORDER BY date DESC LIMIT #{number}

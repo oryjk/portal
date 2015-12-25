@@ -29,5 +29,12 @@
     <!--查id-->
     <select id="selectMediaById" parameterType="int" resultType="com.media.bean.Media">
         SELECT id,url,type,relation FROM media where id=#{media_id}
+<<<<<<< HEAD
+=======
+    </select>
+    <!--查所有的banner-->
+    <select id="selectBannerMedia" resultMap="MediaMap">
+        SELECT  id,url,type,relation FROM media WHERE type=1
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
     </select>
 </mapper>

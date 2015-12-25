@@ -211,7 +211,12 @@ a {
     width: 1000px;
     overflow: hidden;
 }
-
+.pic li{
+    width: 100%;
+}
+.pic img{
+    width: 100%;
+}
 .left-box,
 .right-box {
     width: 450px;

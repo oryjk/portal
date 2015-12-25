@@ -33,13 +33,21 @@ public class TestNews {
 
     @Test
     public  void TestDeleteNews(){
+<<<<<<< HEAD
+=======
+
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
         newsMapper.deleteNews(3);
     }
 
     @Test
     public  void TestUpdateNews(){
         News news=new News();
+<<<<<<< HEAD
         news.setNews_id(2);
+=======
+        news.setId(2);
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
         news.setArticle("66");
         news.setTitle("77");
         news.setCategroy_id(88);
@@ -65,5 +73,15 @@ public class TestNews {
 
         System.out.print(list);
     }
+<<<<<<< HEAD
+=======
+    @Test
+    public  void TestSelectNewsTitle(){
+        News news=new News();
+        news.setTitle("7");
+        List list=newsMapper.selectNewsTitle(news);
+        System.out.print(list);
+    }
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
 
 }

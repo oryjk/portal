@@ -16,8 +16,8 @@ public class MediaController {
 
     @RequestMapping("/media")
     public ModelAndView query(ModelAndView modelAndView){
-        modelAndView.setViewName("media");
-        modelAndView.addObject("media", mediaService.findAll());
+        modelAndView.setViewName("image/upimage");
+        modelAndView.addObject("media", mediaService.selectAllMedia());
         return  modelAndView;
     }
 }

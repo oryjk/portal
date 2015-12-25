@@ -13,6 +13,7 @@ import java.util.List;
 /**
  * Created by liqiang on 15-12-23.
  */
+<<<<<<< HEAD
 @Service
 public class MediaService {
     @Autowired
@@ -29,4 +30,14 @@ public class MediaService {
         return mediaMapper.selectAllMedia();
     }
 
+=======
+public interface MediaService {
+    void insertMedia(Media media);
+    void deleteMedia(int id);
+    void updateMedia(Media media);
+    List<Media> selectAllMedia();
+    Media selectMediaById(int id);
+    List<Media> selectBannerMedia();
+
+>>>>>>> dfe796904e090d1324a6acbe36e15552ef5cfa79
 }
