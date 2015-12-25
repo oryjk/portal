@@ -19,5 +19,6 @@ public interface MediaService {
     void updateMedia(Media media);
     List<Media> selectAllMedia();
     Media selectMediaById(int id);
+    List<Media> selectBannerMedia();
 
 }

@@ -68,4 +68,16 @@ public class MediaServiceImp implements MediaService{
         }
         return media;
     }
+
+    @Override
+    public List<Media> selectBannerMedia() {
+        List<Media> list=null;
+        try {
+            mediaMapper.selectBannerMedia();
+        }catch (Exception e){
+            LOGGER.error("Some thing wrong when selectBanner a media");
+        }
+        return list;
+    }
+
 }

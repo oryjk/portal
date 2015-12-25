@@ -16,4 +16,5 @@ public interface MediaMapper  extends SqlMapper{
     void updateMedia(Media media);
     List<Media> selectAllMedia();
     Media selectMediaById(int id);
+    List<Media> selectBannerMedia();
 }

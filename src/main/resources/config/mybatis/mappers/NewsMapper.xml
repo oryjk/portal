@@ -32,7 +32,7 @@
     </select>
     <!--查实际所有-->
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">
-        SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state}
+        SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state} ORDER BY date DESC
     </select>
     <!--id查-->
     <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
