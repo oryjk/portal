@@ -37,7 +37,7 @@
     </select>
     <!--查id-->
     <select id="selectAboutusById" parameterType="int" resultType="com.aboutus.bean.Aboutus">
-        SELECT id,title,article,date,banner_id,type,state FROM aboutus WHERE state=1 AND id=#{news_id}
+        SELECT id,title,article,date,banner_id,type,state FROM aboutus WHERE state=1 AND id=#{aboutus_id}
     </select>
     <!--按日期取n条记录-->
     <select id="selectDateAboutus" parameterType="int" resultMap="aboutusMap">

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.companyintro.dao.CompanyIntroMapper">
+    <resultMap id="companyintroMap" type="com.companyintro.bean.CompanyIntro">
+        <id property="companyintro_id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="article" column="article"/>
+        <result property="date" column="date"/>
+        <result property="banner_id" column="banner_id"/>
+        <result property="type" column="type"/>
+        <result property="state" column="state"/>
+    </resultMap>
+
+    <!--增-->
+    <insert id="insertCompanyIntro" parameterType="com.companyintro.bean.CompanyIntro">
+        INSERT INTO companyintro (title,article,date,banner_id,type,state) VALUES(#{title},#{article},now(),
+        #{banner_id},#{type},#{state})
+    </insert>
+    <!--删-->
+    <delete id="deleteCompanyIntro" parameterType="int">
+        UPDATE  companyintro SET state=0  WHERE id=#{companyintro_id}
+    </delete>
+    <!--改-->
+    <update id="updateCompanyIntro" parameterType="com.companyintro.bean.CompanyIntro">
+        UPDATE companyintro SET title=#{title},article=#{article},banner_id=#{banner_id},type=#{type},
+        state=#{state} WHERE id=#{companyintro_id}
+    </update>
+    <!--查实际所有-->
+    <select id="selectTrueAllCompanyIntro"  resultMap="companyintroMap">
+        SELECT id,title,article,date,banner_id,type,state from companyintro
+    </select>
+    <!--查所有-->
+    <select id="selectAllCompanyIntro" parameterType="int" resultMap="companyintroMap">
+        SELECT id,title,article,date,banner_id,type,state from companyintro WHERE state=#{state}
+    </select>
+    <!--查id-->
+    <select id="selectCompanyIntroById" parameterType="int" resultType="com.companyintro.bean.CompanyIntro">
+        SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE state=1 AND id=#{companyintro_id}
+    </select>
+    <!--按日期取n条记录-->
+    <select id="selectDateCompanyIntro" parameterType="int" resultMap="companyintroMap">
+        SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE state=1 ORDER BY date DESC LIMIT #{number}
+    </select>
+</mapper>

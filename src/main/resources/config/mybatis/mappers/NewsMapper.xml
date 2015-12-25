@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.news.dao.NewsMapper">
     <resultMap id="newsMap" type="com.news.bean.News">
-        <id property="id" column="id" />
+        <id property="news_id" column="id" />
         <result property="article" column="article"/>
         <result property="title" column="title"/>
         <result property="date" column="date"/>
@@ -34,7 +34,7 @@
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state from news WHERE state=#{state}
     </select>
-    <!--id查-->
+    <!--查id-->
     <select id="selectNewsById" parameterType="int" resultType="com.news.bean.News">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 AND id=#{news_id}
     </select>
