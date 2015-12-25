@@ -1,4 +1,4 @@
-package com.home;
+package com.companyintro.controller;
 
 import com.companyintro.bean.CompanyIntro;
 import com.companyintro.service.CompanyIntroService;
@@ -17,8 +17,8 @@ import java.util.List;
  * Created by dianjinzi on 25/12/15.
  */
 @Controller
-@RequestMapping("/zhongxinkeji")
-public class HomeController {
+@RequestMapping("company")
+public class companyController {
     @Autowired
     private MediaService mediaService;
     @Autowired
@@ -27,16 +27,9 @@ public class HomeController {
     private CompanyIntroService companyIntroService;
 
 
-    @RequestMapping("/home")
-    public ModelAndView index(ModelAndView modelAndView){
-        List<Media> banner=mediaService.selectBannerMedia();
-        modelAndView.addObject("banner",banner);
-        List<News> news=newsService.selectDateNews(5);
-        modelAndView.addObject("news",news);
-        List<CompanyIntro> companyIntros=companyIntroService.selectDateCompanyIntro(1);
-        CompanyIntro companyIntro=companyIntros.get(1);
-        modelAndView.addObject("companyIntro",companyIntro);
-        modelAndView.setViewName ("home");
+    @RequestMapping("companyAdd")
+    public ModelAndView companyAdd(ModelAndView modelAndView){
+        modelAndView.setViewName ("companyAdd");
         return modelAndView;
     }
 

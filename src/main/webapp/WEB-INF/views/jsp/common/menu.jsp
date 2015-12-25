@@ -37,7 +37,7 @@
 				{ "id":1, "pId":0, "name":"首页模块"},
 				{ "id":11, "pId":1, "name":"首页"},
 				{ "id":111, "pId":11, "name":"首页简介", "url_path":"index"},
-				{ "id":112, "pId":11, "name":"简介修改"},
+				{ "id":112, "pId":11, "name":"简介修改", "url_path":"company/companyAdd"},
 				{ "id":113, "pId":11, "name":"简介添加"},
 				{ "id":2, "pId":0, "name":"绝当淘"},
 				{ "id":21, "pId":2, "name":"添加", "url_path":"http://www.baidu.com"},
