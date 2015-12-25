@@ -40,7 +40,7 @@ public class TestNews {
     @Test
     public  void TestUpdateNews(){
         News news=new News();
-        news.setNews_id(2);
+        news.setId(2);
         news.setArticle("66");
         news.setTitle("77");
         news.setCategroy_id(88);

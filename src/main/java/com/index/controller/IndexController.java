@@ -17,7 +17,13 @@ public class IndexController {
 
     @RequestMapping("/main")
     public ModelAndView query(ModelAndView modelAndView){
-        modelAndView.setViewName("index/index");
+        modelAndView.setViewName("backstage/admin/index");
+        return modelAndView;
+    }
+
+    @RequestMapping("/index")
+    public ModelAndView index(ModelAndView modelAndView){
+        modelAndView.setViewName("frontdesk/index");
         return modelAndView;
     }
 }

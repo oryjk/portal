@@ -1,16 +1,19 @@
 package com.news.controller;
 
+import com.alibaba.fastjson.JSONObject;
+import com.news.bean.News;
 import com.news.service.NewsService;
 import org.apache.tomcat.jni.File;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by liqiang on 15-12-24.
@@ -24,14 +27,14 @@ public class NewsController {
     @RequestMapping("newsAdd")
     public ModelAndView newsAdd(ModelAndView modelAndView){
         LOGGER.debug("view is news add page");
-        modelAndView.setViewName("news/newsAdd");
+        modelAndView.setViewName("backstage/news/newsAdd");
         return modelAndView;
     }
 
     @RequestMapping("news")
     public ModelAndView news(ModelAndView modelAndView){
         LOGGER.debug("view is news news index page");
-        modelAndView.setViewName("news/index");
+        modelAndView.setViewName("backstage/news/index");
         return modelAndView;
     }
 
@@ -42,10 +45,16 @@ public class NewsController {
         return "";
     }
 
-    @RequestMapping(value = "findAllByLike" , method = RequestMethod.POST)
+    @RequestMapping("findAllByLike")
     @ResponseBody
     public String findAllByLike() {
         LOGGER.debug("view is news find by condition or all");
-        return "";
+        List<News> newsesList= newsService.selectAllNews(1);
+        LOGGER.debug("news json is" + JSONObject.toJSONString(newsesList));
+        Map<String,Object> jsonMap = new HashMap<String, Object>();
+        jsonMap.put("rows",newsesList);
+        jsonMap.put("total", 3);
+        LOGGER.debug(JSONObject.toJSONString(jsonMap));
+        return JSONObject.toJSONString(jsonMap);
     }
 }
