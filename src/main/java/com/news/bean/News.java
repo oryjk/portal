@@ -6,12 +6,11 @@ import java.util.Date;
  * Created by dianjinzi on 23/12/15.
  */
 public class News {
-
     private Integer news_id;
     private String article;
     private String title;
-    private Date date;
-    private Integer categroy_id;
+    private Date  date;
+    private  Integer categroy_id;
     private Integer state;
 
     public Integer getNews_id() {
@@ -30,20 +29,12 @@ public class News {
         this.article = article;
     }
 
-    public Integer getState() {
-        return state;
+    public String getTitle() {
+        return title;
     }
 
-    public void setState(Integer state) {
-        this.state = state;
-    }
-
-    public Integer getCategroy_id() {
-        return categroy_id;
-    }
-
-    public void setCategroy_id(Integer categroy_id) {
-        this.categroy_id = categroy_id;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public Date getDate() {
@@ -54,12 +45,20 @@ public class News {
         this.date = date;
     }
 
-    public String getTitle() {
-        return title;
+    public Integer getCategroy_id() {
+        return categroy_id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setCategroy_id(Integer categroy_id) {
+        this.categroy_id = categroy_id;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 
     @Override

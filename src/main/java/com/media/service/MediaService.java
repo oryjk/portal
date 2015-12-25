@@ -13,7 +13,6 @@ import java.util.List;
 /**
  * Created by liqiang on 15-12-23.
  */
-
 public interface MediaService {
     void insertMedia(Media media);
     void deleteMedia(int id);
