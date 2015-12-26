@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baotao.dao.BaotaoMapper">
+	<resultMap id="BaseResultMap" type="com.baotao.bean.Baotao">
+		<id column="id" property="id" />
+		<result column="title" property="title" />
+		<result column="content" property="content" />
+		<result column="date" property="date" />
+		<result column="type" property="type" />
+		<result column="state" property="state" />
+	</resultMap>
+	<insert id="addBaotao" parameterType="com.baotao.bean.Baotao">
+		insert into baotao
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+
+			<if test="content != null">
+				content,
+			</if>
+			<if test="date != null">
+				date,
+			</if>
+			
+			<if test="type != null">
+				type,
+			</if>
+			<if test="state != null">
+				state,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="content != null">
+				#{content},
+			</if>
+			<if test="date != null">
+				#{date},
+			</if>
+			<if test="type != null">
+				#{type},
+			</if>
+			<if test="state != null">
+				#{state},
+			</if>
+
+		</trim>
+	</insert>
+	
+	<select id="find" parameterType="com.baotao.bean.Baotao" resultType="com.baotao.bean.Baotao">
+		select * from baotao where state = "1" and type =#{type}
+	</select>
+	
+	<select id="findAll" parameterType="com.baotao.bean.Baotao" resultType="com.baotao.bean.Baotao">
+		select * from baotao where type =#{type}
+	</select>
+	
+	
+	<update id="update" parameterType="com.baotao.bean.Baotao">
+		update  baotao
+		set 
+		<if test="state == 0">
+			state="0"
+		</if>
+		<if test="state == 1">
+			state="1"
+		</if> 
+		where type = #{type}
+		<trim suffixOverrides="and">
+		<if test="state == 0">
+			and state="1"
+		</if>
+		<if test="state == 1">
+			and state="0" id=#{id}
+		</if>
+		</trim>		
+	</update>
+	
+	
+	
+	
+</mapper>

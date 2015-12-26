@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+portal.iml
+build/
+portal.ipr
+portal.iws
+.idea/
+.gradle/
+/bin/
+
+src/main/webapp/resources/zhongxinkeji/node_modules
+src/main/webapp/resources/zhongxinkeji/gulpfile.js
