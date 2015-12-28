@@ -1,13 +1,24 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=Utf-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="<%=basePath%>resources/zhongxinkeji/index/js/myfocus-2.0.4.min.js" type="text/javascript"></script>
+    <script src="<%=basePath%>resources/zhongxinkeji/index/js/mf-pattern/mF_expo2010.js" type="text/javascript"></script>
+    <link href="<%=basePath%>resources/zhongxinkeji/index/js/mf-pattern/mF_expo2010.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="<%=basePath%>resources/zhongxinkeji/index/index.css">
+</head>
 
 <body>
 <!-- header -->
-    <%@include file="${pageContext.request.contextPath }/WEB-INF/views/jsp/common/top.jsp" %>
+    <%@include file="../../common/top.jsp" %>
 
 <!-- content -->
 <div class="content">
@@ -15,9 +26,9 @@
         <div class="ad" id="expo2010-box">
             <div class="pic">
                 <ul>
-                    <li><img src="../img/banner.jpg" text=""></li>
-                    <li><img src="../img/banner.jpg" text=""></li>
-                    <li><img src="../img/banner.jpg" text=""></li>
+                    <c:forEach items="${banners}" var="banners">
+                        <li><img src="<%=basePath%>resources/${banners.url}" text=""></li>
+                    </c:forEach>
                 </ul>
             </div>
         </div>
@@ -73,7 +84,7 @@
 </div>
 
 <!--footer-->
-    <%@include file="${pageContext.request.contextPath }/WEB-INF/views/jsp/common/footer.jsp" %>
+    <%@include file="../../common/footer.jsp" %>
 </body>
 <script type="text/javascript">
     myFocus.set({
