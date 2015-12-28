@@ -8,6 +8,9 @@ portal.iws
 /bin/
 .classpath
 .settings
- 
+out
+libs
+/portal/src/main/java/com/test
+
 src/main/webapp/resources/zhongxinkeji/node_modules
 src/main/webapp/resources/zhongxinkeji/gulpfile.js

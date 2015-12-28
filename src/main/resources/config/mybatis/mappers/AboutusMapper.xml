@@ -4,43 +4,78 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aboutus.dao.AboutusMapper">
     <resultMap id="aboutusMap" type="com.aboutus.bean.Aboutus">
-        <id property="aboutus_id" column="id"/>
+        <id property="id" column="id"/>
         <result property="title" column="title"/>
-        <result property="article" column="article"/>
+        <result property="content" column="content"/>
         <result property="date" column="date"/>
-        <result property="banner_id" column="banner_id"/>
         <result property="type" column="type"/>
         <result property="state" column="state"/>
     </resultMap>
 
     <!--增-->
     <insert id="insertAboutus" parameterType="com.aboutus.bean.Aboutus">
-        INSERT INTO aboutus (title,article,date,banner_id,type,state) VALUES(#{title},#{article},now(),
-        #{banner_id},#{type},#{state})
+        INSERT INTO aboutus (title,content,date,type,state) VALUES(#{title},#{content},now(),#{type},#{state})
     </insert>
     <!--删-->
     <delete id="deleteAboutus" parameterType="int">
-        UPDATE  aboutus SET state=0  WHERE id=#{aboutus_id}
+        UPDATE  aboutus SET state=0  WHERE id=#{id}
     </delete>
     <!--改-->
     <update id="updateAboutus" parameterType="com.aboutus.bean.Aboutus">
-        UPDATE aboutus SET title=#{title},article=#{article},banner_id=#{banner_id},type=#{type},
-        state=#{state} WHERE id=#{aboutus_id}
+        UPDATE aboutus SET title=#{title},content=#{content},type=#{type},
+        state=#{state} WHERE id=#{id}
     </update>
     <!--查实际所有-->
     <select id="selectTrueAllAboutus"  resultMap="aboutusMap">
-        SELECT id,title,article,date,banner_id,type,state from aboutus
+        SELECT id,title,content,date,type,state from aboutus
     </select>
     <!--查所有-->
     <select id="selectAllAboutus" parameterType="int" resultMap="aboutusMap">
-        SELECT id,title,article,date,banner_id,type,state from aboutus WHERE state=#{state}
+        SELECT id,title,content,date,type,state from aboutus WHERE state=#{state}
     </select>
     <!--查id-->
     <select id="selectAboutusById" parameterType="int" resultType="com.aboutus.bean.Aboutus">
-        SELECT id,title,article,date,banner_id,type,state FROM aboutus WHERE state=1 AND id=#{aboutus_id}
+        SELECT id,title,content,date,type,state FROM aboutus WHERE state=1 AND id=#{id}
     </select>
     <!--按日期取n条记录-->
     <select id="selectDateAboutus" parameterType="int" resultMap="aboutusMap">
-        SELECT id,title,article,date,banner_id,type,state FROM aboutus WHERE state=1 ORDER BY date DESC LIMIT #{number}
+        SELECT id,title,content,date,type,state FROM aboutus WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
+    
+     
+     
+    <select id="find" parameterType="com.aboutus.bean.Aboutus" resultType="com.aboutus.bean.Aboutus">
+        select * from aboutus where state = #{state } and type =#{type }
+        <if test="id!=null">
+        	and id = #{id}
+        </if>
+    </select>
+    
+        
+    	
+ 	<update id="update" parameterType="com.aboutus.bean.Aboutus">
+		update  aboutus
+		set 
+		<if test="state == 0">
+			state="0"
+		</if>
+		<if test="state == 1">
+			state="1"
+		</if> 
+		where type = #{type}
+		<trim suffixOverrides="and">
+		<if test="state == 0">
+			and state="1"
+		</if>
+		<if test="state == 1">
+			and state="0" id=#{id}
+		</if>
+		</trim>		
+	</update>
+ 
+    
+
+    
+    
+    
 </mapper>
