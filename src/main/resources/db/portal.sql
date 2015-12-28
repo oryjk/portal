@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50615
 File Encoding         : 65001
 
-Date: 2015-12-28 17:35:11
+Date: 2015-12-28 17:45:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,6 +37,22 @@ INSERT INTO `aboutus` VALUES ('5', null, '<p>1）房产抵押贷款</p><p>个人
 INSERT INTO `aboutus` VALUES ('6', null, '<p><span style=\"font-size: 18px;\"><strong>1）房产抵押贷款</strong></span></p><p>个人、企业名下的以及取得房产证的住宅、商品房、别墅、写字间、商铺和经营性用房、厂房、土地等。</p><p><span style=\"font-size: 18px;\"><strong>2）民品典当</strong></span></p><p>黄铂金饰品（黄金、铂金、K金首饰及摆件）：珠宝（钻石首饰及裸钻、各类高档宝石饰品，如红宝石、蓝宝石、金绿宝石等）；玉石（翡翠、白玉和田籽料等各类高档玉石）；名表（各类高档名牌手表）；高档红木家具；高档数码产品（数码相机、数码摄像机、笔记本电脑、高档手机、MP3/MP4、IPOD、PSP等产品）；高档家电产品（液晶电视、家庭影院、组合音响、台式整机等产品）；奢侈品等。</p><p><span style=\"font-size: 18px;\"><strong>3）汽车质押贷款</strong></span></p><p>在成都车管所登记的个人、公司所有机动车辆及经销商4S店库存商品车。</p><p><br/></p><p>	</p>', '2015-12-27', '2', '1');
 INSERT INTO `aboutus` VALUES ('7', null, '<p><strong><span style=\"font-size: 18px;\">1） 网络美工：</span></strong></p><p>较好的广告创意、设计能力，扎实的美术功底，极强的设计表现能力，有独立设计、制作能力；</p><p><strong><span style=\"font-size: 18px;\">2） 网页UX设计：</span></strong></p><p>负责公司网页、网站和Web应用程序的页面制作和美工设计。</p><p><strong><span style=\"font-size: 18px;\">3） 网站运营推广总监</span></strong>：</p><p>全面负责“点金子”网www.dianjinzi.com电商平台（包括PC端、WAP端、APP）的运营工作，如搜索引擎、微信、微博、论 坛、QQ群、友情 链接等，推广公司产品、提高公司网站知名度，提升IP/PV/UV等；</p><p>有意者请将您的简历Email到： dianjinziwang@163.com （请勿以附件形式发送简历！） 邮件名“姓名-部门-职位”</p><p>简历中请注明： 1.您所申请的职位 2.您目前或期望的薪资范畴</p><p><br/></p>', '2015-12-27', '3', '1');
 INSERT INTO `aboutus` VALUES ('8', null, '<p><strong><span style=\"font-size: 18px;\">成都总部</span></strong></p><p>&nbsp;&nbsp;地址：成都市武侯区武阳大道5号下一站都市写字楼A座302-303</p><p>&nbsp;&nbsp;邮编：610000</p><p>&nbsp;&nbsp;电话：028-85033350</p><p><strong><span style=\"font-size: 18px;\">商务合作</span></strong></p><p>&nbsp;&nbsp;点金子线上平台致力于拓展绝当品销售渠道的典当行推出多种合作模式。</p><p>&nbsp;&nbsp;我们希望与贵公司共谋发展，一同进步。</p><p>&nbsp;&nbsp;欢迎来电来函：</p><p>&nbsp;&nbsp;电话：028-85033350</p><p><br/></p>', '2015-12-28', '4', '1');
+
+-- ----------------------------
+-- Table structure for `banner`
+-- ----------------------------
+DROP TABLE IF EXISTS `banner`;
+CREATE TABLE `banner` (
+  `banner_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `url` varchar(100) NOT NULL,
+  `type` int(10) unsigned NOT NULL,
+  `status` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`banner_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of banner
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `baotao`
