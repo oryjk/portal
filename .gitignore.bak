@@ -7,7 +7,7 @@ portal.iws
 .gradle/
 /bin/
 .classpath
-.settings
+ .settings
  
 src/main/webapp/resources/zhongxinkeji/node_modules
 src/main/webapp/resources/zhongxinkeji/gulpfile.js
