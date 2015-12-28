@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=Utf-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,7 +19,7 @@
 
 <body>
 <!-- header -->
-    <%@include file="../../common/top.jsp" %>
+    <jsp:include page="../../common/header.jsp"></jsp:include>
 
 <!-- content -->
 <div class="content">
@@ -49,7 +50,12 @@
                 </div>
                 <ul>
                  <c:forEach items="${news}" var="onenews">
-                     <li><a href="#">${onenews.title}</a> <span class="time">${onenews.date}</span></li>
+                     <li>
+                        <a href="#">${onenews.title}</a>
+                        <span class="time">
+                            <fmt:formatDate value="${onenews.date}" type="date" dateStyle="short"/>
+                        </span>
+                     </li>
                  </c:forEach>
 
                 </ul>
@@ -59,12 +65,11 @@
             <div class="box">
                 <div class="box-top">
                     <h2>绝当淘</h2>
-                    <a href="#">更多<<</a>
+                    <a href="<%=basePath%>baotao/showJueDangTao">更多<<</a>
                 </div>
                 <div class="box-content">
-                    <p>，由多家知名金融企业与专业投资机构共同创办，</p>
                     <p>
-                        定位，囊括了众筹、第三方支付、P2P网贷、在线理财、绝当品销售等多个业务。应趋势、谋全局、创新意、求突破，“点金子”尊崇典当淘宝新理念，以线下各典当行的绝当品为销售目标，货源上首先确保质量优势。
+                        ${juedangtao}
                     </p>
                 </div>
 
@@ -72,11 +77,10 @@
             <div class="box">
                 <div class="box-top">
                     <h2>收益淘</h2>
-                    <a href="#">更多<<</a>
+                    <a href="<%=basePath%>baotao/showShouYiTao">更多<<</a>
                 </div>
                 <p class="box-content">
-                    成都众鑫惠联网络科技有限公司成立于2015年6月，由多家知名金融企业与专业投资机构共同创办，
-                    定位于中国互联网金融综合服务平台，囊括了众筹、第三方支付、P2P网贷、在线理财、绝当品销售等多个业务。应趋势、谋全局、创新意、求突破，“点金子”尊崇典当淘宝新理念，以线下各典当行的绝当品为销售目标，货源上首先确保质量优势。
+                    ${shouyitao}
                 </p>
             </div>
         </div>
@@ -84,7 +88,8 @@
 </div>
 
 <!--footer-->
-    <%@include file="../../common/footer.jsp" %>
+    < <jsp:include page="../../common/footer.jsp"></jsp:include>
+    <include:jsp
 </body>
 <script type="text/javascript">
     myFocus.set({

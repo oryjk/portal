@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.baotao.service.BaotaoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ import com.menu.service.MenuService;
 public class JueDangtaoController {	
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	@Autowired
-	BaotaoServiceImpl baotaoService;
+	BaotaoService baotaoService;
 	
 	/*@RequestMapping("/ueditor")
 	public ModelAndView ueditor(ModelAndView modelAndView)throws Exception{
