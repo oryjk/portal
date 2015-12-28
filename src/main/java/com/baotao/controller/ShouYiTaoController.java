@@ -91,7 +91,7 @@ public class ShouYiTaoController {
 		
 		//model.addAttribute("editor1", baotaotemp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
-		modelAndView.setViewName("backstage/shouyitao/shouyitao");
+		modelAndView.setViewName("frontdesk/shouyitao/shouyitao");
 		return modelAndView;
 			
 	

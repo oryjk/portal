@@ -16,7 +16,19 @@
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <mvc:annotation-driven></mvc:annotation-driven>
-
+	
+	<mvc:interceptors>		
+		<!-- <mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.common.interceptor.LoginInterceptor" />	
+		</mvc:interceptor> -->
+		
+			<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.common.interceptor.MenuInterceptor" />			
+		</mvc:interceptor>
+		
+	</mvc:interceptors>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
@@ -43,5 +55,7 @@
             <value>5242880</value>
         </property>
     </bean>
+    
+
 
 </beans>

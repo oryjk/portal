@@ -1,5 +1,7 @@
 package com.baotao.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.savedrequest.HttpSessionRequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoConstant;
 import com.baotao.service.BaotaoServiceImpl;
+import com.menu.bean.Menu;
+import com.menu.service.MenuService;
 /**
  * 
  * @author woniu_hd on 12/23/15.
@@ -37,8 +42,7 @@ public class JueDangtaoController {
 		return modelAndView;
 	
 	}*/
-	
-	
+
 	
 	
 	@RequestMapping("/toJueDangTaoEdit")
@@ -102,7 +106,8 @@ public class JueDangtaoController {
 		
 		//model.addAttribute("editor1", intro1temp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
-		modelAndView.setViewName("backstage/juedangtao/juedangtao");
+		modelAndView.addObject("menuType", "2");
+		modelAndView.setViewName("frontdesk/juedangtao/juedangtao");
 		return modelAndView;
 			
 	

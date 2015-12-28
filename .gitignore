@@ -7,6 +7,12 @@ portal.iws
 .gradle/
 /bin/
 .classpath
+out
+libs
+.settings
+/portal/src/main/java/com/test
+
+
 
 src/main/webapp/resources/zhongxinkeji/node_modules
 src/main/webapp/resources/zhongxinkeji/gulpfile.js

@@ -47,7 +47,7 @@
 	</insert>
 	
 	<select id="find" parameterType="com.baotao.bean.Baotao" resultType="com.baotao.bean.Baotao">
-		select * from baotao where state = "1" and type =#{type}
+		select * from baotao where state = #{state } and type =#{type}
 	</select>
 	
 	<select id="findAll" parameterType="com.baotao.bean.Baotao" resultType="com.baotao.bean.Baotao">

@@ -1,6 +1,7 @@
 package com.aboutus.service;
 
 import com.aboutus.bean.Aboutus;
+import com.aboutus.bean.AboutusConstant;
 import com.aboutus.dao.AboutusMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,8 +14,8 @@ import java.util.List;
  * Created by dianjinzi on 24/12/15.
  */
 @Service
-public class AboutServiceImp implements AboutService{
-    private static final Logger LOGGER= LoggerFactory.getLogger(AboutServiceImp.class);
+public class AboutusServiceImp implements AboutusService{
+    private static final Logger LOGGER= LoggerFactory.getLogger(AboutusServiceImp.class);
 
     @Autowired
     private AboutusMapper aboutusMapper;
@@ -22,6 +23,7 @@ public class AboutServiceImp implements AboutService{
     @Override
     public void insertAboutus(Aboutus aboutus) {
         try {
+        	aboutus.setState(AboutusConstant.ABOUTUS_STATE_SHOW);
             aboutusMapper.insertAboutus(aboutus);
         }catch (Exception e){
             LOGGER.error("Some thing wrong when create a aboutus");
@@ -89,4 +91,17 @@ public class AboutServiceImp implements AboutService{
         }
         return  list;
     }
+    @Override
+	public Aboutus find(Aboutus aboutus) {
+    	
+    	if(aboutusMapper.find(aboutus)==null)
+    		return null;
+    	
+    	return aboutusMapper.find(aboutus);
+	}
+    @Override
+	public void update(Aboutus aboutus) {
+		// TODO Auto-generated method stub
+		aboutusMapper.update(aboutus);
+	}
 }

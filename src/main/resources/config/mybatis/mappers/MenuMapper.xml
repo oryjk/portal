@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.menu.dao.MenuMapper">
+	<resultMap id="BaseResultMap" type="com.menu.bean.Menu">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="url" property="url" />
+		<result column="type" property="type" />
+		<result column="num" property="num" />
+	</resultMap>
+	
+	<select id="findAll" resultType="com.menu.bean.Menu">
+		select * from menu
+	</select>
+	
+	
+</mapper>

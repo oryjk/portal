@@ -11,11 +11,23 @@ import java.util.List;
  */
 @Component
 public interface AboutusMapper extends SqlMapper{
+	
     void insertAboutus(Aboutus aboutus);
+    
     void deleteAboutus(int id);
+    
     void updateAboutus(Aboutus aboutus);
+    
     List<Aboutus> selectTrueAllAboutus();
+    
     List<Aboutus> selectAllAboutus(int state);
+    
     Aboutus selectAboutusById(int id);
+    
     List<Aboutus> selectDateAboutus(int number);
+    
+    
+    Aboutus find(Aboutus aboutus);
+    
+    void update(Aboutus about);
 }

@@ -13,18 +13,15 @@ import com.baotao.dao.BaotaoMapper;
 public class BaotaoServiceImpl implements BaotaoService {
 	@Autowired
 	BaotaoMapper baotaoMapper;
-	@Override
 	public void addBaotao(Baotao baotao) throws Exception{
 		baotao.setDate(new Date());		
 		baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
 		baotaoMapper.addBaotao(baotao);
 	}
-	@Override
 	public Baotao find(Baotao baotao) throws Exception{
 		
 		return baotaoMapper.find(baotao);
 	}
-	@Override
 	public void update(Baotao baotao) throws Exception{
 		baotaoMapper.update(baotao);
 		
