@@ -1,4 +1,4 @@
-$(function() {
+﻿$(function() {
     $('#tc').datagrid({
         loadMsg : "数据加载中，请稍后...",
         pageNumber : 1,
@@ -40,7 +40,7 @@ $(function() {
             field : "3",
             title : "",
             align : "center",
-            width : '60px',
+            width : '120px',
             formatter : function(value, rec) {
                 return "<button class='del'>删除</button>";
             }
