@@ -4,11 +4,20 @@
     <div class="footer-content">
         <div class="footer-left">
             <ul class="footer-content-left">
-                <li class="footer-index"><a href="#">首页</a></li>
-                <li><a href="#">绝当淘</a></li>
-                <li><a href="#">收益淘</a></li>
-                <li><a href="#">新闻资讯</a></li>
-                <li class="footer-about"><a href="#">关于我们</a></li>
+            
+            <c:forEach items="${menuList }" var="menu">
+ 				<c:if test="${menu.num==1 }">
+           		 	<li class="footer-index"><a href="${pageContext.request.contextPath }/${menu.url }">${menu.name }</a></li>
+    			</c:if>
+    			<c:if test="${menu.num==5 }">
+           		 	<li class="footer-about"><a href="${pageContext.request.contextPath }/${menu.url }">${menu.name }</a></li>
+    			</c:if>	
+    			<c:if test="${(menu.num!=1)&&(menu.num!=5) }">
+           		 	<li><a href="${pageContext.request.contextPath }/${menu.url }">${menu.name }</a></li>
+    			</c:if>	
+    					
+ 			</c:forEach>
+        
             </ul>
             <div class="footer-content-left">
                 联系电话：028-85033350

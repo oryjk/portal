@@ -23,7 +23,7 @@ public class UserController {
 	private UserService userService;
 	
 	//@RequestMapping(value="/login",method=RequestMethod.POST)
-	@RequestMapping("/login")
+	@RequestMapping("/loginSubmit")
 	public ModelAndView login(ModelAndView modelAndView,HttpSession session, User user) throws Exception {
 
 		User userTemp = userService.findName(user);

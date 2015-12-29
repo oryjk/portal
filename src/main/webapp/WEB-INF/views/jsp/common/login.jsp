@@ -40,7 +40,7 @@
 			<div class="col-lg-6">
 				<h1>landing page</h1>
 				<h2 class="subtitle">Welcom to ZHONGXINKEJI </h2>
-				<form action="${pageContext.request.contextPath }/user/login" method="post" class="form-inline signup" role="form">
+				<form action="${pageContext.request.contextPath }/user/loginSubmit" method="post" class="form-inline signup" role="form">
 					<div class="form-group">
 						<input type="text" name="username"    class="form-control" id="exampleInputEmail1" placeholder="Enter your UserName"><br/><br/>
 						<input type="password"  name="password"   class="form-control" id="exampleInputEmail1" placeholder="Enter your Password"><br/><br/>
