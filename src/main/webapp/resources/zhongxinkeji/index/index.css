@@ -109,7 +109,7 @@ input, select {
 /*begin general
 ****************************************/
 body {
-    font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+    font: 14px/1 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
 }
 h2 {
     font-size: 18px;
@@ -211,9 +211,6 @@ a {
     margin: 0 auto;
     width: 1000px;
     overflow: hidden;
-}
-.banner .mF_expo2010 .pic{
-    height: 425px;
 }
 .banner .mF_expo2010 .pic .banner1 {
     width: 100%;
