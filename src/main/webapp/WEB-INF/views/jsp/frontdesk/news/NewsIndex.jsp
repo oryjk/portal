@@ -29,8 +29,8 @@
          <c:forEach items="${newslist}" var="newslist">
         <ul>
         <li class="substance2">
-        <a href="#" class="title">${newslist.title}</a>
-         <span class="time"> <fmt:formatDate value="${newslist.date}"/></span>
+        <a href="" class="title">${newslist.title}</a>
+         <span class="time"> <fmt:formatDate value="${newslist.date}" type="date" dateStyle="short"/></span>
             <p class="substance-font"> 
             		${newslist.article}	
             </p>
@@ -46,7 +46,7 @@
                 </div>
                  <c:forEach items="${newslist2}" var="newslist2">
                 <ul>
-                    <li><a href="#">${newslist2.title}</a> <span class="time"><fmt:formatDate value="${newslist2.date}"/></span></li>
+                    <li><a href="#">${newslist2.title}</a> <span class="time"><fmt:formatDate value="${newslist2.date}" type="date" dateStyle="short"/></span></li>
                 </ul>
                 </c:forEach>
             </div>
@@ -57,7 +57,7 @@
                 </div>
                <c:forEach items="${newslist2}" var="newslist2">
                 <ul>
-                    <li><a href="#">${newslist2.title}</a> <span class="time"><fmt:formatDate value="${newslist2.date}"/></span></li>
+                    <li><a href="#">${newslist2.title}</a> <span class="time"><fmt:formatDate value="${newslist2.date}" type="date" dateStyle="short"/></span></li>
                 </ul>
                 </c:forEach>
             </div>
