@@ -11,20 +11,14 @@
 <!--content-->
 <div class="content">
     <div class="list">
-        <a href="#" class="about2">
-            公司介绍
-        </a>
-        <a href="#" class="about1">
-            <span class="about-left">
-                <span class="about-right">业务范围</span>
-            </span>
-        </a>
-        <a href="#" class="about2">
-            招贤纳士
-        </a>
-        <a href="#" class="about2">
-            联系我们
-        </a>
+         <c:forEach items="${categroyList }" var="categroy">
+ 			<c:if test="${categroy.type==categroyType }">
+ 				 <a href="${pageContext.request.contextPath }/${categroy.url }" class="about1"><span class="about-left"><span class="about-right">${categroy.name }</span></span></a>
+    		</c:if>
+    		<c:if test="${categroy.type!=categroyType }">
+           		 <a href="${pageContext.request.contextPath }/${categroy.url }" class="about2">${categroy.name }</a>
+    		</c:if>			
+ 		</c:forEach>
     </div>
     <div class="substance">
         ${aboutus.content }

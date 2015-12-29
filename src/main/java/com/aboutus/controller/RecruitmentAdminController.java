@@ -1,5 +1,6 @@
 package com.aboutus.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,12 @@ public ModelAndView recruitmentEdit(ModelAndView modelAndView,Aboutus aboutus) t
 @RequestMapping(value="/recruitmentEditSubmit",method=RequestMethod.POST)
 public ModelAndView SphereOfBusinessEditSubmit(ModelAndView modelAndView,String content,Aboutus aboutus) throws Exception{	
 	
-	if(content==null){
-		//modelAndView.addObject("");
-		return modelAndView;
+	LOGGER.debug("judge null of content");
+	if(StringUtils.isBlank(content)){	
+		aboutus.setContent("内容不能为空！！！    请从新输入！！！");
+		modelAndView.addObject("aboutus",aboutus);
+		modelAndView.setViewName("backstage/about-us/recruitment-edit");
+		return modelAndView;			
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.baotao.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.banner.bean.Banner;
+import com.banner.bean.ConStantBannerType;
+import com.banner.service.BannerService;
 import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoConstant;
 import com.baotao.service.BaotaoServiceImpl;
@@ -21,8 +26,9 @@ public class ShouYiTaoController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	
 	@Autowired
-	BaotaoServiceImpl baotaoService;
-	
+	private BaotaoServiceImpl baotaoService;
+	@Autowired
+    private BannerService bannerService;
 	
 	/**
 	 * 显示收益淘页面
@@ -44,6 +50,10 @@ public class ShouYiTaoController {
 		//model.addAttribute("editor1", baotaotemp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
 		modelAndView.addObject("menuType", "3");
+		
+		List<Banner> banners=bannerService.selectTypeBanner(ConStantBannerType.SHOUYITAO_TYPE);
+        modelAndView.addObject("banners",banners);
+		
 		modelAndView.setViewName("frontdesk/shouyitao/shouyitao");
 		return modelAndView;
 			

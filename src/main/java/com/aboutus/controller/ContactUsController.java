@@ -11,9 +11,10 @@ import com.aboutus.bean.Aboutus;
 import com.aboutus.bean.AboutusConstant;
 import com.aboutus.service.AboutusService;
 import com.baotao.controller.JueDangtaoController;
+import com.categroy.bean.CategroyConstant;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/aboutus")
 public class ContactUsController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	
@@ -31,6 +32,7 @@ public class ContactUsController {
 		Aboutus aboutusTemp = aboutusService.find(aboutus);
 		modelAndView.addObject("aboutus",aboutusTemp);
 		modelAndView.addObject("menuType", "5");
+		modelAndView.addObject("categroyType", CategroyConstant.CATEGROY_CONTACTUS);
 		
 		
 		
