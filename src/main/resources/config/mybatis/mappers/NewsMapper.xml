@@ -28,7 +28,7 @@
     </update>
     <!--查所有-->
     <select id="selectTrueAllNews"  resultMap="newsMap">
-        SELECT id,article,title,date,categroy_id,state from news
+        SELECT id,article,title,date,categroy_id,state from news where state = 1
     </select>
     <!--查实际所有-->
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">

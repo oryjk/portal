@@ -47,7 +47,7 @@
             <div class="box">
                 <div class="box-top">
                     <h2>新闻资讯</h2>
-                    <a href="#">更多<<</a>
+                    <a href="<%=basePath%>news/all">更多<<</a>
                 </div>
                 <ul>
                      <c:forEach items="${news}" var="onenews">
