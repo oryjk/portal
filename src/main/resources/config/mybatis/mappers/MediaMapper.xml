@@ -34,4 +34,8 @@
     <select id="selectBannerMedia" resultMap="MediaMap">
         SELECT  id,url,type,relation FROM media WHERE type=1
     </select>
+    <!--根据relation查新闻图片-->
+    <select id="selectRelationMedia" parameterType="int" resultType="com.media.bean.Media">
+    SELECT id,url,type,relation FROM media where relation=#{relation_id}
+    </select>
 </mapper>

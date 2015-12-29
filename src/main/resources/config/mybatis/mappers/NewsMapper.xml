@@ -10,7 +10,22 @@
         <result property="date" column="date"/>
         <result property="categroy_id" column="categroy_id"/>
         <result property="state" column="state"/>
+        <association property="newsMedia" column="id" select="getNewsMedia"/>
     </resultMap>
+
+    <resultMap id="newsMediaMap" type="com.news.bean.NewsMedia">
+        <id property="media_id" column="id"/>
+        <result property="url" column="url"/>
+        <result property="type" column="type"/>
+        <result property="relation" column="relation"/>
+    </resultMap>
+
+
+    <select id="getNewsMedia" parameterType="int" resultMap="newsMediaMap">
+        SELECT * FROM media
+        WHERE  relation=#{id}
+    </select>
+
 
     <!--增-->
     <insert id="insertNews" parameterType="com.news.bean.News">
