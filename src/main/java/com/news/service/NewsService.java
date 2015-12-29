@@ -16,4 +16,6 @@ public interface NewsService {
     News selectNewsById(int id);
     List<News> selectDateNews(int number);
     List<News> selectNewsTitle(String title);
+    List<News> selectByLimit(int number);  
+	
 }

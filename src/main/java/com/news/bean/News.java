@@ -12,6 +12,15 @@ public class News {
     private Date  date;
     private  Integer categroy_id;
     private Integer state;
+    private  NewsMedia newsMedia;
+
+    public NewsMedia getNewsMedia() {
+        return newsMedia;
+    }
+
+    public void setNewsMedia(NewsMedia newsMedia) {
+        this.newsMedia = newsMedia;
+    }
 
     public Integer getNews_id() {
         return news_id;
@@ -70,6 +79,7 @@ public class News {
                 ", date=" + date +
                 ", categroy_id=" + categroy_id +
                 ", state=" + state +
+                ", newsMedia=" + newsMedia +
                 '}';
     }
 }

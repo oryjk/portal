@@ -80,4 +80,15 @@ public class MediaServiceImp implements MediaService{
         return list;
     }
 
+    @Override
+    public Media selectRelationMedia(int relation) {
+        Media media=null;
+        try {
+            media=mediaMapper.selectRelationMedia(relation);
+        }catch (Exception e){
+            LOGGER.error("Some thing wrong when selectById a media");
+        }
+        return media;
+    }
+
 }
