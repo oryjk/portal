@@ -46,6 +46,9 @@
     <select id="selectDateNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
-
+    <!-- 分页 -->
+    <select id="selectByLimit" parameterType="int" resultType="com.news.bean.News">  
+            SELECT id,article,title,date,categroy_id,state FROM news ORDER BY id LIMIT #{number}  
+    </select>  
 
 </mapper>

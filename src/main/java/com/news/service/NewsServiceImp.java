@@ -104,4 +104,15 @@ public class NewsServiceImp implements NewsService{
         }
         return list;
     }
+    @Override
+    public List<News> selectByLimit(int number) {
+        List<News> list=null;
+        try {
+            list=newsMapper.selectByLimit(number);
+        }catch (Exception e){
+            LOGGER.error("Some thing wrong when selectByLimit a news");
+        }
+        return list;
+    }
+
 }
