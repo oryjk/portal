@@ -1,5 +1,6 @@
 package com.baotao.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,7 @@ public class ShouYiTaoAdminController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	
 	@Autowired
-	BaotaoServiceImpl baotaoService;
+	private BaotaoServiceImpl baotaoService;
 	
 	@RequestMapping("/toShouYiTaoEdit")
 	public ModelAndView toShouYiTaoEdit(ModelAndView modelAndView,Baotao baotao) throws Exception{
@@ -46,6 +47,15 @@ public class ShouYiTaoAdminController {
 	@RequestMapping(value="/shouYiTaoEditSubmit",method=RequestMethod.POST)
 	public ModelAndView shouYiTaoEditSubmit(ModelAndView modelAndView,Model model,String content,Baotao baotao) throws Exception{	
 		
+		LOGGER.debug("judge null of content");
+		if(StringUtils.isBlank(content)){		
+			baotao.setContent("内容不能为空！！！    请从新输入！！！");
+			modelAndView.addObject("baotao",baotao);
+			modelAndView.setViewName("backstage/shouyitao/shouyitaoedit");
+			return modelAndView;			
+		}
+		
+		
 		//查找当前显示，若有状态置0（假删除）
 		Baotao baotaoTemp = new Baotao();
 		baotaoTemp.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
@@ -67,7 +77,7 @@ public class ShouYiTaoAdminController {
 		Baotao baotaotemp = baotaoService.find(baotaoTemp);		
 		//model.addAttribute("editor", baotaotemp.getContent());
 		modelAndView.addObject("baotao",baotaotemp);
-		modelAndView.setViewName("backstage/shouyitao/showshouyitao");
+		modelAndView.setViewName("backstage/shouyitao/show");
 		return modelAndView;	
 	}
 	

@@ -11,6 +11,7 @@ import com.aboutus.bean.Aboutus;
 import com.aboutus.bean.AboutusConstant;
 import com.aboutus.service.AboutusService;
 import com.baotao.controller.JueDangtaoController;
+import com.categroy.bean.CategroyConstant;
 
 @Controller
 @RequestMapping("/aboutus")
@@ -32,6 +33,7 @@ AboutusService  aboutusService;
 		Aboutus aboutusTemp = aboutusService.find(aboutus);
 		modelAndView.addObject("aboutus",aboutusTemp);
 		modelAndView.addObject("menuType", "5");
+		modelAndView.addObject("categroyType", CategroyConstant.CATEGROY_SPHEREOFBUSINESS);
 		modelAndView.setViewName("frontdesk/about-us/sphere-of-business");
 		return modelAndView;
 

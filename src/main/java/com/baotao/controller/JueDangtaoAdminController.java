@@ -2,6 +2,8 @@ package com.baotao.controller;
 
 
 import com.baotao.service.BaotaoService;
+
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,16 +28,7 @@ import com.baotao.bean.BaotaoConstant;
 public class JueDangtaoAdminController {	
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoAdminController.class);
 	@Autowired
-	BaotaoService baotaoService;
-	
-	/*@RequestMapping("/ueditor")
-	public ModelAndView ueditor(ModelAndView modelAndView)throws Exception{
-		
-		modelAndView.setViewName("backstage/baotao/controller");
-		return modelAndView;
-	
-	}*/
-
+	private BaotaoService baotaoService;
 	
 	
 	@RequestMapping("/toJueDangTaoEdit")
@@ -56,9 +49,16 @@ public class JueDangtaoAdminController {
 
 	
 	@RequestMapping(value="/jueDangTaoEditSubmit",method=RequestMethod.POST)
-	public ModelAndView jueDangTaoEditSubmit(ModelAndView modelAndView,String content,Baotao baotao) throws Exception{	
+	public ModelAndView jueDangTaoEditSubmit(ModelAndView modelAndView,String content,Baotao baotao) throws Exception{		
 		
-		//查找当前显示，若有状态置0（假删除）
+		LOGGER.debug("judge null of content");
+		if(StringUtils.isBlank(content)){		
+			baotao.setContent("内容不能为空！！！    请从新输入！！！");
+			modelAndView.addObject("baotao",baotao);
+			modelAndView.setViewName("backstage/juedangtao/juedangtaoedit");
+			return modelAndView;			
+		}
+				
 		Baotao baotaoTemp = new Baotao();
 		baotaoTemp.setType(BaotaoConstant.BAOTAO_JUEDANGTAO_TYPE);
 		baotaoTemp.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
@@ -78,7 +78,7 @@ public class JueDangtaoAdminController {
 		LOGGER.debug("find new juedangtao/shouyitao content");
 		Baotao baotaotemp = baotaoService.find(baotaoTemp);
 		modelAndView.addObject("baotao",baotaotemp);
-		modelAndView.setViewName("backstage/juedangtao/showshouyitao");
+		modelAndView.setViewName("backstage/juedangtao/show");
 		return modelAndView;	
 	}
 	

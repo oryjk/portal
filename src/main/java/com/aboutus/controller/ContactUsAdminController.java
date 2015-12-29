@@ -1,5 +1,6 @@
 package com.aboutus.controller;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import com.aboutus.service.AboutusService;
 import com.baotao.controller.JueDangtaoController;
 
 @Controller
-@RequestMapping("/aboutus")
+@RequestMapping("/admin")
 public class ContactUsAdminController {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	
@@ -43,9 +44,12 @@ public class ContactUsAdminController {
 	@RequestMapping(value="/contactUsEditSubmit",method=RequestMethod.POST)
 	public ModelAndView SphereOfBusinessEditSubmit(ModelAndView modelAndView,String content,Aboutus aboutus) throws Exception{	
 		
-		if(content==null){
-			//modelAndView.addObject("");
-			return modelAndView;
+		LOGGER.debug("judge null of content");
+		if(StringUtils.isBlank(content)){		
+			aboutus.setContent("内容不能为空！！！    请从新输入！！！");
+			modelAndView.addObject("aboutus",aboutus);
+			modelAndView.setViewName("backstage/about-us/contact-us-edit");
+			return modelAndView;			
 		}
 		
 		

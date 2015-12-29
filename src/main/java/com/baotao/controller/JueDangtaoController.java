@@ -2,6 +2,9 @@ package com.baotao.controller;
 
 
 import com.baotao.service.BaotaoService;
+
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.banner.bean.Banner;
+import com.banner.bean.ConStantBannerType;
+import com.banner.service.BannerService;
 import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoConstant;
 
@@ -25,8 +31,10 @@ import com.baotao.bean.BaotaoConstant;
 public class JueDangtaoController {	
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
 	@Autowired
-	BaotaoService baotaoService;
-	
+	private BaotaoService baotaoService;
+	@Autowired
+    private BannerService bannerService;
+
 
 	
 	/**
@@ -47,6 +55,10 @@ public class JueDangtaoController {
 		//model.addAttribute("editor1", intro1temp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
 		modelAndView.addObject("menuType", "2");
+		
+		List<Banner> banners=bannerService.selectTypeBanner(ConStantBannerType.JUEDANGTAO_TYPE);
+        modelAndView.addObject("banners",banners);
+		
 		modelAndView.setViewName("frontdesk/juedangtao/juedangtao");
 		return modelAndView;
 			

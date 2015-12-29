@@ -10,7 +10,11 @@
 	<%@include file="../../common/header.jsp" %>
 <!-- content -->
 <div class="content">
-    <a href="#" class="banner"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/banner2.jpg"></a>
+
+	<c:forEach items="${banners}" var="banners">
+            <a href="#" class="banner"><img src="${pageContext.request.contextPath }/resources/${banners.url}"></a>
+    </c:forEach>
+    
     <div class="substance">
         <div class="title">
             <div class="title-left"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/title-logo.png"></div>

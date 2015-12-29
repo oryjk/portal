@@ -18,7 +18,7 @@
   
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/aboutus/sphereOfBusinessEditSubmit" method="post">
+	<form action="${pageContext.request.contextPath }/admin/sphereOfBusinessEditSubmit" method="post">
 		<script id="container" name="content" type="text/plain">
         ${aboutus.content}
     	</script>
