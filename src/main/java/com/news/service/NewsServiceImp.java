@@ -21,13 +21,14 @@ public class NewsServiceImp implements NewsService{
     private NewsMapper newsMapper;
 
     @Override
-    public void insertNews(News news) {
+    public Integer insertNews(News news) {
         try {
             newsMapper.insertNews(news);
+            return news.getNews_id();
         }catch (Exception e){
             LOGGER.error("Some thing wrong when create a news");
         }
-
+        return 0;
     }
 
     @Override
@@ -52,7 +53,7 @@ public class NewsServiceImp implements NewsService{
     public List<News> selectTrueAllNews() {
         List<News> list=null;
         try {
-             list=newsMapper.selectTrueAllNews();
+            list=newsMapper.selectTrueAllNews();
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectTrueAll a news");
         }
@@ -104,15 +105,4 @@ public class NewsServiceImp implements NewsService{
         }
         return list;
     }
-    @Override
-    public List<News> selectByLimit(int number) {
-        List<News> list=null;
-        try {
-            list=newsMapper.selectByLimit(number);
-        }catch (Exception e){
-            LOGGER.error("Some thing wrong when selectByLimit a news");
-        }
-        return list;
-    }
-
 }

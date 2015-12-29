@@ -34,11 +34,11 @@ public class ShowListController {
         
       
 		//分页的显示
-        List<News> newsList1=newsService.selectByLimit(number);
-        LOGGER.debug("news json is" + JSONObject.toJSONString(newsList1));
+        //List<News> newsList1=newsService.selectByLimit(number);
+        //LOGGER.debug("news json is" + JSONObject.toJSONString(newsList1));
         modelAndView.setViewName("frontdesk/news/NewsList");
         modelAndView.addObject("menuType", "4");
-        modelAndView.addObject("newslist1", newsList1);
+        //modelAndView.addObject("newslist1", newsList1);
         
 //        List<News> pagination=newsService.selectByLimit(number);
 //        LOGGER.debug("news json is" + JSONObject.toJSONString(pagination));

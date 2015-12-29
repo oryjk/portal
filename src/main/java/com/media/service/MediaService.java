@@ -20,5 +20,5 @@ public interface MediaService {
     List<Media> selectAllMedia();
     Media selectMediaById(int id);
     List<Media> selectBannerMedia();
-    Media selectRelationMedia(int relation);
+    List<Media> selectNewsMedia(int id);
 }

@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Component
 public interface NewsMapper extends SqlMapper{
-    void insertNews(News news);
+    Integer insertNews(News news);
     void deleteNews(int id);
     void updateNews(News news);
     List<News> selectTrueAllNews();
@@ -19,6 +19,4 @@ public interface NewsMapper extends SqlMapper{
     News selectNewsById(int id);
     List<News> selectDateNews(int number);
     List<News> selectNewsTitle(News news);
-	List<News> selectByLimit(int number);
-    List<News> getNewsAndMedia(int news_id);
 }

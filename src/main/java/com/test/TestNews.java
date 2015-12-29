@@ -23,8 +23,8 @@ public class TestNews {
 
     @Test
     public void TestGetNewsAndMedia(){
-        List list=newsMapper.getNewsAndMedia(5);
-        System.out.print(list);
+        //List list=newsMapper.getNewsAndMedia(5);
+        //System.out.print(list);
     }
 
     @Test
