@@ -8,6 +8,8 @@ portal.iws
 /bin/
 .classpath
 .settings
+.settings/org.eclipse.jdt.core.prefs
+
 out
 libs
 /portal/src/main/java/com/test
