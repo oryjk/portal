@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class IndexController {
-    @RequestMapping("/")
+    @RequestMapping("/login")
     public ModelAndView login(ModelAndView modelAndView){
         modelAndView.setViewName("common/login");
         return modelAndView;

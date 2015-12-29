@@ -19,5 +19,9 @@ public interface NewsMapper extends SqlMapper{
     News selectNewsById(int id);
     List<News> selectDateNews(int number);
     List<News> selectNewsTitle(News news);
+<<<<<<< HEAD
 	List<News> selectByLimit(int number);
+=======
+    List<News> getNewsAndMedia(int news_id);
+>>>>>>> b5bd0e13bd7c283f52cf4b4d301b3e475e408ddb
 }

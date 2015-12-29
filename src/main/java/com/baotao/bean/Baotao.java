@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Baotao implements Serializable{
-	static final long serialVersionUID = 42456789L;
+
+	static final long serialVersionUID = 1L;
 	private int id;
 	private String title;
 	private String content;

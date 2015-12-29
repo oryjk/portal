@@ -8,7 +8,10 @@
     <link href="js/mf-pattern/mF_expo2010.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="index.css">
 </head>
-<body>
+
+
+
+<body id="body">
 <!-- header -->
 <div class="header">
     <div class="header-nav">
@@ -16,7 +19,7 @@
             <img src="../img/logo.png" alt="众鑫惠联,点金子,绝当淘">
         </a>
         <ul class="header-right">
-            <li ><a class="header-index" href="#">首页</a></li>
+            <li><a class="header-index" href="#">首页</a></li>
             <li><a class="header-same" href="#">绝当淘</a></li>
             <li><a class="header-same" href="#">收益淘</a></li>
             <li><a class="header-same" href="#">新闻资讯</a></li>
@@ -31,9 +34,10 @@
         <div class="ad" id="expo2010-box">
             <div class="pic">
                 <ul>
-                    <li><img src="../img/banner.jpg" text=""></li>
-                    <li><img src="../img/banner.jpg" text=""></li>
-                    <li><img src="../img/banner.jpg" text=""></li>
+                    <li style="background:url(../img/banner2.jpg) no-repeat center center;" class="banner1"></li>
+                    <li style="background:url(../img/banner1.jpg) no-repeat center center;" class="banner2"></li>
+                    <li style="background:url(../img/banner3.jpg) no-repeat center center;" class="banner3"></li>
+
                 </ul>
             </div>
         </div>
@@ -70,6 +74,7 @@
                 </div>
                 <div class="box-content">
                     <p>，由多家知名金融企业与专业投资机构共同创办，</p>
+
                     <p>
                         定位，囊括了众筹、第三方支付、P2P网贷、在线理财、绝当品销售等多个业务。应趋势、谋全局、创新意、求突破，“点金子”尊崇典当淘宝新理念，以线下各典当行的绝当品为销售目标，货源上首先确保质量优势。
                     </p>
@@ -121,12 +126,12 @@
 </body>
 <script type="text/javascript">
     myFocus.set({
-        id:'expo2010-box',//焦点图盒子ID
-        pattern:'mF_expo2010',//风格应用的名称
-        time:3,//切换时间间隔(秒)
-        height:425,
-        trigger:'mouseover',//触发切换模式:'click'(点击)/'mouseover'(悬停)
-        txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+        id: 'expo2010-box',//焦点图盒子ID
+        pattern: 'mF_expo2010',//风格应用的名称
+        time: 3,//切换时间间隔(秒)
+        height: 425,
+        trigger: 'mouseover',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+        txtHeight: 'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
     });
 </script>
 </html>
