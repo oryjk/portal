@@ -2,10 +2,14 @@ package com.news.controller;
 
 
 import java.util.List;
+
+import com.media.bean.Media;
+import com.media.service.MediaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -26,6 +30,8 @@ public class ShowIndexController {
 	
 	@Autowired
     private NewsService newsService;
+    @Autowired
+    private MediaService mediaService;
 	
     @RequestMapping("all")
     public ModelAndView selectTrueAllNews( ModelAndView modelAndView ) {
@@ -54,6 +60,11 @@ public class ShowIndexController {
         modelAndView.setViewName("frontdesk/news/newsDetail");
         modelAndView.addObject("menuType", "4");
         modelAndView.addObject("news", news);
+        //根据id查询出图片
+        List<Media> media = mediaService.selectNewsMedia(id);
+        if(!ObjectUtils.isEmpty(media)){
+            modelAndView.addObject("media", media.get(0));
+        }
         return modelAndView;
 }
 
