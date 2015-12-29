@@ -19,7 +19,7 @@
 
 <body>
 <!-- header -->
-    <jsp:include page="../../common/header.jsp"></jsp:include>
+     <jsp:include page="../../common/header.jsp"></jsp:include>
 
 <!-- content -->
 <div class="content">
@@ -88,8 +88,8 @@
 </div>
 
 <!--footer-->
-    < <jsp:include page="../../common/footer.jsp"></jsp:include>
-    <include:jsp
+    <jsp:include page="../../common/footer.jsp"></jsp:include>
+
 </body>
 <script type="text/javascript">
     myFocus.set({
