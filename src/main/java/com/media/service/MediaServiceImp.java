@@ -51,7 +51,7 @@ public class MediaServiceImp implements MediaService{
     public List<Media> selectAllMedia() {
         List<Media> list=null;
         try {
-            mediaMapper.selectAllMedia();
+            list=mediaMapper.selectAllMedia();
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectAll a media");
         }
@@ -73,7 +73,7 @@ public class MediaServiceImp implements MediaService{
     public List<Media> selectBannerMedia() {
         List<Media> list=null;
         try {
-            mediaMapper.selectBannerMedia();
+            list=mediaMapper.selectBannerMedia();
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectBanner a media");
         }

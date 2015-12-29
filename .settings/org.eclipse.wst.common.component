@@ -374,16 +374,16 @@
 		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Users/Administrator.WIN-20151210XAQ/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.2.2.RELEASE/963d6c9d0b546b6313fb51618ed5c080e8981ddc/spring-core-4.2.2.RELEASE.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/bao/portal/libs/bcprov-jdk15-1.45.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/mh/portal/libs/bcprov-jdk15-1.45.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/bao/portal/libs/com.cfca.certkitjs-1.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/mh/portal/libs/com.cfca.certkitjs-1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/bao/portal/libs/com.cfca.pkibase-1.0.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/mh/portal/libs/com.cfca.pkibase-1.0.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
-		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/bao/portal/libs/elasticsearch-analysis-ik-1.5.1-sources.jar">
+		<dependent-module deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/D:/mh/portal/libs/elasticsearch-analysis-ik-1.5.1-sources.jar">
 			<dependency-type>uses</dependency-type>
 		</dependent-module>
 	</wb-module>

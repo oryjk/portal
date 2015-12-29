@@ -23,7 +23,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="index.html">Siimple</a>
+			<a class="navbar-brand" href="#">ZHONGXINKEJI</a>
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
@@ -38,13 +38,15 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6">
-				<h1>Simple landing page</h1>
-				<h2 class="subtitle">No need huge slogan, we believe in less is better</h2>
-				<form class="form-inline signup" role="form">
+				<h1>landing page</h1>
+				<h2 class="subtitle">Welcom to ZHONGXINKEJI </h2>
+				<form action="${pageContext.request.contextPath }/user/login" method="post" class="form-inline signup" role="form">
 					<div class="form-group">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
+						<input type="text" name="username"    class="form-control" id="exampleInputEmail1" placeholder="Enter your UserName"><br/><br/>
+						<input type="password"  name="password"   class="form-control" id="exampleInputEmail1" placeholder="Enter your Password"><br/><br/>
+						<input type="submit" value="Get it now" class="btn btn-theme"    />
 					</div>
-					<button type="submit" class="btn btn-theme">Get it now</button>
+					
 				</form>
 			</div>
 			<div class="col-lg-4 col-lg-offset-2">

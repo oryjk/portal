@@ -8,33 +8,34 @@
   <!-- 根据所有-->
     <select id="findAll"
             resultType="com.user.bean.User">
-        select * from user
+        select * from user 
     </select>
   
-  <!-- 根据用户名查询密码-->
+  <!-- 根据用户名模糊查询密码-->
     <select id="selectUserByName"
-            parameterType="java.lang.String" resultType="com.user.bean.User">
-        select * from user where username like '%${value}%' and type=1
+            parameterType="com.user.bean.User" resultType="com.user.bean.User">
+        select * from user where username like '%${username}%'
+    </select>
+    
+  <!-- 根据用户名模询密码-->
+    <select id="findName"
+            parameterType="com.user.bean.User" resultType="com.user.bean.User">
+        select * from user where username= #{username}
     </select>
 
   <!-- 根据type值为1查询用户信息 --> 
     <select id="selectShowUser"
-            parameterType="int" resultType="com.user.bean.User">
-        select * from user where type = 1
+            parameterType="com.user.bean.User" resultType="com.user.bean.User">
+        select * from user where type = #{type }
     </select>
-    
-  <!-- 根据type值为0查询用户信息 -->
-    <select id="selectHideUser"
-            parameterType="int" resultType="com.user.bean.User">
-        select * from user where type = 0
-    </select>
-    
-    
     
     <!-- ***************************   修改   ************************-->            
     <!-- 根据ID修改用户名和密码 -->
-    <update id="updateUserById" parameterType="com.user.bean.User" >
-        update user set username=#{username},password=#{password} where id =#{id} and type=1
+    <update id="updateById" parameterType="com.user.bean.User" >
+        update user set username=#{username},password=#{password} where id =#{id}
+        <if test="type!=null">
+        and type=#{type }
+        </if>
     </update>
     
     <!-- 根据ID修改Type -->

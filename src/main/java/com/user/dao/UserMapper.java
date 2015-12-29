@@ -15,11 +15,11 @@ public interface UserMapper extends SqlMapper{
 
      List<User> findAll();
 
-	 List<User> selectUserByName(String string);
+	 List<User> selectUserByName(User user);
 
+	 User findName(User user);
+	 
 	 List<User> selectShowUser();
-
-	 List<User> selectHideUser();
 	
 	 void updateUserById(User user);
 	
