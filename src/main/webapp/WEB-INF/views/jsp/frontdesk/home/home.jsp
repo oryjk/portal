@@ -29,7 +29,7 @@
             <div class="pic">
                 <ul>
                     <c:forEach items="${banners}" var="banners">
-                        <li style="background:url(<%=basePath%>resources/${banners.url}) no-repeat center center;" class="banner3"></li>
+                        <li style="background:url(<%=basePath%>resources/${banners.url}) no-repeat center center;" class="banner1"></li>
                     </c:forEach>
                 </ul>
             </div>
