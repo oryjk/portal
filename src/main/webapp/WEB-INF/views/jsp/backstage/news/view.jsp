@@ -3,7 +3,10 @@
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
 %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script type="text/javascript" src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/jquery.min.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/layer.js"></script>
+<script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery.form.js"></script>
 <div class="breadcrumbs" id="breadcrumbs">
     <script type="text/javascript">
         try {
@@ -22,13 +25,23 @@
 </div>
 
 <div class="main-content">
-    <div class="col-xs-8">
-        <iframe src="<%=basePath%>news " style="border:none;width:100%;height:500px"></iframe>
+    <div class="col-xs-12">
+        <iframe src="<%=basePath%>news" style="border:none;width:100%;height:500px"></iframe>
     </div>
-    <div class="col-xs-4">
+
+    <div class="col-xs-6">
         <div class="row">
             <div class="col-xs-12">
                 <div class="space-4"></div>
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <form id="uploadForm" method="post" enctype="multipart/form-data">
+                            <input type="file" name="file" id="file"/>
+                            <input id="image_submit" value="上传" type="button"/>
+                        </form>
+                        <div id="show"></div>
+                    </div>
+                </div>
                 <div class="space-4"></div>
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
@@ -36,19 +49,19 @@
 
                         <div class="col-sm-9">
                             <span class="input-icon">
-                                <input type="text" id="form-field-icon-1">
+                                <input type="text" id="title">
                                 <i class="icon-leaf blue"></i>
                             </span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-3 control-label no-padding-right">上传图片</label>
-
+                        <label class="col-sm-3 control-label no-padding-right">新闻类型</label>
                         <div class="col-sm-9">
-                            <span class="input-icon">
-                                <input type="file" id="form-field-icon-1">
-                            </span>
+                            <select id="type">
+                                <option value="1">公司新闻</option>
+                                <option value="2">热点新闻</option>
+                            </select>
                         </div>
                     </div>
 
@@ -57,15 +70,7 @@
                             <div class="row-fluid">
                                 <ul class="ace-thumbnails">
                                     <li>
-                                        <a href="<%=basePath%>resources/core/plugins/ace/assets/images/gallery/image-1.jpg" title="aphotos" data-rel="colorbox" class="cboxElement">
-                                            <img alt="150x150" src="<%=basePath%>resources/core/plugins/ace/assets/images/gallery/thumb-1.jpg">
-                                            <div class="tags">
-                                                 <span class="label-holder">
-                                                     <span class="label label-info">新闻图片</span>
-                                                 </span>
-                                             </div>
-                                        </a>
-
+                                        <div id="show"></div>
                                         <div class="tools">
                                             <a href="#">
                                                 <i class="icon-link"></i>
@@ -93,25 +98,25 @@
                         <div class="widget-main">
                             <div>
                                 <label for="form-field-8">新闻内容</label>
-                                <textarea class="form-control" id="form-field-8" placeholder="Default Text"></textarea>
+                                <textarea class="form-control" id="content" placeholder="输入内容：15字以上"></textarea>
                             </div>
                         </div>
                     </div>
 
                     <div class="clearfix form-actions">
                         <div class="col-md-offset-3 col-md-9">
-                            <button class="btn btn-info" type="button">
+                            <button id="submit" class="btn btn-info" type="button">
                                 <i class="icon-ok bigger-110"></i>
-                                Submit
+                                提交
                             </button>
                             <button class="btn" type="reset">
                                 <i class="icon-undo bigger-110"></i>
-                                Reset
+                                重置
                             </button>
                         </div>
                     </div>
 
-
+                </form>
             </div>
         </div>
     </div><!-- PAGE CONTENT ENDS -->
@@ -121,20 +126,51 @@
 </div>
 </div>
 
-<div class="page-content">
-
-</div>
 
 
+
+
+<script src="<%=basePath%>resources/core/js/news/newsOperator.js"></script>
 <script>
-;!function(){
-       $("a").click(function(){
-           alert(1);
-       })
-    }();
+    $(function(){
+        var path = "";
+        var options={
+            url:"fileUpload",
+            type:"post",
+            success:function(url){
+                $("#show").empty();
+                $("#show").append("<img src=' <%=basePath%>" + url + " '/>");
+                path = url;
+            }
+        };
+        $("#uploadForm").submit(function() {
+            $(this).ajaxSubmit(options);
+            return false;
+        });
+
+        $("#image_submit").click(function(){
+            $("#uploadForm").submit();
+        });
+
+        $("#submit").click(function(){
+            var title = $("#title").val();
+            var content = $("#content").val();
+            var type = $("#type").val();
+            alert(path)
+            $.post("newsPostAdd",
+                    {
+                        "title":title,
+                        "content":content,
+                        "type":type,
+                        "url":path
+                    },
+                    function(data){
+                        layer.msg(data);
+                        window.location.reload();
+                    });
+        })
+    });
 </script>
-
-
 
 
 
