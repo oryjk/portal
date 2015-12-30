@@ -107,15 +107,15 @@ h2 {
     font-size: 18px;
 }
 
-p{
+p {
     font-size: 13px;
     text-indent: 30px;
-    line-height:200%;
+    line-height: 200%;
 }
 
 a:link,
 a:visited {
-    color:#014a99;
+    color: #014a99;
     text-decoration: none;
 }
 
@@ -125,13 +125,14 @@ a:active {
     text-decoration: underline;
 }
 
-
-li{
+li {
     list-style: none;
 }
+
 body {
     font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
 }
+
 /*    reset
 ****************************************/
 
@@ -169,87 +170,98 @@ body {
 a {
     display: block;
 }
+
 .header-index:link,
-.header-index:visited{
+.header-index:visited {
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
 }
 
 .header-same:link,
-.header-same:visited
-{
+.header-same:visited {
     color: #000000;
     text-decoration: none;
 }
+
 .header-same:hover,
-.header-same:active
-{
+.header-same:active {
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
 }
 
-
 /*  header   up
 ******************************/
-.content{
+.content {
 
     min-height: 650px;
 }
-.banner{
+
+.banner {
     height: 282px;
 }
-.banner img{
+
+.banner img {
     width: 100%;
     display: block;
 }
-.substance{
-    margin:50px auto 0 auto;
+
+.substance {
+    margin: 50px auto 0 auto;
     width: 1000px;
     min-height: 300px;
 
 }
-.title{
+
+.title {
     height: 31px;
 }
-.title-left{
+
+.title-left {
     float: left;
 }
-.title-right{
+
+.title-right {
     height: 30px;
     font-size: 20px;
     float: right;
     line-height: 30px;
 }
-.title img{
+
+.title img {
     padding-right: 60px;
     float: right;
     padding-left: 10px;
 }
-.substance-content{
+
+.substance-content {
     font-size: 14px;
     margin-top: 36px;
     width: 535px;
     float: left;
 }
-.substance-right{
+
+.substance-right {
     margin-top: 36px;
     width: 380px;
     height: 215px;
     float: right;
     background: #f7f8fc;
 }
-.substance-img{
-    padding:30px 15px 0 30px;
+
+.substance-img {
+    padding: 30px 15px 0 30px;
 }
-.substance-font{
+
+.substance-font {
     font-size: 17px;
     padding: 15px 15px 0 30px;
 }
 
 /*  content
 ******************************************/
+
 .footer {
     margin-top: 20px;
     clear: both;
@@ -267,60 +279,76 @@ a {
     margin: 0 auto;
 
 }
-.footer-left{
+
+.footer-left {
     width: 320px;
     height: 80px;
     float: left;
 }
-.footer-content-left{
-    margin-top: 15px;
-    float: left;
+
+.footer-content-left {
+    height: 12px;
+    padding-top: 15px;
 }
-.footer-content-left li{
+
+.footer-content-left1 {
+    padding-top: 15px;
+}
+
+.footer-content-left li {
     list-style: none;
     float: left;
     border-right: 1px solid #dadada;
     padding: 0 6px;
 }
-.footer-content-left .footer-index{
+
+.footer-content-left .footer-index {
     padding: 0 6px 0 0;
 }
-.footer-content-left .footer-about{
+
+.footer-content-left .footer-about {
     border: 0;
 }
+
 .footer-content-left a:link,
 .footer-content-left a:visited {
     color: #dadada;
     text-decoration: none;
 }
+
 .footer-content-left a:hover,
 .footer-content-left a:active {
     text-decoration: underline;
 }
-.footer-add{
+
+.footer-add {
     padding-top: 10px;
 }
-.footer-right-all{
+
+.footer-right-all {
     width: 450px;
     float: right;
 }
-.footer-img{
+
+.footer-img {
     padding-top: 27px;
     float: right;
 }
-.footer-right{
+
+.footer-right {
     padding-top: 30px;
     height: 50px;
     float: left;
 }
-.footer-right-c{
+
+.footer-right-c {
     padding-top: 12px;
 }
-.qr-code{
+
+.qr-code {
     padding-left: 30px;
     color: black;
 }
-
 
 /*  footer
 ************************************/
