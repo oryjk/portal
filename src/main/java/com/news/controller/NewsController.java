@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
  * Created by liqiang on 15-12-24.
  */
 @Controller
-//@RequestMapping("admin")
+@RequestMapping("admin")
 public class NewsController {
     private static final Logger LOGGER = LoggerFactory.getLogger(NewsController.class);
     @Autowired
@@ -91,6 +92,11 @@ public class NewsController {
         News news = newsService.selectNewsById(id);
         modelAndView.setViewName("backstage/news/news");
         modelAndView.addObject("news", news);
+        //根据id查询出图片
+        List<Media> media = mediaService.selectNewsMedia(id);
+        if(!ObjectUtils.isEmpty(media)){
+            modelAndView.addObject("media", media.get(0));
+        }
         return modelAndView;
     }
 
@@ -99,8 +105,42 @@ public class NewsController {
         LOGGER.debug("view is newsEdit page");
         modelAndView.setViewName("backstage/news/newsEdit");
         modelAndView.addObject("news_id", id);
+        News news = newsService.selectNewsById(id);
+        modelAndView.addObject("news", news);
+        //根据id查询出图片
+        List<Media> medias = mediaService.selectNewsMedia(id);
+        if(!ObjectUtils.isEmpty(medias)){
+            modelAndView.addObject("media", medias.get(0));
+            modelAndView.addObject("url", medias.get(0).getUrl());
+        }
         return modelAndView;
     }
+
+    @RequestMapping("newsEditPost")
+    public ModelAndView newsEditPost(News news, ModelAndView modelAndView, String url){
+        LOGGER.debug("view is newsEdit page");
+        modelAndView.setViewName("backstage/news/newsEdit");
+        LOGGER.debug(news.getTitle()+news.getArticle()+news.getArticle());
+        news.setState(1);
+        newsService.updateNews(news);
+        LOGGER.debug("*****************************"+JSONObject.toJSONString(news.getNews_id()));
+        LOGGER.debug("*****************************"+url);
+        if(url.length() > 0){
+            LOGGER.debug("***************************** start");
+            List<Media> medias = mediaService.selectNewsMedia(news.getNews_id());
+            if(!ObjectUtils.isEmpty(medias)){
+                modelAndView.addObject("media", medias.get(0));
+                Media media = new Media();
+                media.setUrl(url);
+                media.setRelation(news.getNews_id());
+                media.setType(1);
+                LOGGER.debug("*****************************"+JSONObject.toJSONString(media));
+                mediaService.updateMedia(media);
+            }
+        }
+        return modelAndView;
+    }
+
 
     @RequestMapping("del")
     @ResponseBody
@@ -129,7 +169,7 @@ public class NewsController {
 
     @RequestMapping("fileUpload")
     public @ResponseBody String fileUpload(@RequestParam MultipartFile file, HttpServletRequest request, ModelAndView modelAndView) {
-        LOGGER.debug("11111111111111111111111111111111111" + file);
+        LOGGER.debug("**************" + file);
         LOGGER.debug("fileUpload post");
         String image_path = null;
         try {
@@ -140,4 +180,11 @@ public class NewsController {
         return image_path;
     }
 
+
+    @RequestMapping("view")
+    public ModelAndView views(ModelAndView modelAndView){
+        LOGGER.debug("view is news photos page");
+        modelAndView.setViewName("backstage/news/view");
+        return modelAndView;
+    }
 }

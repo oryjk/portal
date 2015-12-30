@@ -20,7 +20,7 @@
         <span class="time">2015年11月11日</span>
     </div>
     <div class="substance" align="center">
-        <img src="<%=basePath%>resources/zhongxinkeji/img/news.png">
+        <img src="<%=basePath%>${media.url}">
         <p style="font-size:15px;
  			   font-family:楷体;text-align:left;">
             ${news.article}

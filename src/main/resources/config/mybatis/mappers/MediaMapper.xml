@@ -20,7 +20,7 @@
     </delete>
     <!--改-->
     <update id="updateMedia" parameterType="com.media.bean.Media">
-        UPDATE media SET url=#{url}, type=#{type}, relation=#{relation} WHERE id=#{media_id}
+        UPDATE media SET url=#{url}, type=#{type} WHERE relation=#{relation}
     </update>
     <!--查所有-->
     <select id="selectAllMedia" resultMap="MediaMap">

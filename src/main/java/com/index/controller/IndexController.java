@@ -15,7 +15,7 @@ public class IndexController {
         return modelAndView;
     }
 
-    @RequestMapping("/main")
+    @RequestMapping("/admin/main")
     public ModelAndView query(ModelAndView modelAndView){
         modelAndView.setViewName("backstage/admin/admin");
         return modelAndView;

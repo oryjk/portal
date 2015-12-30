@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" contentType="text/html; charset=Utf-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%  String path = request.getContextPath();
-	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -20,7 +20,7 @@
 
 <body id="body">
 <!-- header -->
-    <jsp:include page="../../common/header.jsp"></jsp:include>
+<jsp:include page="../../common/header.jsp"></jsp:include>
 
 <!-- content -->
 <div class="content">
@@ -29,7 +29,7 @@
             <div class="pic">
                 <ul>
                     <c:forEach items="${banners}" var="banners">
-                        <li style="background:url(<%=basePath%>${banners.url}) no-repeat center center;" class="banner1"></li>
+                        <li style="background:url(<%=basePath%>resources/${banners.url}) no-repeat center center;" class="banner1"></li>
                     </c:forEach>
                 </ul>
             </div>
@@ -50,14 +50,14 @@
                     <a href="<%=basePath%>news/all">更多<<</a>
                 </div>
                 <ul>
-                     <c:forEach items="${news}" var="onenews">
+                    <c:forEach items="${news}" var="onenews">
                         <li>
-                           <a href="#">${onenews.title}</a>
+                            <a href="news/detail?id=${onenews.news_id}">${onenews.title}</a>
                               <span class="time">
                                   <fmt:formatDate value="${onenews.date}" type="date" dateStyle="short"/>
                               </span>
                         </li>
-                     </c:forEach>
+                    </c:forEach>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,7 @@
 </div>
 
 <!--footer-->
-     <jsp:include page="../../common/footer.jsp"></jsp:include>
+<jsp:include page="../../common/footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript">
     myFocus.set({

@@ -2,6 +2,7 @@ package com.news.service;
 
 import com.news.bean.News;
 import com.news.dao.NewsMapper;
+import com.utils.page.Pagination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,10 +51,10 @@ public class NewsServiceImp implements NewsService{
     }
 
     @Override
-    public List<News> selectTrueAllNews() {
+    public List<News> selectTrueAllNews(Pagination pagination) {
         List<News> list=null;
         try {
-            list=newsMapper.selectTrueAllNews();
+            list=newsMapper.selectTrueAllNews(pagination);
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectTrueAll a news");
         }
@@ -104,5 +105,25 @@ public class NewsServiceImp implements NewsService{
             LOGGER.error("Some thing wrong when selectNewsTitle a news");
         }
         return list;
+    }
+
+    @Override
+    public Integer selectCompanyCountNews(){
+        return newsMapper.selectCompanyCountNews();
+    }
+
+    @Override
+    public List<News> selectCompanyNews(Pagination pagination){
+        return newsMapper.selectCompanyNews(pagination);
+    }
+
+    @Override
+    public Integer selectHotsCountNews(){
+        return newsMapper.selectHotsCountNews();
+    }
+
+    @Override
+    public  List<News> selectHotsNews(Pagination pagination){
+        return  newsMapper.selectHotsNews(pagination);
     }
 }
