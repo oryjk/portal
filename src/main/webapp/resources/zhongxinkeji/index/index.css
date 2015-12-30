@@ -267,6 +267,7 @@ a {
 }
 
 .box ul li {
+    display: block;
     height: 20px;
     padding: 13px 0 0 10px;
 }
