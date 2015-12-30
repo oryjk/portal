@@ -12,7 +12,7 @@
 <!-- content -->
 <div class="content">
     <c:forEach items="${banners}" var="banners">
-            <a href="#" class="banner"><img src="${pageContext.request.contextPath }/resources/${banners.url}"></a>
+            <a href="#" class="banner"><img src="${pageContext.request.contextPath }/${banners.url}"></a>
     </c:forEach>
 
     <div class="substance">
