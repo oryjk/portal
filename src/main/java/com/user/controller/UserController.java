@@ -1,5 +1,6 @@
 package com.user.controller;
 
+import com.common.util.MD5;
 import com.common.util.ResourcesUtil;
 import com.user.bean.User;
 import com.user.service.UserService;
@@ -19,6 +20,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	
 	// @RequestMapping(value="/login",method=RequestMethod.POST)
 	@RequestMapping("/loginSubmit")
 	public ModelAndView login(ModelAndView modelAndView, String checkCode, HttpSession session, User user)
@@ -55,10 +57,12 @@ public class UserController {
 		User userTemp = userService.findName(user);
 		modelAndView.addObject("user", user);
 		if (userTemp != null) {
-			if ((userTemp.getPassword() == user.getPassword()) || (userTemp.getPassword().equals(user.getPassword()))) {
+			MD5 md5 = new MD5();
+			String str = md5.getMD5ofStr(user.getPassword());
+			if ( userTemp.getPassword().equals(str)) {
 				session.setAttribute("username", user.getUsername());
 				// 登录成功
-				modelAndView.setViewName("backstage/admin/index");
+				modelAndView.setViewName("backstage/admin/admin");
 				return modelAndView;
 
 			}
