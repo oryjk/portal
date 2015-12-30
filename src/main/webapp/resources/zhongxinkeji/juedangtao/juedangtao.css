@@ -194,6 +194,9 @@ a {
 .content{
     min-height: 650px;
 }
+.banner{
+    height: 282px;
+}
 .banner img{
     width: 100%;
     display: block;
