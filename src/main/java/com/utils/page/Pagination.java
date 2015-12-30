@@ -1,16 +1,21 @@
 package com.utils.page;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Map;
 
+@Component("Pagination")
 public class Pagination {
-private List<Map<String, Object>> list;
+	private List<Map<String, Object>> list;
 
-	
+
 	private Long rowCount;
 	private int pageSize;
 	private int pageNo;
-
+	//新闻类型
+	private int type;
+	private int startIndex;
 
 	public List<Map<String, Object>> getList() {
 		return list;
@@ -24,7 +29,7 @@ private List<Map<String, Object>> list;
 		return rowCount;
 	}
 
-	
+
 	public void setRowCount(Long rowCount) {
 		this.rowCount = rowCount;
 	}
@@ -34,12 +39,12 @@ private List<Map<String, Object>> list;
 		return pageSize;
 	}
 
-	
+
 	public void setPageSize(int pageSize) {
 		this.pageSize = pageSize;
 	}
 
-	
+
 	public int getPageNo() {
 		return pageNo;
 	}
@@ -49,7 +54,17 @@ private List<Map<String, Object>> list;
 		this.pageNo = pageNo;
 	}
 
-	
+
+	public int getType() {
+		return type;
+	}
+
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+
 	public int getStartIndex() {
 		int i = (pageNo - 1) * pageSize;
 		if (i > 0) {
@@ -59,7 +74,10 @@ private List<Map<String, Object>> list;
 		}
 	}
 
-	
+	public void setStartIndex() {
+		this.startIndex = pageSize * pageNo;
+	}
+
 	public int getPageCount() {
 		Long pageCount = (rowCount + pageSize - 1) / pageSize;
 		return pageCount.intValue();
@@ -69,7 +87,7 @@ private List<Map<String, Object>> list;
 		return pageNo == 1 ? pageNo : pageNo - 1;
 	}
 
-	
+
 	public int getNextPageNo() {
 		return pageNo < getPageCount() ? pageNo + 1 : pageNo;
 	}

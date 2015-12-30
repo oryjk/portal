@@ -12,6 +12,8 @@
         <result property="state" column="state"/>
     </resultMap>
 
+
+
     <!--增-->
     <insert id="insertNews" parameterType="com.news.bean.News" keyProperty="news_id" useGeneratedKeys="true">
         INSERT INTO news (article,title,date,categroy_id,state) VALUES(#{article},#{title},now(),
@@ -27,8 +29,8 @@
         WHERE id=#{news_id}
     </update>
     <!--查所有-->
-    <select id="selectTrueAllNews"  resultMap="newsMap">
-        SELECT id,article,title,date,categroy_id,state from news where state = 1
+    <select id="selectTrueAllNews" parameterType="com.utils.page.Pagination"  resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state from news where state = 1 ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
     </select>
     <!--查实际所有-->
     <select id="selectAllNews" parameterType="int" resultMap="newsMap">
@@ -46,6 +48,20 @@
     <select id="selectDateNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
-
-
+    <!--分页查询公司新闻总条数-->
+    <select id="selectCompanyCountNews" resultType="int">
+        SELECT count(*) FROM news WHERE state=1 and categroy_id=1
+    </select>
+    <!--分页查询热点新闻总条数-->
+    <select id="selectHotsCountNews" resultType="int">
+        SELECT count(*) FROM news WHERE state=1 and categroy_id=2
+    </select>
+    <!--分页查询公司新闻-->
+    <select id="selectCompanyNews" parameterType="com.utils.page.Pagination" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 and categroy_id=1 ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
+    </select>
+    <!--分页查询热点新闻-->
+    <select id="selectHotsNews" parameterType="com.utils.page.Pagination" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 and categroy_id=2 ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
+    </select>
 </mapper>

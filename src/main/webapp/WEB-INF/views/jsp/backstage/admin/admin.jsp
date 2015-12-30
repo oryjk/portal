@@ -17,7 +17,7 @@
 <body>
 <div class="navbar navbar-default" id="navbar">
     <script type="text/javascript">
-            try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+        try{ace.settings.check('navbar' , 'fixed')}catch(e){}
     </script>
     <!--head个人资料，登录退出-->
     <jsp:include page="../common/info.jsp"></jsp:include>
@@ -27,19 +27,21 @@
     <jsp:include page="../common/set.jsp"></jsp:include>
 
     <div id="data">
-        <jsp:include page="../news/view.jsp"></jsp:include>
+
     </div>
+
 </div><!-- /.main-container-inner -->
 <!-- basic scripts -->
 </body>
-    <jsp:include page="../common/script.jsp"></jsp:include>
+<jsp:include page="../common/script.jsp"></jsp:include>
 </html>
 
 <script>
     $(function(){
-       $("a[path]").click(function(){
-           $("#data").load($(this).attr("path"));
-       });
+        $("a[path]").click(function(){
+            $("#data").empty();
+            $("#data").append("<iframe src=" + $(this).attr('path') + " style='width:1000px;height:800px;border:none'></iframe>")
+        });
     })
 </script>
 

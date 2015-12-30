@@ -70,60 +70,31 @@
                 </li>
 
                 <li>
-                    <a href="typography.html">
+                    <a path="toJueDangTaoEdit">
                         <i class="icon-text-width"></i>
                         <span class="menu-text"> 绝当淘 </span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#" class="dropdown-toggle">
+                    <a path="toShouYiTaoEdit" class="dropdown-toggle">
                         <i class="icon-desktop"></i>
                         <span class="menu-text"> 收益淘 </span>
-
-                        <b class="arrow icon-angle-down"></b>
                     </a>
-
-                    <ul class="submenu">
-                        <li>
-                            <a href="elements.html">
-                                <i class="icon-double-angle-right"></i>
-                                组件
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="buttons.html">
-                                <i class="icon-double-angle-right"></i>
-                                按钮 &amp; 图表
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li>
-                    <a href="#" class="dropdown-toggle">
+                    <a path="toShouYiTaoEdit" class="dropdown-toggle">
+                        <i class="icon-desktop"></i>
+                        <span class="menu-text"> banner </span>
+                    </a>
+                </li>
+
+                <li>
+                    <a path="view" class="dropdown-toggle">
                         <i class="icon-list"></i>
                         <span class="menu-text"> 新闻咨询 </span>
-
-                        <b class="arrow icon-angle-down"></b>
                     </a>
-
-                    <ul class="submenu">
-                        <li>
-                            <a href="tables.html">
-                                <i class="icon-double-angle-right"></i>
-                                简单 &amp; 动态
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="jqgrid.html">
-                                <i class="icon-double-angle-right"></i>
-                                jqGrid plugin
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li>

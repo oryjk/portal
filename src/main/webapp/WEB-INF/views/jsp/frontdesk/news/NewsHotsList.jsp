@@ -25,7 +25,7 @@
 <!-- content -->
 <div class="content">
     <div class="news">
-        <a href="#"> 新闻资讯</a>&nbsp;&nbsp; >&nbsp;&nbsp;<a class="news-in" href="#">新闻咨询</a>
+        <a href="news"> 新闻资讯</a>&nbsp;&nbsp; >&nbsp;&nbsp;<a class="news-in" href="#">媒体动态</a>
     </div>
     <c:forEach items="${newslist}" var="newslist">
         <ul>
@@ -41,11 +41,11 @@
     <div class="substance-foot">
         页数：${page.pageNo eq 0 ? 1 : page.pageNo}/${pageCount} 总记录数：${page.rowCount}
         <a href="#">首页</a>
-        <a href="selectNewsList?pageNo=${page.pageNo-1 > 0 ? page.pageNo-1:1}">上一页</a>
+        <a href="HotsNew?pageNo=${page.pageNo-1 > 0 ? page.pageNo-1:1}">上一页</a>
         <c:if test="${page.pageNo+1 <= pageCount}">
-            <a href="selectNewsList?pageNo=${page.pageNo+1 eq 1 ? 2 : page.pageNo+1}">下一页</a>
+            <a href="HotsNew?pageNo=${page.pageNo+1 eq 1 ? 2 : page.pageNo+1}">下一页</a>
         </c:if>
-        <a href="selectNewsList?pageNo=${pageCount}">末页</a>
+        <a href="HotsNew?pageNo=${pageCount}">末页</a>
         <label>
             <select>
                 <c:forEach var="i" begin="1" end="${pageCount}">
