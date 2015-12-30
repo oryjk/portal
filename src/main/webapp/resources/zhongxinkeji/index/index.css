@@ -308,8 +308,11 @@ a {
 }
 
 .footer-content-left {
+    height: 12px;
     padding-top: 15px;
-    float: left;
+}
+.footer-content-left1 {
+    padding-top: 15px;
 }
 
 .footer-content-left li {
