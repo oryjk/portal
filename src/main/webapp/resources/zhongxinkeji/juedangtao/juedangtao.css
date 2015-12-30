@@ -107,15 +107,15 @@ h2 {
     font-size: 18px;
 }
 
-p {
+p{
     font-size: 13px;
     text-indent: 30px;
-    line-height: 200%;
+    line-height:200%;
 }
 
 a:link,
 a:visited {
-    color: #014a99;
+    color:#014a99;
     text-decoration: none;
 }
 
@@ -125,14 +125,13 @@ a:active {
     text-decoration: underline;
 }
 
-li {
+
+li{
     list-style: none;
 }
-
 body {
     font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
 }
-
 /*    reset
 ****************************************/
 .header {
@@ -169,22 +168,22 @@ body {
 a {
     display: block;
 }
-
 .header-index:link,
-.header-index:visited {
+.header-index:visited{
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
 }
 
 .header-same:link,
-.header-same:visited {
+.header-same:visited
+{
     color: #000000;
     text-decoration: none;
 }
-
 .header-same:hover,
-.header-same:active {
+.header-same:active
+{
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
@@ -192,55 +191,46 @@ a {
 
 /*  header   up
 ******************************/
-.content {
+.content{
     min-height: 650px;
 }
-
-.banner {
+.banner{
     height: 282px;
 }
-
-.banner img {
+.banner img{
     width: 100%;
     display: block;
 }
-
-.substance {
-    margin: 50px auto 0 auto;
+.substance{
+    margin:50px auto 0 auto;
     width: 1000px;
     min-height: 300px;
 
 }
-
-.title {
+.title{
     height: 31px;
 }
-
-.title-left {
+.title-left{
     float: left;
 }
-
-.title-right {
+.title-right{
     height: 30px;
     font-size: 20px;
     float: right;
     line-height: 30px;
 }
-
-.title .img1 {
+.title .img1{
 
     float: right;
     padding-left: 10px;
 }
-
-.substance-content {
+.substance-content{
     font-size: 14px;
     margin-top: 36px;
 }
 
-/*  footer
-************************************/
-
+/*
+*********************/
 .footer {
     margin-top: 20px;
     clear: both;
@@ -269,7 +259,6 @@ a {
     height: 12px;
     padding-top: 15px;
 }
-
 .footer-content-left1 {
     padding-top: 15px;
 }
