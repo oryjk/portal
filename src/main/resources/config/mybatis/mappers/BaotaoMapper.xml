@@ -50,8 +50,12 @@
 		select * from baotao where state = #{state } and type =#{type}
 	</select>
 	
-	<select id="findAll" parameterType="com.baotao.bean.Baotao" resultType="com.baotao.bean.Baotao">
-		select * from baotao where type =#{type}
+	<select id="findAll" parameterType="com.baotao.bean.BaotaoCustom" resultType="com.baotao.bean.Baotao">
+		select * from baotao where type =#{type} and state !=1 order by date desc limit #{startindex },#{maxnum }
+	</select>
+	
+	<select id="findNum" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM baotao WHERE type =#{type} and state !=1
 	</select>
 	
 	
@@ -70,10 +74,14 @@
 			and state="1"
 		</if>
 		<if test="state == 1">
-			and state="0" id=#{id}
+			and state="0" and id=#{id}
 		</if>
 		</trim>		
 	</update>
+	
+	<delete id="delete">
+		delete from baotao where id = #{id}
+	</delete>
 	
 	
 	

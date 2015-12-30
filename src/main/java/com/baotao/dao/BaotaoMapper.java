@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.baotao.bean.Baotao;
+import com.baotao.bean.BaotaoCustom;
 import com.base.mapper.SqlMapper;
 
 @Component
@@ -16,6 +17,10 @@ public interface BaotaoMapper extends SqlMapper {
 	
 	 void update(Baotao baotao)throws Exception;
 	 
-	 List<Baotao> findAll(Baotao baotao)throws Exception;
+	 List<Baotao> findAll(BaotaoCustom baotaoCustom)throws Exception;
+	 
+	 int findNum(int type)throws Exception;
+	 
+	 void delete(int id)throws Exception;
 }
  

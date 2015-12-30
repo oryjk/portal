@@ -1,5 +1,9 @@
 package com.baotao.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoConstant;
+import com.baotao.bean.BaotaoCustom;
 import com.baotao.service.BaotaoServiceImpl;
 /**
  * 
@@ -25,20 +30,56 @@ public class ShouYiTaoAdminController {
 	
 	@Autowired
 	private BaotaoServiceImpl baotaoService;
+	private int nowpage=0;
 	
 	@RequestMapping("/toShouYiTaoEdit")
-	public ModelAndView toShouYiTaoEdit(ModelAndView modelAndView,Baotao baotao) throws Exception{
+	public ModelAndView toShouYiTaoEdit(ModelAndView modelAndView,Baotao baotao,HttpServletRequest request) throws Exception{
 		LOGGER.debug("go ShouYiTaoEditedit page");
 		baotao.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
 		baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
 		
 		LOGGER.debug("find shoyitao content");
-		Baotao baotaotemp = baotaoService.find(baotao);
-		
+		Baotao baotaotemp = baotaoService.find(baotao);		
 		modelAndView.addObject("baotao", baotaotemp);
 		
-		modelAndView.setViewName("backstage/shouyitao/shouyitaoedit");
 		
+		
+		
+		
+		String mark = request.getParameter("mark");
+		if(StringUtils.isEmpty(mark)){
+			nowpage=0;
+		}else{
+			nowpage = Integer.parseInt(mark);
+		}
+				
+		LOGGER.debug("find ShouYiTao content");
+		BaotaoCustom baotaoCustom = new BaotaoCustom();
+		baotaoCustom.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
+	
+		if(nowpage==0){
+			nowpage=1;
+		}
+		baotaoCustom.setStartindex((nowpage-1)*3);
+		baotaoCustom.setMaxnum(3);
+
+		List<Baotao> baotaoList = baotaoService.findAll(baotaoCustom);
+		
+		modelAndView.addObject("baotaoList", baotaoList);
+		
+		int count = baotaoService.findNum(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
+		modelAndView.addObject("count", count);
+		
+		modelAndView.addObject("nowpage", nowpage);
+		
+		
+		
+		
+		
+		
+		
+		
+		modelAndView.setViewName("backstage/shouyitao/shouyitaoedit");		
 		return modelAndView;	
 	}
 	
@@ -82,7 +123,64 @@ public class ShouYiTaoAdminController {
 	}
 	
 	
+	/**
+	 * 选择历史记录
+	 * @param modelAndView
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/chooseShouYiTaoListEdit",method=RequestMethod.GET)
+	public ModelAndView chooseJueDangTaoListEdit(ModelAndView modelAndView,HttpServletRequest request) throws Exception{		
 	
+		Baotao baotao = new Baotao();
+		String temp = request.getParameter("updateId");
+		if(StringUtils.isNotEmpty(temp)){
+			int updateId = Integer.parseInt(temp);
+			//把显示的隐藏	
+			baotao.setState(BaotaoConstant.BAOTAO_STATE_NO);
+			baotao.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);		
+			baotaoService.update(baotao);
+			//根据id把隐藏的显示
+			baotao.setId(updateId);	
+			baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);			
+			baotaoService.update(baotao);
+			
+		}
+		
+		
+		//显示
+		LOGGER.debug("find new juedangtao/shouyitao content");
+		Baotao baotaotemp = baotaoService.find(baotao);
+		modelAndView.addObject("baotao",baotaotemp);
+		modelAndView.setViewName("backstage/juedangtao/show");
+		return modelAndView;
+				
+	
+	}
+	/**
+	 * 删除记录
+	 * @param modelAndView
+	 * @param request
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value="/deleteShouYiTaoListEdit",method=RequestMethod.GET)
+	public ModelAndView deleteJueDangTaoListEdit(ModelAndView modelAndView,HttpServletRequest request) throws Exception{
+		
+		String temp = request.getParameter("updateId");
+		
+		if(StringUtils.isNotEmpty(temp)){
+			int updateId = Integer.parseInt(temp);
+			baotaoService.delete(updateId);
+		}
+		
+		
+		
+		modelAndView.setViewName("forward:toShouYiTaoEdit");
+		return modelAndView;	
+		
+	}
 	
 	
 }
