@@ -207,7 +207,6 @@ a {
     margin: 30px auto 0 auto;
 }
 .title1{
-    margin-top: 9px;
     padding-left: 25px;
     color: #014a99;
     font-size: 17px;
@@ -284,13 +283,12 @@ a {
 .box ul{
     border-top: 1px dashed #cccccc;
     margin-top: 7px;
-    padding-top: 6.5px;
+    padding-top: 7px;
 }
 .box1 ul li,
 .box ul li{
     height: 18px;
-    padding-left: 10px;
-    margin-top: 13px;
+    padding: 13px 0 0 10px;
 }
 .box1 ul li a,
 .box ul li a{
