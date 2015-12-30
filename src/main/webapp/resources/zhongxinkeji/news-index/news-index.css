@@ -219,6 +219,7 @@ a {
 
 .title1-right {
     float: right;
+    display: inline-block;
 }
 
 .title1 h2 {
