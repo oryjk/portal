@@ -6,31 +6,32 @@
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset=utf-8 />
-    <link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/themes/default/easyui.css">
-    <script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery-easyui-1.4.4/jquery.easyui.min.js"></script>
+    <meta charset="utf-8" />
+    <title>控制台 - （点金子）后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <jsp:include page="../common/css.jsp"></jsp:include>
+    <script type="text/javascript" src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/jquery.min.js"></script>
+    <script type="text/javascript" src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/layer.js"></script>
+    <script type="text/javascript" src="<%=basePath%>resources/core/plugins/jquery.form.js"></script>
 </head>
 
 <body>
-
-<form class="form-horizontal" style="text-align:center;margin-top:10%">
-    <div class="control-group">
-        <!-- Text input-->
-        <label class="control-label" >公司简介</label>
-    </div>
+<div style="border:1px #ccc solid;width:450px;height:300px;margin:150px auto" >
+<form action="uploadbanner" method="post">
+        <h1>公司简介</h1>
 
     <div class="control-group">
-        <label class="control-label">简介内容</label>
-        <textarea type="" class=""> </textarea>
+        <label class="control-label">简介内容:</label>
+        <textarea name="content"></textarea>
     </div>
 
     <div class="control-group" style="margin-top:10px;">
         <div class="controls">
-            <button class="btn btn-success" style="width:200px">确定</button>
+            <p style="margin:20px"> <input value="提交" type="submit"/>         </p>
         </div>
     </div>
 </form>
-
+</div>
 </body>

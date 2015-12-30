@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by wangyirui on 29/12/15.
@@ -52,6 +53,31 @@ public class BackBannerController {
 
         }
         modelAndView.setViewName("backstage/banner/upbanner");
+        return modelAndView;
+    }
+
+    @RequestMapping("/querybanner")
+    public  ModelAndView querybanner(ModelAndView modelAndView){
+        List<Banner> banners=bannerService.selectBanner();
+        modelAndView.addObject("banners",banners);
+        modelAndView.setViewName("");
+        return modelAndView;
+    }
+
+    @RequestMapping("/deletebanner")
+    public ModelAndView deletebanner(ModelAndView modelAndView,Banner banner){
+        if(banner!=null){
+            bannerService.deleteBanner(banner.getBanner_id());
+        }
+
+        return modelAndView;
+    }
+
+    @RequestMapping("/modifybanner")
+    public ModelAndView modifybanner(ModelAndView modelAndView,Banner banner){
+        if(banner!=null){
+            bannerService.updateBanner(banner);
+        }
         return modelAndView;
     }
 
