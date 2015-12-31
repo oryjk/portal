@@ -206,7 +206,9 @@ a {
     width: 100%;
     display: block;
 }
-
+.box0{
+    height: 27px;
+}
 .substance {
     margin: 0 auto;
     width: 1000px;
