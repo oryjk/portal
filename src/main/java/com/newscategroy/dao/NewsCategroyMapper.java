@@ -13,9 +13,9 @@ import java.util.List;
 @Component
 public interface NewsCategroyMapper extends SqlMapper{
     Integer selectNewsCountCategroy();
-    NewsCategroy insertNewsCategroy();
+    void insertNewsCategroy(NewsCategroy newsCategroy);
     Integer deleteNewsCategroy(int newsCategroy_id);
-    NewsCategroy updateNewsCategroy();
+    void updateNewsCategroy(NewsCategroy newsCategroy);
     List<NewsCategroy> selectAllNewsCategroy(Pagination pagination);
     NewsCategroy selectNewsCategroyById(int newsCategroy_id);
 }

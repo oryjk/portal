@@ -34,7 +34,7 @@
             align: "center",
             width: '120px',
             formatter: function (value, rec) {
-                return "<button class='pohtos'>修改</button>";
+                return "<button class='alter'>修改</button>";
             }
         }, {
             field: "4",
@@ -53,7 +53,7 @@
 
 
 $(function() {
-    $('.alter').live('click', function() {
+    $('.add').live('click', function() {
         var row = $('#tc').datagrid('getSelected');
         if (row) {
             layer.open({
@@ -63,12 +63,12 @@ $(function() {
                 shade: false,
                 maxmin: true, // 开启最大化最小化按钮
                 area: ['500px', '50%'],
-                content: 'newsEdit?id=' + row.news_id // action
+                content: 'NewcategroyAddView'
             });
         }
     });
 
-    $('.detail').live('click', function() {
+    $('.alter').live('click', function() {
         var row = $('#tc').datagrid('getSelected');
         if (row){
             layer.open({
@@ -78,7 +78,7 @@ $(function() {
                 shade : false,
                 maxmin : true, // 开启最大化最小化按钮
                 area : [ '1000', '350px' ],
-                content : 'newsDetail?id=' + row.news_id // action
+                content : 'NewcategroyEditView?id=' + row.newsCategroy_id // action
             });
         }
     });

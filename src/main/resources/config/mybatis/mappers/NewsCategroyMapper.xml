@@ -19,7 +19,7 @@
     </delete>
     <!--改-->
     <update id="updateNewsCategroy" parameterType="com.newscategroy.bean.NewsCategroy">
-        UPDATE newscategroy SET name=#{name},url=#{url} WHERE id=#{newsCategroy_id}
+        UPDATE newscategroy SET name=#{name} WHERE id=#{newsCategroy_id}
     </update>
     <!--查所有-->
     <select id="selectAllNewsCategroy" resultMap="newsCategroyMap" parameterType="com.utils.page.Pagination">
