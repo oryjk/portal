@@ -23,7 +23,7 @@
         <div class="title">
             <div class="title-left"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/title-logo.png"></div>
             <img class="img1" src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/jiantou.png">
-            <a href="#" class="title-right">进入绝当淘商城</a>
+            <a href="http://mp.dianjinzi.com" class="title-right">进入绝当淘商城</a>
         </div>
         <div class="substance-content">
               ${baotao.content }

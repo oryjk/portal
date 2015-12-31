@@ -32,11 +32,11 @@
 				<td>删除</td>				
 			</tr>
 			<c:forEach items="${menuEditList }" var="menuEdit" varStatus="m">				
-				<tr>
-					<td><input type="hidden" name="menuEditList[${m.index }].id"  value="${menuEdit.id }"   /><input type="text" name="menuEditList[${m.index }].name" value="${menuEdit.name }"   /></td>
-					<td><input type="text" name="menuEditList[${m.index }].url" value="${menuEdit.url }"   /></td>
-					<td><input type="text" name="menuEditList[${m.index }].type" value="${menuEdit.type }"   /></td>
-					<td><a href="${pageContext.request.contextPath }/admin/deleteMenuEdit?did=${menuEdit.id}">删除</a></td>					
+				<tr >
+					<td ><input type="hidden" name="menuEditList[${m.index }].id"  value="${menuEdit.id }"   /><input type="text" name="menuEditList[${m.index }].name" value="${menuEdit.name }"   /></td>
+					<td ><input type="text" name="menuEditList[${m.index }].url" value="${menuEdit.url }"   /></td>
+					<td ><input type="text" name="menuEditList[${m.index }].type" value="${menuEdit.type }"   /></td>
+					<td ><a href="${pageContext.request.contextPath }/admin/deleteMenuEdit?did=${menuEdit.id}">删除</a></td>					
 				</tr>			
 			</c:forEach>
 		</table>
