@@ -84,10 +84,26 @@
                 </li>
 
                 <li>
-                    <a path="toShouYiTaoEdit" class="dropdown-toggle">
+                    <a class="dropdown-toggle">
                         <i class="icon-desktop"></i>
                         <span class="menu-text"> banner </span>
+                        <b class="arrow icon-angle-down"></b>
                     </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a path="querybanner" >
+                                <i class="icon-double-angle-right"></i>
+                                查询banner
+                            </a>
+                        </li>
+                        <li>
+                            <a path="banner">
+                                <i class="icon-double-angle-right"></i>
+                                添加banner
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li>
@@ -104,12 +120,12 @@
                                 新闻咨询
                             </a>
                         </li>
-                        <li>
-                            <a path="newsTypeManager">
-                                <i class="icon-double-angle-right"></i>
-                                新闻分类
-                            </a>
-                        </li>
+                        <%--<li>--%>
+                            <%--<a path="newsTypeManager">--%>
+                                <%--<i class="icon-double-angle-right"></i>--%>
+                                <%--新闻分类--%>
+                            <%--</a>--%>
+                        <%--</li>--%>
                     </ul>
                 </li>
 
