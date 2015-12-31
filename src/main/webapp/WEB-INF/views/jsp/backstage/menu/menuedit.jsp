@@ -24,7 +24,7 @@
  			
 
 	<form action="${pageContext.request.contextPath }/admin/menuEditListSubmit" method="post">
-		<table>
+		<table >
 			<tr>				
 				<td>菜单名</td>
 				<td>连接地址</td>
