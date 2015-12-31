@@ -49,6 +49,10 @@
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
     <!--分页查询公司新闻总条数-->
+    <select id="selectCountAllNews" resultType="int">
+        SELECT count(*) FROM news WHERE state=1
+    </select>
+    <!--分页查询公司新闻总条数-->
     <select id="selectCompanyCountNews" resultType="int">
         SELECT count(*) FROM news WHERE state=1 and categroy_id=1
     </select>

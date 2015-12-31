@@ -126,4 +126,9 @@ public class NewsServiceImp implements NewsService{
     public  List<News> selectHotsNews(Pagination pagination){
         return  newsMapper.selectHotsNews(pagination);
     }
+
+    @Override
+    public Integer selectCountAllNews(){
+        return newsMapper.selectCountAllNews();
+    }
 }

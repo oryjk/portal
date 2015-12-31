@@ -91,10 +91,26 @@
                 </li>
 
                 <li>
-                    <a path="view" class="dropdown-toggle">
+                    <a class="dropdown-toggle">
                         <i class="icon-list"></i>
-                        <span class="menu-text"> 新闻咨询 </span>
+                        <span class="menu-text"> 新闻 </span>
+                        <b class="arrow icon-angle-down"></b>
                     </a>
+
+                    <ul class="submenu">
+                        <li>
+                            <a path="view">
+                                <i class="icon-double-angle-right"></i>
+                                新闻咨询
+                            </a>
+                        </li>
+                        <li>
+                            <a path="newsTypeManager">
+                                <i class="icon-double-angle-right"></i>
+                                新闻分类
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
                 <li>
@@ -107,30 +123,30 @@
 
                     <ul class="submenu">
                         <li>
-                            <a href="form-elements.html">
+                            <a path="companyIntroductionEdit">
                                 <i class="icon-double-angle-right"></i>
-                                表单组件
+                                公司介绍
                             </a>
                         </li>
 
                         <li>
-                            <a href="form-wizard.html">
+                            <a path="contactUsEdit">
                                 <i class="icon-double-angle-right"></i>
-                                向导提示 &amp; 验证
+                                联系我们
                             </a>
                         </li>
 
                         <li>
-                            <a href="wysiwyg.html">
+                            <a path="recruitmentEdit">
                                 <i class="icon-double-angle-right"></i>
-                                编辑器
+                                招贤纳士
                             </a>
                         </li>
 
                         <li>
-                            <a href="dropzone.html">
+                            <a path="sphereOfBusinessEdit">
                                 <i class="icon-double-angle-right"></i>
-                                文件上传
+                                业务范围
                             </a>
                         </li>
                     </ul>

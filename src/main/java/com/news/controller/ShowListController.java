@@ -94,7 +94,7 @@ public class ShowListController {
         int PageNo = NumberUtils.toInt(request.getParameter("pageNo"));
         LOGGER.debug("************************" + PageNo);
         //分页总数查询
-        pagination.setRowCount(newsService.selectHotsCountNews().longValue()+newsService.selectCompanyCountNews().longValue());
+        pagination.setRowCount(newsService.selectCountAllNews().longValue());
         //设置每页显示条数
         pagination.setPageSize(10);
         //设置开始页
