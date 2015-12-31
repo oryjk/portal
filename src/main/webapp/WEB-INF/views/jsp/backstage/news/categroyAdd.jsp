@@ -13,14 +13,11 @@
 <html>
 
 <body>
-<form action="NewcategroyEdit">
+<form action="NewcategroyAdd">
     <div class="col-xs-12">
         <div class="row">
             <div class="col-xs-12">
-                <input type="hidden" name="newsCategroy_id" value="${newsCategroy_id}">
-                <div class="space-4"></div>
-                <div class="space-4"></div>
-                <input type="text" name="name" value="${newsCategroy.name}">
+                <input type="text" name="name">
                     <div class="clearfix form-actions">
                         <div class="col-md-offset-3 col-md-9">
                             <button id="submit" class="btn btn-info" type="submit">

@@ -70,9 +70,29 @@ public class CategroyController {
 
     @RequestMapping("NewcategroyEditView")
     public ModelAndView NewcategroyEditView(@RequestParam int id,ModelAndView modelAndView){
-        NewsCategroy newsCategroy = newsCategroyMapper.selectNewsCategroyById(id);
-        modelAndView.addObject("newsCategroy", newsCategroy);
+        modelAndView.addObject("newsCategroy_id", id);
         modelAndView.setViewName("backstage/news/categroyEdit");
+        return modelAndView;
+    }
+
+    @RequestMapping("NewcategroyEdit")
+    public ModelAndView NewcategroyEdit(NewsCategroy newsCategroy,ModelAndView modelAndView,@RequestParam String name){
+        modelAndView.setViewName("backstage/news/categroyEdit");
+        newsCategroy.setName(name);
+        newsCategroyMapper.updateNewsCategroy(newsCategroy);
+        return modelAndView;
+    }
+
+    @RequestMapping("NewcategroyAddView")
+    public ModelAndView NewcategroyAddView(ModelAndView modelAndView){
+        modelAndView.setViewName("backstage/news/categroyAdd");
+        return modelAndView;
+    }
+
+    @RequestMapping("NewcategroyAdd")
+    public ModelAndView NewcategroyAdd(NewsCategroy newsCategroy,ModelAndView modelAndView){
+        modelAndView.setViewName("backstage/news/categroyAdd");
+        newsCategroyMapper.insertNewsCategroy(newsCategroy);
         return modelAndView;
     }
 }
