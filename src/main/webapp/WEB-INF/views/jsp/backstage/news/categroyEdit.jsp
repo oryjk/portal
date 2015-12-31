@@ -17,7 +17,7 @@
     <div class="col-xs-12">
         <div class="row">
             <div class="col-xs-12">
-                <input type="hidden" name="news_id" value="${newsCategroy.}">
+                <input type="hidden" name="news_id" value="${news_id}">
                 <div class="space-4"></div>
                 <div class="space-4"></div>
                 <form class="form-horizontal" role="form">

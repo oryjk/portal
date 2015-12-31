@@ -55,12 +55,12 @@
             </div><!-- #sidebar-shortcuts -->
 
             <ul class="nav nav-list">
-                <li class="active">
-                    <a href="#" path="<%=basePath%>newsAdd">
-                        <i class="icon-dashboard"></i>
-                        <span class="menu-text"> 用户 </span>
-                    </a>
-                </li>
+                <%--<li class="active">--%>
+                    <%--<a href="#" path="<%=basePath%>newsAdd">--%>
+                        <%--<i class="icon-dashboard"></i>--%>
+                        <%--<span class="menu-text"> 用户 </span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
 
                 <li>
                     <a path="toJueDangTaoEdit">
@@ -168,17 +168,17 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="calendar.html">
-                        <i class="icon-calendar"></i>
-						<span class="menu-text">
-							日志
-						    <span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
-							    <i class="icon-warning-sign red bigger-130"></i>
-                            </span>
-                       </span>
-                    </a>
-                </li>
+                <%--<li>--%>
+                    <%--<a href="calendar.html">--%>
+                        <%--<i class="icon-calendar"></i>--%>
+						<%--<span class="menu-text">--%>
+							<%--日志--%>
+						    <%--<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">--%>
+							    <%--<i class="icon-warning-sign red bigger-130"></i>--%>
+                            <%--</span>--%>
+                       <%--</span>--%>
+                    <%--</a>--%>
+                <%--</li>--%>
             </ul><!-- /.nav-list -->
 
             <div class="sidebar-collapse" id="sidebar-collapse">
