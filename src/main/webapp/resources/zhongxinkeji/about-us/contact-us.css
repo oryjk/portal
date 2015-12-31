@@ -249,6 +249,7 @@ a {
 
 .substance {
     margin-top: 35px;
+    min-height: 600px;
 }
 
 .substance p {
