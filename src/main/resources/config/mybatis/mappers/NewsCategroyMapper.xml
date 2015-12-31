@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.news.dao.NewsMapper">
+<mapper namespace="com.newscategroy.dao.NewsCategroyMapper">
     <resultMap id="newsCategroyMap" type="com.newscategroy.bean.NewsCategroy">
         <id property="newsCategroy_id" column="id"/>
         <result property="name" column="name"/>
@@ -22,12 +22,14 @@
         UPDATE newscategroy SET name=#{name},url=#{url} WHERE id=#{newsCategroy_id}
     </update>
     <!--查所有-->
-    <select id="selectAllNewsCategroy" resultMap="newsCategroyMap">
-        SELECT id,name,url from newscategroy
+    <select id="selectAllNewsCategroy" resultMap="newsCategroyMap" parameterType="com.utils.page.Pagination">
+        SELECT id,name,url from newscategroy LIMIT #{startIndex},#{pageSize}
     </select>
     <!--查id-->
     <select id="selectNewsCategroyById" parameterType="int" resultType="com.newscategroy.bean.NewsCategroy">
         SELECT id,name,url FROM newscategroy where id=#{newsCategroy_id}
     </select>
-
+    <select id="selectNewsCountCategroy" resultType="int">
+        SELECT count(*) FROM newscategroy
+    </select>
 </mapper>

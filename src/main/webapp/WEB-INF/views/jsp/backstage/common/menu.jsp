@@ -63,13 +63,6 @@
                 </li>
 
                 <li>
-                    <a href="widgets.html">
-                        <i class="icon-list-alt"></i>
-                        <span class="menu-text"> 首页 </span>
-                    </a>
-                </li>
-
-                <li>
                     <a path="toJueDangTaoEdit">
                         <i class="icon-text-width"></i>
                         <span class="menu-text"> 绝当淘 </span>
@@ -120,12 +113,12 @@
                                 新闻咨询
                             </a>
                         </li>
-                        <%--<li>--%>
-                            <%--<a path="newsTypeManager">--%>
-                                <%--<i class="icon-double-angle-right"></i>--%>
-                                <%--新闻分类--%>
-                            <%--</a>--%>
-                        <%--</li>--%>
+                       <li>
+                            <a path="NewcategroyView">
+                                <i class="icon-double-angle-right"></i>
+                                新闻分类
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
@@ -169,6 +162,13 @@
                 </li>
 
                 <li>
+                    <a path="toMenuEdit" class="dropdown-toggle">
+                        <i class="icon-edit"></i>
+                        <span class="menu-text"> 菜单编辑 </span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="calendar.html">
                         <i class="icon-calendar"></i>
 						<span class="menu-text">
@@ -194,3 +194,4 @@
             </script>
         </div>
     </div><!-- /span -->
+</div>
