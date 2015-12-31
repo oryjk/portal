@@ -11,4 +11,10 @@ import com.menu.bean.Menu;
  */
 public interface MenuService {
 	List<Menu>findAll()throws Exception;
+
+	void add() throws Exception;
+
+	void delete(int did) throws Exception;
+
+	void update(Menu menu)throws Exception;
 }

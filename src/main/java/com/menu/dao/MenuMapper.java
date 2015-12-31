@@ -11,4 +11,13 @@ import com.menu.bean.Menu;
  */
 public interface MenuMapper  extends SqlMapper {
 	List<Menu> findAll()throws Exception;
+
+	int findNum() throws Exception;
+
+	void add(int num) throws Exception;
+
+	void delete(int did) throws Exception;
+
+	void update(Menu menu)throws Exception;
+	
 }

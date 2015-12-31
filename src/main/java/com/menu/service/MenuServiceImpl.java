@@ -19,8 +19,22 @@ public class MenuServiceImpl implements MenuService {
 	private MenuMapper menuMapper;
 	
 	public List<Menu> findAll() throws Exception {
-		// TODO Auto-generated method stub
 		return menuMapper.findAll();
+	}
+
+	public void add() throws Exception {
+		int num = menuMapper.findNum();
+		menuMapper.add(num+1);
+		
+	}
+
+	public void delete(int did) throws Exception {
+		menuMapper.delete(did);
+	}
+
+	public void update(Menu menu) throws Exception {
+		menuMapper.update(menu);
+		
 	}
 
 }

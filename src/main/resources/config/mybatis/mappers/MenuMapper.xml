@@ -12,8 +12,27 @@
 	</resultMap>
 	
 	<select id="findAll" resultType="com.menu.bean.Menu">
-		select * from menu
+		select * from menu  order by type asc
 	</select>
 	
+	<insert id="add" parameterType="int">
+		insert into menu (type) values (#{type})
+	</insert>
+	
+	<select id="findNum"  resultType="int">
+		SELECT COUNT(*) FROM menu 
+	</select>
+	
+	<update id="update" parameterType="com.menu.bean.Menu">
+		update  menu
+		set name =#{name },
+		url = #{url},
+		type = #{type}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from menu where id = #{did}
+	</delete>
 	
 </mapper>
