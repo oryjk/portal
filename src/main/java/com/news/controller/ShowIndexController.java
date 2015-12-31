@@ -42,6 +42,9 @@ public class ShowIndexController {
         //新闻详细信息显示
         List<News> newsList= newsService.selectDateNews(10);
         LOGGER.debug("news json is" + JSONObject.toJSONString(newsList));
+        for(News m: newsList){
+            m.setArticle(m.getArticle().substring(0,120)+"...");
+        }
         modelAndView.addObject("newslist", newsList);
 
         //新闻咨询
