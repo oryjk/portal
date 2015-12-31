@@ -1,5 +1,9 @@
 package com.aboutus.bean;
-
+/**
+ * 
+ * @author HD
+ *
+ */
 public class AboutusConstant {
 	
 	public static final int ABOUTUS_STATE_NO=0;

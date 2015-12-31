@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -62,7 +66,7 @@ public class UserController {
 			if ( userTemp.getPassword().equals(str)) {
 				session.setAttribute("username", user.getUsername());
 				// 登录成功
-				modelAndView.setViewName("backstage/admin/admin");
+				modelAndView.setViewName("redirect:/admin/main");
 				return modelAndView;
 
 			}

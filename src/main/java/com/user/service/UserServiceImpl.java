@@ -5,6 +5,12 @@ import org.springframework.stereotype.Service;
 
 import com.user.bean.User;
 import com.user.dao.UserMapper;
+
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 @Service
 public class UserServiceImpl implements UserService {
 

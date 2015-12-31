@@ -12,7 +12,11 @@ import org.springframework.web.servlet.ModelAndView;
 import com.menu.bean.Menu;
 import com.menu.service.MenuService;
 
-
+/**
+ * 
+ * @author woniu_hd on 12/28/15.
+ *
+ */
 public class MenuInterceptor implements HandlerInterceptor {
 	
 	@Autowired

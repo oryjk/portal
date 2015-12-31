@@ -23,7 +23,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.baotao.controller.JueDangtaoController;
-
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 @Controller
 public class Codecontroller {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);

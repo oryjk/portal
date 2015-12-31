@@ -12,7 +12,11 @@ import com.aboutus.bean.AboutusConstant;
 import com.aboutus.service.AboutusService;
 import com.baotao.controller.JueDangtaoController;
 import com.categroy.bean.CategroyConstant;
-
+/**
+ * 
+ * @author hd
+ *
+ */
 @Controller
 @RequestMapping("/aboutus")
 public class CompanyIntroductionController {

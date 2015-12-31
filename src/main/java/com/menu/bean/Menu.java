@@ -1,7 +1,11 @@
 package com.menu.bean;
 
 import java.io.Serializable;
-
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 public class Menu implements Serializable {
 
 

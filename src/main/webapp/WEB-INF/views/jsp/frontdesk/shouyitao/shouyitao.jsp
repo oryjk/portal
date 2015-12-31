@@ -19,7 +19,7 @@
         <div class="title">
             <div class="title-left"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/title-logo1.png"></div>
             <img class="img12" src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/jiantou.png">
-            <a href="#" class="title-right">进入收益淘商城</a>
+            <a href="#" class="title-right">进入淘在当商城</a>
         </div>
         <div class="substance-content">
              ${baotao.content }

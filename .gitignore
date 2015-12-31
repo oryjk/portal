@@ -6,13 +6,13 @@ portal.iws
 .idea/
 .gradle/
 /bin/
-.classpath
-.settings
+.classpath/
+.settings/
 .settings/org.eclipse.jdt.core.prefs
 
 out
 libs
 /portal/src/main/java/com/test
 
-src/main/webapp/resources/zhongxinkeji/node_modules
+src/main/webapp/resources/zhongxinkeji/node_modules/
 src/main/webapp/resources/zhongxinkeji/ gulpfile.js

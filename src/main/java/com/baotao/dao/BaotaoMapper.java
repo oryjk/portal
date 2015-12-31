@@ -7,7 +7,11 @@ import org.springframework.stereotype.Component;
 import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoCustom;
 import com.base.mapper.SqlMapper;
-
+/**
+ * 
+ * @author woniu_hd on 12/23/15.
+ *
+ */
 @Component
 public interface BaotaoMapper extends SqlMapper {
 	 

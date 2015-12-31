@@ -13,7 +13,11 @@ import com.aboutus.bean.Aboutus;
 import com.aboutus.bean.AboutusConstant;
 import com.aboutus.service.AboutusService;
 import com.baotao.controller.JueDangtaoController;
-
+/**
+ * 
+ * @author hd
+ *
+ */
 @Controller
 @RequestMapping("/admin")
 public class ContactUsAdminController {

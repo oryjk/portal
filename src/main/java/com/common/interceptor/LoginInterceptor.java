@@ -9,7 +9,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 public class LoginInterceptor  implements HandlerInterceptor {
 
 	@Override

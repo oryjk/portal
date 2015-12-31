@@ -10,7 +10,11 @@ import com.baotao.bean.Baotao;
 import com.baotao.bean.BaotaoConstant;
 import com.baotao.bean.BaotaoCustom;
 import com.baotao.dao.BaotaoMapper;
-
+/**
+ * 
+ * @author woniu_hd on 12/23/15.
+ *
+ */
 @Service
 public class BaotaoServiceImpl implements BaotaoService {
 	@Autowired

@@ -13,7 +13,11 @@ import com.categroy.bean.Categroy;
 import com.categroy.service.CategroyService;
 import com.menu.bean.Menu;
 import com.menu.service.MenuService;
-
+/**
+ * 
+ * @author woniu_hd on 12/26/15.
+ *
+ */
 
 public class CategroyInterceptor implements HandlerInterceptor {
 	
