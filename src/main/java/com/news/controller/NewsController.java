@@ -5,6 +5,7 @@ import com.media.bean.Media;
 import com.media.service.MediaService;
 import com.news.bean.News;
 import com.news.service.NewsService;
+import com.utils.page.Pagination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,8 @@ public class NewsController {
     private MediaService mediaService;
     @Autowired
     private ImageUtils imageUtils;
+    @Autowired
+    private Pagination pagination;
 
     @RequestMapping("photos")
     public ModelAndView photos(ModelAndView modelAndView, @RequestParam int id){
@@ -156,13 +159,19 @@ public class NewsController {
 
     @RequestMapping("findAllByLike")
     @ResponseBody
-    public String findAllByLike() {
+    public String findAllByLike(@RequestParam("page") int pages , @RequestParam("rows") int rows) {
         LOGGER.debug("news select method");
-        List<News> newsesList= newsService.selectAllNews(1);
+        //分页总数查询
+        pagination.setRowCount(newsService.selectCompanyCountNews().longValue());
+        //设置每页显示条数
+        pagination.setPageSize(rows);
+        //设置开始页
+        pagination.setPageNo(pages);
+        List<News> newsesList= newsService.selectTrueAllNews(pagination);
         LOGGER.debug("news json is" + JSONObject.toJSONString(newsesList));
         Map<String,Object> jsonMap = new HashMap<String, Object>();
         jsonMap.put("rows",newsesList);
-        jsonMap.put("total", 3);
+        jsonMap.put("total", newsService.selectCountAllNews());
         LOGGER.debug(JSONObject.toJSONString(jsonMap));
         return JSONObject.toJSONString(jsonMap);
     }

@@ -25,7 +25,7 @@
           <tr>
             <td>ID</td>
             <td>banner</td>
-            <td>修改</td>
+            <td>添加</td>
             <td>删除</td>
           </tr>
           <c:forEach items="${banners}" var="banners">
@@ -33,14 +33,14 @@
                 <td>${banners.banner_id}</td>
                 <td><a href="<%=basePath%>${banners.url}">${banners.url}</a></td>
                 <td>
-                     <button value="${banners}" onClick="location.href='<%=basePath%>admin/modifybanner'">修改</button>
+                     <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
                 </td>
                 <td>
                      <button value="${banners}" onClick="location.href='<%=basePath%>admin/deletebanner?banner_id=${banners.banner_id}'">删除</button>
                 </td>
             </tr>
           </c:forEach>
-          <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
+
         </table>
         </div>
     </body>
