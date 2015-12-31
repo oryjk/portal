@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=Utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%  String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -86,7 +86,8 @@
 </div>
 
 <!--footer-->
-<jsp:include page="../../common/footer.jsp"></jsp:include>
+<%-- <jsp:include page="../../common/footer.jsp"></jsp:include> --%>
+<%@include file="../../common/footer.jsp" %>
 </body>
 <script type="text/javascript">
     myFocus.set({

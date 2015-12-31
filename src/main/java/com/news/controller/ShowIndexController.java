@@ -40,8 +40,11 @@ public class ShowIndexController {
         LOGGER.debug("view is news find by condition or all");
 
         //新闻详细信息显示
-        List<News> newsList= newsService.selectDateNews(10);
+        List<News> newsList= newsService.selectDateNews(3);
         LOGGER.debug("news json is" + JSONObject.toJSONString(newsList));
+        for(News m: newsList){
+            m.setArticle(m.getArticle().substring(0,120)+"...");
+        }
         modelAndView.addObject("newslist", newsList);
 
         //新闻咨询
