@@ -248,6 +248,7 @@ a {
 
 .substance {
     margin-top: 35px;
+    min-height: 800px;
 }
 
 .substance img {
