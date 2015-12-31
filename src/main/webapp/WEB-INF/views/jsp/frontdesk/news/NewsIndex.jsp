@@ -23,7 +23,7 @@
 
 <!-- content -->
 <div class="content">
-    <a href="#" class="banner"><img src="<%=basePath%>resources/zhongxinkeji/img/banner2.jpg"></a>
+    <a href="#" class="banner"><img src="<%=basePath%>resources/core/images/newsbanner.jpg"></a>
     <div class="substance">
         <div class="title1"><h2>最新动态</h2> <a href="findall" class="title1-right">更多>></a></div>
         <c:forEach items="${newslist}" var="newslist">
