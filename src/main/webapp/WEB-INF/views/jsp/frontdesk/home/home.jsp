@@ -38,7 +38,7 @@
     <div class="substance">
         <div class="left-box">
             <div class="box">
-                <h2>公司简介</h2>
+                <h2 class="box0">公司简介</h2>
 
                 <p class="box-content">
                     ${companyIntro.article}
