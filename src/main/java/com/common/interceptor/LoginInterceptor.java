@@ -23,7 +23,7 @@ public class LoginInterceptor  implements HandlerInterceptor {
 
 		// 判断用户身份是否在session中存在
 		HttpSession session = request.getSession();
-		String username = (String) session.getAttribute("name");
+		String username = (String) session.getAttribute("username");
 		// 如果用户身份在session中存在就放行
 		if (username!= null) {
 			return true;
