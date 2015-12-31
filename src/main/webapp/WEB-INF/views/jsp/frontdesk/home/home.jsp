@@ -28,8 +28,8 @@
         <div class="ad" id="expo2010-box">
             <div class="pic">
                 <ul>
-                    <c:forEach items="${banners}" var="banners">
-                        <li style="background:url(<%=basePath%>resources/${banners.url}) no-repeat center center;" class="banner1"></li>
+                    <c:forEach items="${banners}" var="banners" >
+                        <li style="background:url(<%=basePath%>${banners.url}) no-repeat center center;" class="banner1"></li>
                     </c:forEach>
                 </ul>
             </div>

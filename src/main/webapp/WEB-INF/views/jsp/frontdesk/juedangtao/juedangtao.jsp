@@ -1,4 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%  String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,7 @@
 <!-- content -->
 <div class="content">
     
-	<c:forEach items="${banners}" var="banners">
+	<c:forEach items="${banners}" var="banners" varStatus="status">
         <a href="#" class="banner" style="background:url(${pageContext.request.contextPath }/${banners.url}) no-repeat center center;"></a>
 	</c:forEach>
 
