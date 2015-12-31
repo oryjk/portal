@@ -60,16 +60,16 @@ public class BackBannerController {
     public  ModelAndView querybanner(ModelAndView modelAndView){
         List<Banner> banners=bannerService.selectBanner();
         modelAndView.addObject("banners",banners);
-        modelAndView.setViewName("");
+        modelAndView.setViewName("backstage/banner/indexbanner");
         return modelAndView;
     }
 
     @RequestMapping("/deletebanner")
-    public ModelAndView deletebanner(ModelAndView modelAndView,Banner banner){
-        if(banner!=null){
-            bannerService.deleteBanner(banner.getBanner_id());
+    public ModelAndView deletebanner(ModelAndView modelAndView,Banner banners){
+        if(banners!=null){
+            bannerService.deleteBanner(banners.getBanner_id());
         }
-
+        modelAndView.setViewName("forward:querybanner");
         return modelAndView;
     }
 
