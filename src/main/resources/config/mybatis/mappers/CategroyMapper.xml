@@ -16,4 +16,25 @@
 	</select>
 	
 	
+	<insert id="add" parameterType="int">
+		insert into categroy (type) values (#{type})
+	</insert>
+	
+	<select id="findNum"  resultType="int">
+		SELECT COUNT(*) FROM categroy 
+	</select>
+	
+	<update id="update" parameterType="com.categroy.bean.Categroy">
+		update  categroy
+		set name =#{name },
+		url = #{url},
+		type = #{type}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from categroy where id = #{did}
+	</delete>
+	
+	
 </mapper>

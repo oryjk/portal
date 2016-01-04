@@ -64,13 +64,15 @@ public class Codecontroller {
 			g2d.setStroke(bs);
 			g2d.draw(line); // 绘制直线
 		}
-		// 输出由英文，数字，和中文随机组成的验证文字，具体的组合方式根据生成随机数确定。
+		// 输出由英文，数字，随机组成的验证文字，具体的组合方式根据生成随机数确定。
 		String sRand = "";
 		String ctmp = "";
 		int itmp = 0;
 		// 制定输出的验证码为四位
 		for (int i = 0; i < 4; i++) {
-			switch (random.nextInt(3)) {
+			itmp = random.nextInt(10) + 48;
+			ctmp = String.valueOf((char) itmp);
+		/*	switch (random.nextInt(3)) {
 			case 1: // 生成A-Z的字母
 				itmp = random.nextInt(26) + 65;
 				ctmp = String.valueOf((char) itmp);
@@ -79,7 +81,7 @@ public class Codecontroller {
 				itmp = random.nextInt(10) + 48;
 				ctmp = String.valueOf((char) itmp);
 				break;
-			}
+			}*/
 			sRand += ctmp;
 			Color color = new Color(20 + random.nextInt(110), 20 + random.nextInt(110), random.nextInt(110));
 			g.setColor(color);
