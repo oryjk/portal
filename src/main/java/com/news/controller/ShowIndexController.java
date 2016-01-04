@@ -3,6 +3,9 @@ package com.news.controller;
 
 import java.util.List;
 
+import com.banner.bean.Banner;
+import com.banner.bean.ConStantBannerType;
+import com.banner.service.BannerService;
 import com.media.bean.Media;
 import com.media.service.MediaService;
 import com.utils.page.Pagination;
@@ -34,9 +37,11 @@ public class ShowIndexController {
     private MediaService mediaService;
     @Autowired
     private Pagination pagination;
+    @Autowired
+    private BannerService bannerService;
 
     @RequestMapping("all")
-    public ModelAndView selectTrueAllNews( ModelAndView modelAndView ) {
+    public ModelAndView selectTrueAllNews( ModelAndView modelAndView,Banner banner) {
         LOGGER.debug("view is news find by condition or all");
 
         //新闻详细信息显示
@@ -54,6 +59,12 @@ public class ShowIndexController {
         List<News> newsCompanyList= newsService.selectCompanyNews(pagination);
         //媒体
         List<News> newsHotsList= newsService.selectHotsNews(pagination);
+
+        banner.setType(ConStantBannerType.NEWS_TYPE);
+        banner.setStatus(ConStantBannerType.SHOW_STATUS);
+        List<Banner> banners=bannerService.selectTypeBanner(banner);
+        modelAndView.addObject("banners",banners);
+
         modelAndView.setViewName("frontdesk/news/NewsIndex");
         modelAndView.addObject("menuType", "4");
         modelAndView.addObject("newslist2", newsCompanyList);

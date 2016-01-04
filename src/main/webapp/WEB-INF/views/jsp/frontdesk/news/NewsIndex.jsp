@@ -19,7 +19,9 @@
 
 <!-- content -->
 <div class="content">
-    <a href="#" class="banner"><img src="<%=basePath%>resources/core/images/newsbanner.jpg"></a>
+    <c:forEach items="${banners}" var="banners" varStatus="status">
+        <a href="#" class="banner" style="background:url(${pageContext.request.contextPath }/${banners.url}) no-repeat center center;"></a>
+    </c:forEach>
     <div class="substance">
         <div class="title1"><h2>最新动态</h2> <a href="findall" class="title1-right">更多>></a></div>
         <c:forEach items="${newslist}" var="newslist">
