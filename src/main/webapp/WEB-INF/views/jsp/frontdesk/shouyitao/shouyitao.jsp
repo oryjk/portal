@@ -15,13 +15,12 @@
 <!-- content -->
 <div class="content">
     <c:forEach items="${banners}" var="banners">
-    
               <a href="#" class="banner" style="background:url(${pageContext.request.contextPath }/${banners.url}) no-repeat center center;"></a>
     </c:forEach>
 
     <div class="substance">
         <div class="title">
-            <div class="title-left"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/title-logo1.png"></div>
+            <div class="title-left"><img src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/taozaidang.png"></div>
             <img class="img12" src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/jiantou.png">
             <a href="http://www.dianjinzi.com" class="title-right">进入淘在当商城</a>
         </div>
