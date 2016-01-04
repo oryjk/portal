@@ -26,6 +26,7 @@
             <td>ID</td>
             <td>banner</td>
             <td>类型</td>
+            <td>当前状态</td>
             <td>添加</td>
             <td>修改</td>
             <td>删除</td>
@@ -40,6 +41,10 @@
                     <c:if test="${banners.type=='3'}">收益淘banner</c:if>
                     <c:if test="${banners.type=='4'}">新闻页banner</c:if>
                     <c:if test="${banners.type=='5'}">关于我们banner</c:if>
+                </td>
+                <td>
+                    <c:if test="${banners.status=='1'}">显示</c:if>
+                    <c:if test="${banners.status=='0'}">不显示</c:if>
                 </td>
                 <td>
                      <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
