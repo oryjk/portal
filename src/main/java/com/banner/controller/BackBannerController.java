@@ -73,11 +73,22 @@ public class BackBannerController {
         return modelAndView;
     }
 
+    @RequestMapping("/querymodifybanner")
+    public ModelAndView querymodifybanner(ModelAndView modelAndView,Banner banners){
+        LOGGER.debug("querymodifybanner");
+        banners=bannerService.selectBannerById(banners.getBanner_id());
+        modelAndView.addObject("banners",banners);
+        modelAndView.setViewName("backstage/banner/updatebanner");
+        return modelAndView;
+    }
+
     @RequestMapping("/modifybanner")
     public ModelAndView modifybanner(ModelAndView modelAndView,Banner banner){
-        if(banner!=null){
-            bannerService.updateBanner(banner);
-        }
+        LOGGER.debug("****************************************************modifybanner");
+        System.out.print("*********------------------------------------------------------------");
+        System.out.print(banner);
+        bannerService.updateBanner(banner);
+        modelAndView.setViewName("forward:querybanner");
         return modelAndView;
     }
 

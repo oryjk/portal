@@ -25,7 +25,9 @@
           <tr>
             <td>ID</td>
             <td>banner</td>
+            <td>类型</td>
             <td>添加</td>
+            <td>修改</td>
             <td>删除</td>
           </tr>
           <c:forEach items="${banners}" var="banners">
@@ -33,7 +35,17 @@
                 <td>${banners.banner_id}</td>
                 <td><a href="<%=basePath%>${banners.url}">${banners.url}</a></td>
                 <td>
+                    <c:if test="${banners.type=='1'}">首页banner</c:if>
+                    <c:if test="${banners.type=='2'}">绝当淘banner</c:if>
+                    <c:if test="${banners.type=='3'}">收益淘banner</c:if>
+                    <c:if test="${banners.type=='4'}">新闻页banner</c:if>
+                    <c:if test="${banners.type=='5'}">关于我们banner</c:if>
+                </td>
+                <td>
                      <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
+                </td>
+                <td>
+                     <button value="${banners}" onClick="location.href='<%=basePath%>admin/querymodifybanner?banner_id=${banners.banner_id}'">修改</button>
                 </td>
                 <td>
                      <button value="${banners}" onClick="location.href='<%=basePath%>admin/deletebanner?banner_id=${banners.banner_id}'">删除</button>
