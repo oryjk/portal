@@ -131,4 +131,14 @@ public class NewsServiceImp implements NewsService{
     public Integer selectCountAllNews(){
         return newsMapper.selectCountAllNews();
     }
+
+    //分页条件查询
+    @Override
+    public List<News> selectNewsCondition(Pagination pagination){
+        return newsMapper.selectNewsCondition(pagination);
+    }
+    @Override
+    public Integer selectNewsConditionCount(Pagination pagination){
+        return newsMapper.selectNewsConditionCount(pagination);
+    }
 }

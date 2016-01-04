@@ -7,22 +7,26 @@ import java.util.Map;
 
 @Component("Pagination")
 public class Pagination {
-	private List<Map<String, Object>> list;
+	//保存查询条件bean对象
+	private Object bean;
 
-
+	//总条数
 	private Long rowCount;
+	//页数
 	private int pageSize;
+	//当前页
 	private int pageNo;
-	//新闻类型
+	//类型
 	private int type;
+
 	private int startIndex;
 
-	public List<Map<String, Object>> getList() {
-		return list;
+	public Object getBean() {
+		return bean;
 	}
 
-	public void setList(List<Map<String, Object>> list) {
-		this.list = list;
+	public void setBean(Object bean) {
+		this.bean = bean;
 	}
 
 	public Long getRowCount() {
@@ -74,6 +78,7 @@ public class Pagination {
 		}
 	}
 
+	//开始条数
 	public void setStartIndex() {
 		this.startIndex = pageSize * pageNo;
 	}

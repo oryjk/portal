@@ -20,7 +20,14 @@
 <!-- content -->
 <div class="content">
     <div class="news">
-        <a href="#"> 新闻资讯</a>&nbsp;&nbsp; >&nbsp;&nbsp;<a class="news-in" href="#">新闻咨询</a>
+        <a href="#"> 新闻资讯</a>&nbsp;&nbsp; >&nbsp;&nbsp;<a class="news-in" href="#">
+        <c:if test="${page.type == 1}">
+            新闻咨询
+        </c:if>
+        <c:if test="${page.type == 2}">
+            媒体新闻
+        </c:if>
+        </a>
     </div>
     <c:forEach items="${newslist}" var="newslist">
         <ul>

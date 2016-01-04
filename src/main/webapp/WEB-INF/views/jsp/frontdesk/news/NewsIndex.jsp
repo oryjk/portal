@@ -38,7 +38,7 @@
             <div class="box">
                 <div class="box-top">
                     <h2>新闻资讯</h2>
-                    <a href="selectNewsList">更多<< </a>
+                    <a href="findNews?type=1">更多<< </a>
                 </div>
                 <c:forEach items="${newslist2}" var="newslist2">
                     <ul>
@@ -49,7 +49,7 @@
             <div class="box1">
                 <div class="box-top">
                     <h2>媒体动态</h2>
-                    <a href="HotsNew">更多<< </a>
+                    <a href="findNews?type=2">更多<< </a>
                 </div>
                 <c:forEach items="${newslist3}" var="newslist3">
                     <ul>

@@ -3,6 +3,7 @@ package com.news.controller;
 import java.util.List;
 
 import com.mchange.lang.LongUtils;
+import com.news.constant.ConstantNews;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,60 +36,6 @@ public class ShowListController {
     @Autowired
     private Pagination pagination;
 
-    @RequestMapping("selectNewsList")
-    public ModelAndView selectAllNews(ModelAndView modelAndView, HttpServletRequest request) {
-        int PageNo = NumberUtils.toInt(request.getParameter("pageNo"));
-        LOGGER.debug("************************" + PageNo);
-        //分页总数查询
-        pagination.setRowCount(newsService.selectCompanyCountNews().longValue());
-        //设置每页显示条数
-        pagination.setPageSize(10);
-        //设置开始页
-        if(PageNo > 0 && PageNo <= pagination.getPageCount()){
-            pagination.setPageNo(PageNo);
-        }else{
-            pagination.setPageNo(0);
-        }
-        pagination.setStartIndex();
-        //新闻的列表显示
-        List<News> newsList= newsService.selectCompanyNews(pagination);
-        LOGGER.debug("news json is ***************************" + newsList.size());
-        modelAndView.setViewName("frontdesk/news/NewsList");
-        modelAndView.addObject("menuType", "4");
-        modelAndView.addObject("newslist", newsList);
-
-        modelAndView.addObject("pageCount", pagination.getPageCount());
-        modelAndView.addObject("page", pagination);
-        return modelAndView;
-    }
-
-    @RequestMapping("HotsNew")
-    public ModelAndView HotsNew(ModelAndView modelAndView, HttpServletRequest request) {
-        int PageNo = NumberUtils.toInt(request.getParameter("pageNo"));
-        LOGGER.debug("************************" + PageNo);
-        //分页总数查询
-        pagination.setRowCount(newsService.selectHotsCountNews().longValue());
-        //设置每页显示条数
-        pagination.setPageSize(10);
-        //设置开始页
-        if(PageNo > 0 && PageNo <= pagination.getPageCount()){
-            pagination.setPageNo(PageNo);
-        }else{
-            pagination.setPageNo(0);
-        }
-        pagination.setStartIndex();
-        //新闻的列表显示
-        List<News> newsList= newsService.selectHotsNews(pagination);
-        LOGGER.debug("news json is ***************************" + newsList.size());
-        modelAndView.setViewName("frontdesk/news/NewsHotsList");
-        modelAndView.addObject("menuType", "4");
-        modelAndView.addObject("newslist", newsList);
-
-        modelAndView.addObject("pageCount", pagination.getPageCount());
-        modelAndView.addObject("page", pagination);
-        return modelAndView;
-    }
-
     @RequestMapping("findall")
     public ModelAndView findall(ModelAndView modelAndView, HttpServletRequest request) {
         int PageNo = NumberUtils.toInt(request.getParameter("pageNo"));
@@ -108,6 +55,36 @@ public class ShowListController {
         List<News> newsList= newsService.selectTrueAllNews(pagination);
         LOGGER.debug("news json is ***************************" + newsList.size());
         modelAndView.setViewName("frontdesk/news/NewsAll");
+        modelAndView.addObject("menuType", "4");
+        modelAndView.addObject("newslist", newsList);
+
+        modelAndView.addObject("pageCount", pagination.getPageCount());
+        modelAndView.addObject("page", pagination);
+        return modelAndView;
+    }
+
+
+    //新闻条件查询
+    @RequestMapping("findNews")
+    public ModelAndView findNews(ModelAndView modelAndView, HttpServletRequest request) {
+        int PageNo = NumberUtils.toInt(request.getParameter("pageNo"));
+        LOGGER.debug("************************" + PageNo);
+        //设置每页显示条数
+        pagination.setPageSize(10);
+        //设置开始页
+        if(PageNo > 0 && PageNo <= pagination.getPageCount()){
+            pagination.setPageNo(PageNo);
+        }else{
+            pagination.setPageNo(0);
+        }
+        pagination.setStartIndex();
+        pagination.setType(NumberUtils.toInt(request.getParameter("type")));
+        //分页总数查询
+        pagination.setRowCount(newsService.selectNewsConditionCount(pagination).longValue());
+        //新闻的列表显示
+        List<News> newsList= newsService.selectNewsCondition(pagination);
+        LOGGER.debug("news json is ***************************" + newsList.size());
+        modelAndView.setViewName("frontdesk/news/NewsList");
         modelAndView.addObject("menuType", "4");
         modelAndView.addObject("newslist", newsList);
 

@@ -22,4 +22,7 @@ public interface NewsService {
     Integer selectHotsCountNews();
     List<News> selectHotsNews(Pagination pagination);
     Integer selectCountAllNews();
+
+    List<News> selectNewsCondition(Pagination pagination);
+    Integer selectNewsConditionCount(Pagination pagination);
 }

@@ -48,7 +48,7 @@
     <select id="selectDateNews" parameterType="int" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 ORDER BY date DESC LIMIT #{number}
     </select>
-    <!--分页查询公司新闻总条数-->
+    <!--分页查询新闻总条数-->
     <select id="selectCountAllNews" resultType="int">
         SELECT count(*) FROM news WHERE state=1
     </select>
@@ -68,4 +68,34 @@
     <select id="selectHotsNews" parameterType="com.utils.page.Pagination" resultMap="newsMap">
         SELECT id,article,title,date,categroy_id,state FROM news WHERE state=1 and categroy_id=2 ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
     </select>
+
+
+
+
+    <!--条件查询新闻-->
+    <select id="selectNewsCondition" parameterType="com.utils.page.Pagination" resultMap="newsMap">
+        SELECT id,article,title,date,categroy_id,state
+          FROM news WHERE state = 1
+          and categroy_id = #{type}
+          <include refid="queryItem"/>
+          ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
+    </select>
+    <!--条件查询总新闻条数-->
+    <select id="selectNewsConditionCount" parameterType="com.utils.page.Pagination" resultType="int">
+        SELECT count(*) FROM news WHERE state=1
+        and categroy_id = #{type}
+        <include refid="queryItem"/>
+        ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
+    </select>
+    <!--新闻查询条件-->
+    <sql id="queryItem">
+        <if test="bean!=null">
+            <if test="bean.title!=null">
+                and title like '%${bean.title}%'
+            </if>
+            <if test="bean.article!=null">
+                and article like '%${bean.article}%'
+            </if>
+        </if>
+    </sql>
 </mapper>

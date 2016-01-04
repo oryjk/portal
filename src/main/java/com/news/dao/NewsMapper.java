@@ -15,6 +15,8 @@ public interface NewsMapper extends SqlMapper{
     Integer insertNews(News news);
     void deleteNews(int id);
     void updateNews(News news);
+
+
     List<News> selectTrueAllNews(Pagination pagination);
     List<News> selectAllNews(int state);
     News selectNewsById(int id);
@@ -25,4 +27,8 @@ public interface NewsMapper extends SqlMapper{
     Integer selectHotsCountNews();
     List<News> selectHotsNews(Pagination pagination);
     Integer selectCountAllNews();
+
+
+    List<News> selectNewsCondition(Pagination pagination);
+    Integer selectNewsConditionCount(Pagination pagination);
 }
