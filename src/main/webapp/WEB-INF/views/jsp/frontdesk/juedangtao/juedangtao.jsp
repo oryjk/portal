@@ -29,7 +29,19 @@
               ${baotao.content }
 		</div>
 
-       
+        <div class="box">
+            <div class="box-top">
+                <h2>绝当淘资讯</h2>
+                <a href="#">更多<<</a>
+            </div>
+            <ul>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.1</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.2</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.3</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.4</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.5</span></li>
+            </ul>
+        </div>
     </div>
 </div>
 <!--footer-->

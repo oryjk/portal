@@ -29,13 +29,18 @@
              ${baotao.content }
         </div>
 
-        <div class="substance-right">
-            <img class="substance-img" src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/pig.jpg">
-            <img class="substance-img" src="${pageContext.request.contextPath }/resources/zhongxinkeji/img/shouyitao_09.jpg">
-
-            <div class="substance-font">实物抵押，无坏账
-                <span class="substance-font">短期项目，流动强</span>
+        <div class="box">
+            <div class="box-top">
+                <h2>绝当淘资讯</h2>
+                <a href="#">更多<<</a>
             </div>
+            <ul>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.1</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.2</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.3</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.4</span></li>
+                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.5</span></li>
+            </ul>
         </div>
     </div>
 </div>
