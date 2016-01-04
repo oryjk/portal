@@ -43,7 +43,9 @@ public class ShowIndexController {
         List<News> newsList= newsService.selectDateNews(3);
         LOGGER.debug("news json is" + JSONObject.toJSONString(newsList));
         for(News m: newsList){
-            m.setArticle(m.getArticle().substring(0,120)+"...");
+            if(m.getArticle() != null && m.getArticle().length() > 120){
+                m.setArticle(m.getArticle().substring(0,120)+"...");
+            }
         }
         modelAndView.addObject("newslist", newsList);
 

@@ -36,7 +36,11 @@
     <div class="substance-foot">
         页数：${page.pageNo eq 0 ? 1 : page.pageNo}/${pageCount} 总记录数：${page.rowCount}
         <a href="#">首页</a>
-        <a href="selectNewsList?pageNo=${page.pageNo-1 > 0 ? page.pageNo-1:1}">上一页</a>
+        <c:if test="${page.pageNo != 0}">
+            <c:if test="${page.pageNo != 1}">
+                <a href="selectNewsList?pageNo=${page.pageNo-1 > 0 ? page.pageNo-1:1}">上一页</a>
+            </c:if>
+        </c:if>
         <c:if test="${page.pageNo+1 <= pageCount}">
             <a href="selectNewsList?pageNo=${page.pageNo+1 eq 1 ? 2 : page.pageNo+1}">下一页</a>
         </c:if>

@@ -107,15 +107,15 @@ h2 {
     font-size: 18px;
 }
 
-p {
+p{
     font-size: 13px;
     text-indent: 30px;
-    line-height: 200%;
+    line-height:200%;
 }
 
 a:link,
 a:visited {
-    color: white;
+    color:white;
     text-decoration: none;
 }
 
@@ -125,14 +125,13 @@ a:active {
     text-decoration: underline;
 }
 
-li {
+
+li{
     list-style: none;
 }
-
 body {
     font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
 }
-
 /*    reset
 ****************************************/
 .header {
@@ -169,22 +168,22 @@ body {
 a {
     display: block;
 }
-
 .header-index:link,
-.header-index:visited {
+.header-index:visited{
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
 }
 
 .header-same:link,
-.header-same:visited {
+.header-same:visited
+{
     color: #000000;
     text-decoration: none;
 }
-
 .header-same:hover,
-.header-same:active {
+.header-same:active
+{
     color: #014a99;
     text-decoration: none;
     border-top: 2px solid #014a99;
@@ -192,81 +191,73 @@ a {
 
 /*  header   up
 ******************************/
-.content {
+.content{
     width: 1000px;
-    min-height: 480px;
+    min-height:480px;
     margin: 20px auto;
 }
-
-.list {
+.list{
     height: 38px;
     background: #f3f3f3;
 }
-
-.about1 {
+.about1{
     float: left;
     line-height: 26px;
     text-align: center;
-    margin: 5px 0 0 30px;
+    margin:5px 0 0 30px ;
     width: 66px;
     height: 26px;
-    background: url("../img/btn-c.png") repeat-x;
+    background:url("../img/btn-c.png") repeat-x;
 }
-
-.about-left {
+.about-left{
     width: 66px;
     float: left;
     background: url("../img/aa_03.jpg") no-repeat left 0;
 }
-
-.about-right {
+.about-right{
     width: 66px;
     float: right;
     background: url("../img/aa_07.jpg") no-repeat right 0;
 }
-
-.about2 {
+.about2{
     float: left;
     line-height: 26px;
     text-align: center;
-    margin: 5px 0 0 30px;
+    margin:5px 0 0 30px ;
     width: 66px;
     height: 26px;
 }
-
 .about2:link,
 .about2:visited {
-    color: #014a99;
+    color:#014a99;
     text-decoration: none;
 }
 
 .about2:hover,
 .about2:active {
     color: #014a99;
-    text-decoration: none;
+    text-decoration:none;
     border-top: 2px solid #014a99;
 }
-
-.substance {
+.substance{
     margin-top: 35px;
 }
-
-.substance img {
+.substance img{
     float: left;
     padding-right: 20px;
 }
-
-.substance h3 {
+.substance h3{
+    padding: 10px 0;
+}
+.substance p{
     padding: 10px 0;
 }
 
-.substance p {
-    padding: 10px 0;
-}
 
 /*  footer
 *************************************/
-
+/*
+*********************/
 .footer {
     margin-top: 20px;
     clear: both;
