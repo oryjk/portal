@@ -16,5 +16,5 @@ public interface BannerMapper extends SqlMapper{
     void updateBanner(Banner banner);
     List<Banner> selectBanner();
     Banner selectBannerById(int banner_id);
-    List<Banner> selectTypeBanner(int type);
+    List<Banner> selectTypeBanner(Banner banner);
 }

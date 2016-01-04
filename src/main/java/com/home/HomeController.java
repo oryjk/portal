@@ -42,7 +42,7 @@ public class HomeController {
     private ConStantBannerType conStantBannerType;
 
     @RequestMapping("home")
-    public ModelAndView index(ModelAndView modelAndView,Baotao baotao)throws Exception{
+    public ModelAndView index(ModelAndView modelAndView,Baotao baotao,Banner banner)throws Exception{
         LOGGER.debug("view is  home page");
 
         List<News> news=newsService.selectDateNews(5);
@@ -69,7 +69,10 @@ public class HomeController {
             companyIntro=companyIntros.get(i);
         }
         modelAndView.addObject("companyIntro",companyIntro);
-        List<Banner> banners=bannerService.selectTypeBanner(conStantBannerType.HOME_TYPE);
+
+        banner.setType(ConStantBannerType.HOME_TYPE);
+        banner.setStatus(ConStantBannerType.SHOW_STATUS);
+        List<Banner> banners=bannerService.selectTypeBanner(banner);
         modelAndView.addObject("banners",banners);
         modelAndView.addObject("menuType", "1");
         modelAndView.setViewName ("frontdesk/home/home");

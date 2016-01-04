@@ -45,20 +45,22 @@ public class JueDangtaoController {
 	 * @throws Exception
 	 */
 	@RequestMapping("/showJueDangTao")
-	public ModelAndView showJueDangTao(ModelAndView modelAndView,Baotao baotao) throws Exception{
+	public ModelAndView showJueDangTao(ModelAndView modelAndView,Baotao baotao,Banner banner) throws Exception{
 		LOGGER.debug("show juedangtao page");
 		baotao.setType(BaotaoConstant.BAOTAO_JUEDANGTAO_TYPE);
 		baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
 		LOGGER.debug("find new juedangtao content");
 		Baotao baotaotemp = baotaoService.find(baotao);
-		
+
 		//model.addAttribute("editor1", intro1temp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
 		modelAndView.addObject("menuType", "2");
-		
-		List<Banner> banners=bannerService.selectTypeBanner(ConStantBannerType.JUEDANGTAO_TYPE);
-        modelAndView.addObject("banners",banners);
-		
+
+		banner.setType(ConStantBannerType.JUEDANGTAO_TYPE);
+		banner.setStatus(ConStantBannerType.SHOW_STATUS);
+		List<Banner> banners=bannerService.selectTypeBanner(banner);
+		modelAndView.addObject("banners",banners);
+
 		modelAndView.setViewName("frontdesk/juedangtao/juedangtao");
 		return modelAndView;
 			

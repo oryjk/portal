@@ -31,7 +31,7 @@
         SELECT banner_id,url,type,status FROM banner where banner_id=#{banner_id}
     </select>
     <!--根据页面查banner-->
-    <select id="selectTypeBanner" parameterType="int" resultMap="BannerMap">
-        SELECT  banner_id,url,type,status FROM banner WHERE type=#{type}  ORDER BY banner_id DESC
+    <select id="selectTypeBanner" parameterType="com.banner.bean.Banner" resultMap="BannerMap">
+        SELECT  banner_id,url,type,status FROM banner WHERE type=#{type} AND status=#{status}
     </select>
 </mapper>

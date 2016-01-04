@@ -39,21 +39,23 @@ public class ShouYiTaoController {
 	 * @throws Exception
 	 */
 	@RequestMapping("/showShouYiTao")
-	public ModelAndView showShouYiTao(ModelAndView modelAndView,Baotao baotao) throws Exception{
+	public ModelAndView showShouYiTao(ModelAndView modelAndView,Baotao baotao,Banner banner) throws Exception{
 		LOGGER.debug("show shouyitao page");
 		baotao.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
 		baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
-		
+
 		LOGGER.debug("find new shouyitao content");
 		Baotao baotaotemp = baotaoService.find(baotao);
-		
+
 		//model.addAttribute("editor1", baotaotemp.getArticle());
 		modelAndView.addObject("baotao", baotaotemp);
 		modelAndView.addObject("menuType", "3");
-		
-		List<Banner> banners=bannerService.selectTypeBanner(ConStantBannerType.SHOUYITAO_TYPE);
-        modelAndView.addObject("banners",banners);
-		
+
+		banner.setType(ConStantBannerType.SHOUYITAO_TYPE);
+		banner.setStatus(ConStantBannerType.SHOW_STATUS);
+		List<Banner> banners=bannerService.selectTypeBanner(banner);
+		modelAndView.addObject("banners",banners);
+
 		modelAndView.setViewName("frontdesk/shouyitao/shouyitao");
 		return modelAndView;
 			

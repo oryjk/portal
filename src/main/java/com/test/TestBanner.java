@@ -1,6 +1,7 @@
 package com.test;
 
 import com.banner.bean.Banner;
+import com.banner.bean.ConStantBannerType;
 import com.banner.dao.BannerMapper;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -58,7 +59,10 @@ public class TestBanner {
     }
     @Test
     public void TestSelectTypeBanner(){
-        List list=bannerMapper.selectTypeBanner(1);
+        Banner banner=new Banner();
+        banner.setType(ConStantBannerType.HOME_TYPE);
+        banner.setStatus(ConStantBannerType.SHOW_STATUS);
+        List list=bannerMapper.selectTypeBanner(banner);
 
         System.out.print(list);
     }

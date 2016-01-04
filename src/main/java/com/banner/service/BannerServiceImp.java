@@ -70,10 +70,10 @@ public class BannerServiceImp implements BannerService{
     }
 
     @Override
-    public List<Banner> selectTypeBanner(int type) {
+    public List<Banner> selectTypeBanner(Banner banner) {
         List<Banner> list=null;
         try {
-            list=bannerMapper.selectTypeBanner(type);
+            list=bannerMapper.selectTypeBanner(banner);
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectType a banner");
         }
