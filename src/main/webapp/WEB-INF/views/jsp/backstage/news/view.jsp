@@ -60,6 +60,8 @@
                         <select id="type">
                             <option value="1">公司新闻</option>
                             <option value="2">热点新闻</option>
+                            <option value="3">绝当淘</option>
+                            <option value="4">收益淘</option>
                         </select>
                     </div>
                 </div>

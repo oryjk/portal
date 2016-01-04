@@ -5,6 +5,10 @@ import com.baotao.service.BaotaoService;
 
 import java.util.List;
 
+import com.news.bean.News;
+import com.news.constant.ConstantNews;
+import com.news.service.NewsService;
+import com.utils.page.Pagination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +38,10 @@ public class JueDangtaoController {
 	private BaotaoService baotaoService;
 	@Autowired
     private BannerService bannerService;
+	@Autowired
+	private NewsService newsService;
+	@Autowired
+	private Pagination pagination;
 
 
 	
@@ -60,6 +68,13 @@ public class JueDangtaoController {
 		banner.setStatus(ConStantBannerType.SHOW_STATUS);
 		List<Banner> banners=bannerService.selectTypeBanner(banner);
 		modelAndView.addObject("banners",banners);
+
+		//绝当淘新闻内容
+		pagination.setPageSize(5);
+		pagination.setPageNo(1);
+		pagination.setType(ConstantNews.JUEDANGTAONEWS_TYPE);
+		List<News> newsList= newsService.selectNewsCondition(pagination);
+		modelAndView.addObject("newslist",newsList);
 
 		modelAndView.setViewName("frontdesk/juedangtao/juedangtao");
 		return modelAndView;

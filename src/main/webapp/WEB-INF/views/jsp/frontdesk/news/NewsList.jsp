@@ -27,6 +27,12 @@
         <c:if test="${page.type == 2}">
             媒体新闻
         </c:if>
+        <c:if test="${page.type == 3}">
+            绝当淘新闻
+        </c:if>
+        <c:if test="${page.type == 4}">
+            收益淘新闻
+        </c:if>
         </a>
     </div>
     <c:forEach items="${newslist}" var="newslist">

@@ -31,15 +31,13 @@
 
         <div class="box">
             <div class="box-top">
-                <h2>绝当淘资讯</h2>
-                <a href="#">更多<<</a>
+                <h2>收益淘资讯</h2>
+                <a href="${pageContext.request.contextPath }/news/findNews?type=4">更多<<</a>
             </div>
             <ul>
-                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.1</span></li>
-                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.2</span></li>
-                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.3</span></li>
-                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.4</span></li>
-                <li><a href="#">点金子绝当淘上线了！</a> <span class="time">2015.1.5</span></li>
+                <c:forEach items="${newslist}" var="newslist">
+                    <li><a href="${pageContext.request.contextPath }/news/detail?id=${newslist.news_id}">${newslist.title}</a> <span class="time"><fmt:formatDate value="${newslist.date}" type="date" dateStyle="short"/></span></li>
+                </c:forEach>
             </ul>
         </div>
     </div>

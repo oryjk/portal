@@ -43,6 +43,8 @@
                             <select name="categroy_id" value="${news.categroy_id}" id="type">
                                 <option value="1">公司新闻</option>
                                 <option value="2">热点新闻</option>
+                                <option value="3">绝当淘新闻</option>
+                                <option value="3">收益淘新闻</option>
                             </select>
                         </div>
                     </div>
