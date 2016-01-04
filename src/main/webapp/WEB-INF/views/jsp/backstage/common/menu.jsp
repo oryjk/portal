@@ -158,6 +158,13 @@
                                 业务范围
                             </a>
                         </li>
+
+                        <li>
+                            <a path="toCategroyEdit">
+                                <i class="icon-double-angle-right"></i>
+                                关于我们菜单
+                            </a>
+                        </li>
                     </ul>
                 </li>
 
