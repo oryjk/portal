@@ -41,7 +41,7 @@ public class HomeController {
     @Autowired
     private ConStantBannerType conStantBannerType;
 
-    @RequestMapping("home")
+    @RequestMapping("/")
     public ModelAndView index(ModelAndView modelAndView,Baotao baotao,Banner banner)throws Exception{
         LOGGER.debug("view is  home page");
 

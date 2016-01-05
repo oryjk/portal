@@ -84,9 +84,7 @@ public class BackBannerController {
 
     @RequestMapping("/modifybanner")
     public ModelAndView modifybanner(ModelAndView modelAndView,Banner banner){
-        LOGGER.debug("****************************************************modifybanner");
-        System.out.print("*********------------------------------------------------------------");
-        System.out.print(banner);
+        LOGGER.debug("***********modifybanner");
         bannerService.updateBanner(banner);
         modelAndView.setViewName("forward:querybanner");
         return modelAndView;
