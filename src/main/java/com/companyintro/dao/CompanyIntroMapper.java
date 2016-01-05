@@ -15,7 +15,7 @@ public interface CompanyIntroMapper extends SqlMapper{
     void deleteCompanyIntro(int id);
     void updateCompanyIntro(CompanyIntro companyIntro);
     List<CompanyIntro> selectTrueAllCompanyIntro();
-    List<CompanyIntro> selectAllCompanyIntro(int state);
+    CompanyIntro selectOneCompanyIntro();
     CompanyIntro selectCompanyIntroById(int id);
     List<CompanyIntro> selectDateCompanyIntro(int number);
 }

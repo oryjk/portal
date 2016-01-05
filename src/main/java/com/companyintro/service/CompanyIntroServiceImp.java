@@ -57,14 +57,14 @@ public class CompanyIntroServiceImp implements CompanyIntroService{
     }
 
     @Override
-    public List<CompanyIntro> selectAllCompanyIntro(int state) {
-        List<CompanyIntro> list=null;
+    public CompanyIntro selectOneCompanyIntro() {
+        CompanyIntro companyIntro=null;
         try {
-            list=companyIntroMapper.selectAllCompanyIntro(state);
+            companyIntro=companyIntroMapper.selectOneCompanyIntro();
         }catch (Exception e){
             LOGGER.error("Some thing wrong when selectAll a companyIntro");
         }
-        return list;
+        return companyIntro;
     }
 
     @Override

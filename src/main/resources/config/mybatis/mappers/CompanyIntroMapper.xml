@@ -20,7 +20,7 @@
     </insert>
     <!--删-->
     <delete id="deleteCompanyIntro" parameterType="int">
-        UPDATE  companyintro SET state=0  WHERE id=#{companyintro_id}
+        DELETE FROM companyintro WHERE id=#{companyintro_id}
     </delete>
     <!--改-->
     <update id="updateCompanyIntro" parameterType="com.companyintro.bean.CompanyIntro">
@@ -31,13 +31,13 @@
     <select id="selectTrueAllCompanyIntro"  resultMap="companyintroMap">
         SELECT id,title,article,date,banner_id,type,state from companyintro
     </select>
-    <!--查所有-->
-    <select id="selectAllCompanyIntro" parameterType="int" resultMap="companyintroMap">
-        SELECT id,title,article,date,banner_id,type,state from companyintro WHERE state=#{state}
+    <!--前台查一条显示的记录-->
+    <select id="selectOneCompanyIntro"  resultType="com.companyintro.bean.CompanyIntro">
+        SELECT id,title,article,date,banner_id,type,state from companyintro WHERE state=1 ORDER BY date DESC LIMIT 1
     </select>
     <!--查id-->
     <select id="selectCompanyIntroById" parameterType="int" resultType="com.companyintro.bean.CompanyIntro">
-        SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE state=1 AND id=#{companyintro_id}
+        SELECT id,title,article,date,banner_id,type,state FROM companyintro WHERE  id=#{companyintro_id}
     </select>
     <!--按日期取n条记录-->
     <select id="selectDateCompanyIntro" parameterType="int" resultMap="companyintroMap">

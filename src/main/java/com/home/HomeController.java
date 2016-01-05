@@ -61,13 +61,7 @@ public class HomeController {
         modelAndView.addObject("shouyitao",shouyitao);
 
 
-
-
-        List<CompanyIntro> companyIntros=companyIntroService.selectDateCompanyIntro(1);
-        CompanyIntro companyIntro=null;
-        for (int i=0;i<companyIntros.size();i++){
-            companyIntro=companyIntros.get(i);
-        }
+        CompanyIntro companyIntro=companyIntroService.selectOneCompanyIntro();
         modelAndView.addObject("companyIntro",companyIntro);
 
         banner.setType(ConStantBannerType.HOME_TYPE);

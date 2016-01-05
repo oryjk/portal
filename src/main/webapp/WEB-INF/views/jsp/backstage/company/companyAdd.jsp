@@ -19,17 +19,17 @@
 
 <body>
 <div style="border:1px #ccc solid;width:450px;height:300px;margin:150px auto" >
-<form action="uploadbanner" method="post">
+<form action="<%=basePath%>admin/uploadcompany" method="post">
         <h1>公司简介</h1>
 
     <div class="control-group">
         <label class="control-label">简介内容:</label>
-        <textarea name="content"></textarea>
+        <input name="content" type="text" />
     </div>
 
     <div class="control-group" style="margin-top:10px;">
         <div class="controls">
-            <p style="margin:20px"> <input value="提交" type="submit"/>         </p>
+            <p style="margin:20px"> <input value="提交" type="submit"/></p>
         </div>
     </div>
 </form>

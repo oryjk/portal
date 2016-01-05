@@ -2,9 +2,7 @@ package com.companyintro.controller;
 
 import com.companyintro.bean.CompanyIntro;
 import com.companyintro.service.CompanyIntroService;
-import com.media.bean.Media;
 import com.media.service.MediaService;
-import com.news.bean.News;
 import com.news.service.NewsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,29 +36,34 @@ public class companyController {
 
     @RequestMapping("/uploadcompany")
     public ModelAndView uploadCompany(ModelAndView modelAndView,String content,CompanyIntro companyIntro){
+        LOGGER.debug("*********************"+content);
         if (content!=null) {
             companyIntro.setArticle(content);
-            companyIntro.setState(1);
+            companyIntro.setState(0);
             companyIntro.setTitle("公司简介");
+            companyIntro.setBanner_id(1);
             companyIntroService.insertCompanyIntro(companyIntro);
         }
+        modelAndView.setViewName("forward:querycompany");
         return modelAndView;
 
     }
 
     @RequestMapping("/querycompany")
     public ModelAndView querycompany(ModelAndView modelAndView){
-        List<CompanyIntro> companyIntros=companyIntroService.selectAllCompanyIntro(1);
+        List<CompanyIntro> companyIntros=companyIntroService.selectTrueAllCompanyIntro();
         modelAndView.addObject("companyIntros",companyIntros);
-        modelAndView.setViewName("");
+        modelAndView.setViewName("backstage/company/indexcompany");
         return modelAndView;
     }
 
     @RequestMapping("/deletecompany")
     public ModelAndView deletecompany(ModelAndView modelAndView,CompanyIntro companyIntro){
         if (companyIntro!=null){
+            LOGGER.debug("*******************"+companyIntro);
             companyIntroService.deleteCompanyIntro(companyIntro.getCompanyintro_id());
         }
+        modelAndView.setViewName("forward:querycompany");
         return modelAndView;
     }
 
@@ -69,6 +72,17 @@ public class companyController {
         if(companyIntro!=null){
             companyIntroService.updateCompanyIntro(companyIntro);
         }
+        modelAndView.setViewName("forward:querycompany");
+        return modelAndView;
+    }
+
+    @RequestMapping("/querymodifycompany")
+    public ModelAndView querymodifycompany(ModelAndView modelAndView,CompanyIntro companyIntro){
+        Integer id=companyIntro.getCompanyintro_id();
+        companyIntro=companyIntroService.selectCompanyIntroById(id);
+        companyIntro.setCompanyintro_id(id);
+        modelAndView.addObject("companyIntro",companyIntro);
+        modelAndView.setViewName("backstage/company/updatecompany");
 
         return modelAndView;
     }
