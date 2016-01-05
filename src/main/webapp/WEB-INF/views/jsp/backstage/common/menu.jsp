@@ -55,12 +55,12 @@
             </div><!-- #sidebar-shortcuts -->
 
             <ul class="nav nav-list">
-                <%--<li class="active">--%>
-                    <%--<a href="#" path="<%=basePath%>newsAdd">--%>
-                        <%--<i class="icon-dashboard"></i>--%>
-                        <%--<span class="menu-text"> 用户 </span>--%>
-                    <%--</a>--%>
-                <%--</li>--%>
+                <li class="active">
+                    <a href="#" path="querycompany">
+                        <i class="icon-dashboard"></i>
+                        <span class="menu-text"> 公司信息 </span>
+                    </a>
+                </li>
 
                 <li>
                     <a path="toJueDangTaoEdit">
