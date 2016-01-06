@@ -51,13 +51,21 @@ public class HomeController {
         baotao.setType(BaotaoConstant.BAOTAO_JUEDANGTAO_TYPE);
         baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
         baotao= baotaoService.find(baotao);
-        String juedangtao=baotao.getContent().substring(0,200)+"......";
+
+        String juedangtao=baotao.getContent();
+        if(juedangtao.length()>200){
+            juedangtao=juedangtao.substring(0,200)+"......";
+        }
         modelAndView.addObject("juedangtao",juedangtao);
 
         baotao.setType(BaotaoConstant.BAOTAO_SHOUYIBAO_TYPE);
         baotao.setState(BaotaoConstant.BAOTAO_STATE_SHOW);
         baotao= baotaoService.find(baotao);
-        String shouyitao=baotao.getContent().substring(0,200)+"......";
+
+        String shouyitao=baotao.getContent();
+        if(shouyitao.length()>200){
+            shouyitao=shouyitao.substring(0,200)+"......";
+        }
         modelAndView.addObject("shouyitao",shouyitao);
 
 
