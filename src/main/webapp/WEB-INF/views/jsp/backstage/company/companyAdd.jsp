@@ -33,5 +33,6 @@
         </div>
     </div>
 </form>
+    <button  onClick="location.href='<%=basePath%>admin/querycompany'">返回</button>
 </div>
 </body>

@@ -34,6 +34,9 @@
            </p>
            <p style="margin:20px"> <input value="上传" type="submit"/>         </p>
         </form>
+            <p>
+                <button  onClick="location.href='<%=basePath%>admin/querybanner'">返回</button>
+            </p>
         <p id="show" style="display:none"><c:if test="${!empty upload}">${upload}"</c:if></p>
         <script>
             $(function(){

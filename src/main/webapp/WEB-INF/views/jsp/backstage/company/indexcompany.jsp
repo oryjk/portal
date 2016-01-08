@@ -26,7 +26,6 @@
             <td>ID</td>
             <td>内容</td>
             <td>当前状态</td>
-            <td>添加</td>
             <td>修改</td>
             <td>删除</td>
           </tr>
@@ -39,9 +38,6 @@
                     <c:if test="${companyIntros.state=='0'}">不显示</c:if>
                 </td>
                 <td>
-                     <button  onClick="location.href='<%=basePath%>admin/company'">添加</button>
-                </td>
-                <td>
                 <button value="${companyIntros}" onClick="location.href='<%=basePath%>admin/querymodifycompany?companyintro_id=${companyIntros.companyintro_id}'">修改</button>
                 </td>
                 <td>
@@ -51,6 +47,7 @@
           </c:forEach>
 
         </table>
+                <button  onClick="location.href='<%=basePath%>admin/company'">添加</button>
         </div>
     </body>
 

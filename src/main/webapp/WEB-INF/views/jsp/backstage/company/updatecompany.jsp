@@ -43,6 +43,9 @@
                </div>
            </div>
        </form>
+       <p>
+           <button  onClick="location.href='<%=basePath%>admin/querycompany'">返回</button>
+       </p>
 
        <script type="text/javascript">
               var ue = UE.getEditor('container');

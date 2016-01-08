@@ -27,7 +27,6 @@
             <td>banner</td>
             <td>类型</td>
             <td>当前状态</td>
-            <td>添加</td>
             <td>修改</td>
             <td>删除</td>
           </tr>
@@ -47,9 +46,6 @@
                     <c:if test="${banners.status=='0'}">不显示</c:if>
                 </td>
                 <td>
-                     <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
-                </td>
-                <td>
                      <button value="${banners}" onClick="location.href='<%=basePath%>admin/querymodifybanner?banner_id=${banners.banner_id}'">修改</button>
                 </td>
                 <td>
@@ -59,6 +55,7 @@
           </c:forEach>
 
         </table>
+            <button  onClick="location.href='<%=basePath%>admin/banner'">添加</button>
         </div>
     </body>
 

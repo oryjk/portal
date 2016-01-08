@@ -42,13 +42,16 @@
             </div>
            <div class="control-group" style="margin-top:10px;">
                <div class="controls">
-                    ${banners.banner_id}
                    <input type = "hidden" name="banner_id" value="${banners.banner_id}">
                    <input type = "hidden" name="url" value="${banners.url}">
                    <p style="margin:20px"> <input value="提交" type="submit"/></p>
                </div>
            </div>
        </form>
+       <p>
+           <button  onClick="location.href='<%=basePath%>admin/querybanner'">返回</button>
+       </p>
+
     </body>
 
 </html>
