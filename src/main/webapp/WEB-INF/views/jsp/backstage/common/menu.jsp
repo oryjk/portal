@@ -77,6 +77,13 @@
                 </li>
 
                 <li>
+                    <a path="teamView" class="dropdown-toggle">
+                        <i class="icon-desktop"></i>
+                        <span class="menu-text"> 专家团队 </span>
+                    </a>
+                </li>
+
+                <li>
                     <a class="dropdown-toggle">
                         <i class="icon-desktop"></i>
                         <span class="menu-text"> banner </span>
