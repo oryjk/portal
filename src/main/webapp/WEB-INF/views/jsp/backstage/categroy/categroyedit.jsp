@@ -33,10 +33,10 @@
 			</tr>
 			<c:forEach items="${categroyEditList }" var="categroyEdit" varStatus="m">				
 				<tr >
-					<td ><input type="hidden" name="categroyEditList[${m.index }].id"  value="${categroyEdit.id }"   />
-					<input type="text" name="categroyEditList[${m.index }].name" value="${categroyEdit.name }"   /></td>
-					<td ><input type="text" name="categroyEditList[${m.index }].url" value="${categroyEdit.url }"   /></td>
-					<td ><input type="text" name="categroyEditList[${m.index }].type" value="${categroyEdit.type }"   /></td>
+					<td ><input type="hidden" name="categroy[${m.index }].id"  value="${categroyEdit.id }"   />
+					<input type="text" name="categroy[${m.index }].name" value="${categroyEdit.name }"   /></td>
+					<td ><input type="text" name="categroy[${m.index }].url" value="${categroyEdit.url }"   /></td>
+					<td ><input type="text" name="categroy[${m.index }].type" value="${categroyEdit.type }"   /></td>
 					<td ><a href="${pageContext.request.contextPath }/admin/deleteCategroyEdit?did=${categroyEdit.id}">删除</a></td>					
 				</tr>			
 			</c:forEach>

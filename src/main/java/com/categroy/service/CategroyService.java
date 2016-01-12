@@ -12,5 +12,5 @@ public interface CategroyService {
 
 	void delete(int did) throws Exception;
 
-	void update(Menu menu)throws Exception;
+	void update(Categroy categroy)throws Exception;
 }

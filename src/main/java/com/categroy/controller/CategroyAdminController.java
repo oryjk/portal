@@ -1,7 +1,12 @@
 package com.categroy.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
+import com.alibaba.fastjson.JSONObject;
+import com.categroy.bean.CategroyList;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +24,8 @@ import com.menu.bean.MenuQueryVo;
 @Controller
 @RequestMapping("/admin")
 public class CategroyAdminController {
-	
+	private static final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(CategroyAdminController.class);
+
 	@Autowired
 	private CategroyService categroyService;
 	
@@ -58,20 +64,12 @@ public class CategroyAdminController {
 		
 	}
 	
-	
-	
 	@RequestMapping("/categroyEditListSubmit")
-	public ModelAndView editItemsListSubmit(ModelAndView modelAndView,MenuQueryVo menuQueryVo) throws Exception{
-		
-		for(Menu menu: menuQueryVo.getMenuEditList()){
-			categroyService.update(menu);			
+	public ModelAndView editItemsListSubmit(ModelAndView modelAndView,CategroyList categroy) throws Exception{
+		for(Categroy cate : categroy.getCategroy()){
+			categroyService.update(cate);
 		}
-		
-		
-		List<Categroy> categroyEditList= categroyService.findAll();
-		modelAndView.addObject("categroyEditList",categroyEditList);
-		modelAndView.setViewName("backstage/categroy/categroyedit");
-		return modelAndView;		
+		return menuEdit(modelAndView);
 	}
 
 }

@@ -53,11 +53,11 @@ CREATE TABLE `banner` (
 -- ----------------------------
 -- Records of banner
 -- ----------------------------
-INSERT INTO `banner` VALUES ('1', 'resources/core/images/banner5.jpg', '2', null);
-INSERT INTO `banner` VALUES ('2', 'resources/core/images/banner7.jpg', '3', null);
-INSERT INTO `banner` VALUES ('3', 'resources/core/images/banner3.jpg', '1', null);
-INSERT INTO `banner` VALUES ('4', 'resources/core/images/banner4.jpg', '1', null);
-INSERT INTO `banner` VALUES ('5', 'resources/core/images/banner1.jpg', '1', null);
+INSERT INTO `banner` VALUES ('1', 'resources/core/images/banner5.jpg', '2', 1);
+INSERT INTO `banner` VALUES ('2', 'resources/core/images/banner7.jpg', '3', 1);
+INSERT INTO `banner` VALUES ('3', 'resources/core/images/banner3.jpg', '1', 1);
+INSERT INTO `banner` VALUES ('4', 'resources/core/images/banner4.jpg', '1', 1);
+INSERT INTO `banner` VALUES ('5', 'resources/core/images/banner1.jpg', '1', 1);
 
 -- ----------------------------
 -- Table structure for `baotao`

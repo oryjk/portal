@@ -30,8 +30,8 @@ public class CategroyServiceImpl implements CategroyService {
 		categroyMapper.delete(did);
 	}
 
-	public void update(Menu menu) throws Exception {
-		categroyMapper.update(menu);
+	public void update(Categroy categroy) throws Exception {
+		categroyMapper.update(categroy);
 		
 	}
 
