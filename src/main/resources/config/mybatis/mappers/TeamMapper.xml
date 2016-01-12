@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.team.dao.TeamMapper">
+    <resultMap id="TeamMap" type="com.team.bean.Team">
+        <id property="id" column="id" />
+        <result property="photo_url" column="photo_url"/>
+        <result property="username" column="username"/>
+        <result property="user_intro" column="user_intro"/>
+        <result property="skill" column="skill"/>
+    </resultMap>
+
+    <!--增-->
+    <insert id="insertTeamUser" parameterType="com.team.bean.Team" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO team (photo_url,username,user_intro,skill) VALUES(#{photo_url},#{username},#{user_intro},#{skill})
+    </insert>
+    <!--删-->
+    <delete id="deleteTeamUser" parameterType="int">
+        delete from team where id = #{id}
+    </delete>
+    <!--改-->
+    <update id="updateTeamUser" parameterType="com.team.bean.Team">
+        UPDATE team SET photo_url=#{photo_url}, username=#{username}, user_intro=#{user_intro}, skill=#{skill} WHERE id=#{id}
+    </update>
+    <!--根据id查询数据-->
+    <select id="selectTeamById" parameterType="int" resultMap="TeamMap">
+        SELECT * FROM team where id = #{id}
+    </select>
+
+    <!--条件查询专家团队-->
+    <select id="selectTeamUserCondition" parameterType="com.utils.page.Pagination" resultMap="TeamMap">
+        SELECT * FROM team
+        <include refid="queryItem"/>
+        ORDER BY id desc
+    </select>
+    <!--条件查询专家团队总条数-->
+    <select id="selectTeamUserConditionCount" parameterType="com.utils.page.Pagination" resultType="int">
+        SELECT count(*) FROM team
+        <include refid="queryItem"/>
+        ORDER BY id DESC
+    </select>
+    <!--查询条件-->
+    <sql id="queryItem">
+        <if test="bean!=null">
+            where
+            <if test="bean.username!=null">
+                username like '%${bean.username}%'
+            </if>
+            <if test="bean.skill!=null">
+                and skill like '%${bean.skill}%'
+            </if>
+        </if>
+    </sql>
+</mapper>
