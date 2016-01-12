@@ -6,10 +6,17 @@ import com.user.bean.User;
 import com.user.service.UserService;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.UnknownAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
+import org.hibernate.action.spi.Executable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.apache.shiro.authc.UnknownAccountException;
 
 import javax.servlet.http.HttpSession;
 /**
@@ -30,7 +37,18 @@ public class UserController {
 	public ModelAndView login(ModelAndView modelAndView, String checkCode, HttpSession session, User user)
 			throws Exception {
 
-		
+		if (StringUtils.isBlank(user.getUsername())) {
+			modelAndView.addObject("usernamenotnull", ResourcesUtil.getValue("errorInformation", "username.notnull"));
+			modelAndView.setViewName("common/login");
+			return modelAndView;
+		}
+
+		if (StringUtils.isBlank(user.getPassword())){
+			modelAndView.addObject("passwordnotnull", ResourcesUtil.getValue("errorInformation", "password.notnull"));
+			modelAndView.setViewName("common/login");
+			return modelAndView;
+		}
+
 		if (StringUtils.isBlank(checkCode)) {
 			modelAndView.addObject("verificationcodenotnull",
 			ResourcesUtil.getValue("errorInformation", "verificationcode.notnull"));			
@@ -40,50 +58,35 @@ public class UserController {
 
 
 		if (!checkCode.equalsIgnoreCase((String) session.getAttribute("randCheckCode"))) {
-			modelAndView.addObject("verificationcodeerror",
-					ResourcesUtil.getValue("errorInformation", "verificationcode.error"));
+			modelAndView.addObject("verificationcodeerror", ResourcesUtil.getValue("errorInformation", "verificationcode.error"));
 			modelAndView.setViewName("common/login");
 			return modelAndView;
 
-		}
-
-		if (StringUtils.isBlank(user.getUsername())) {
-			modelAndView.addObject("usernamenotnull", ResourcesUtil.getValue("errorInformation", "username.notnull"));
-			modelAndView.setViewName("common/login");
-			return modelAndView;
-		}
-		if (StringUtils.isBlank(user.getPassword())){
-			modelAndView.addObject("passwordnotnull", ResourcesUtil.getValue("errorInformation", "password.notnull"));
-			modelAndView.setViewName("common/login");
-			return modelAndView;
-		}
-
-		User userTemp = userService.findName(user);
-		modelAndView.addObject("user", user);
-		if (userTemp != null) {
-			MD5 md5 = new MD5();
-			String str = md5.getMD5ofStr(user.getPassword());
-			if ( userTemp.getPassword().equals(str)) {
-				session.setAttribute("username", user.getUsername());
-				// 登录成功
-				modelAndView.setViewName("redirect:/admin/main");
-				return modelAndView;
-
+		}else{
+			MD5 md51 = new MD5();
+			String str1 = md51.getMD5ofStr(user.getPassword());
+			UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUsername(),str1);
+			Subject subject = SecurityUtils.getSubject();
+			try{
+				subject.login(usernamePasswordToken);
+				if(subject.isAuthenticated()){
+					modelAndView.setViewName("redirect:/admin/main");
+					return modelAndView;
+				}
 			}
-			// 密码错误
-			modelAndView.addObject("passworderror", ResourcesUtil.getValue("errorInformation", "password.error"));
-			modelAndView.setViewName("common/login");
-			return modelAndView;
+			catch (Exception e){
+				modelAndView.addObject("passworderror", ResourcesUtil.getValue("errorInformation", "password.error"));
+				modelAndView.setViewName("common/login");
+			}
 		}
-		modelAndView.addObject("usernameerror", ResourcesUtil.getValue("errorInformation", "username.error"));
-		modelAndView.setViewName("common/login");
 		return modelAndView;
 	}
 
 	@RequestMapping("/logout")
 	public ModelAndView logout(ModelAndView modelAndView, HttpSession session) throws Exception {
 		// 清除session内容
-		session.invalidate();
+		Subject subject = SecurityUtils.getSubject();
+		subject.logout();
 		modelAndView.setViewName("common/login");
 		return modelAndView;
 	}

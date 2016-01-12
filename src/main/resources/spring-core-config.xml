@@ -39,5 +39,5 @@
         <property name="cacheSeconds" value="120"></property>
     </bean>
 
-
+    <import resource="spring-shiro-config.xml"/>
 </beans>
