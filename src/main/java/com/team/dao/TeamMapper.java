@@ -19,4 +19,5 @@ public interface TeamMapper extends SqlMapper{
     List<Team> selectTeamUserCondition(Pagination pagination);
     Integer selectTeamUserConditionCount(Pagination pagination);
     Team selectTeamById(int id);
+    List<Team> selectAll();
 }

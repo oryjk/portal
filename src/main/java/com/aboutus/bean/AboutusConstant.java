@@ -13,5 +13,5 @@ public class AboutusConstant {
 	public static final int ABOUTUS_SPHEREOGBUSINESS_TYPE=2;
 	public static final int ABOUTUS_RECRUITMENT_TYPE=3;
 	public static final int ABOUTUS_CONTACTUS_TYPE=4;
-
+	public static final int ABOUTUS_TEAM_TYPE=5;
 }

@@ -28,9 +28,9 @@ import java.util.Map;
 public class TeamController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TeamController.class);
     @Autowired
-    Pagination pagination;
+    private Pagination pagination;
     @Autowired
-    TeamService teamService;
+    private TeamService teamService;
 
     @RequestMapping("teamView")
     public ModelAndView view(ModelAndView modelAndView){

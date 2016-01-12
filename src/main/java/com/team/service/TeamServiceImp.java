@@ -48,4 +48,8 @@ public class TeamServiceImp implements TeamService{
     public Team selectTeamById(int id){
         return teamMapper.selectTeamById(id);
     }
+
+    public List<Team> selectAll(){
+        return teamMapper.selectAll();
+    }
 }

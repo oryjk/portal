@@ -28,6 +28,10 @@
         SELECT * FROM team where id = #{id}
     </select>
 
+    <select id="selectAll" resultMap="TeamMap">
+        SELECT * FROM team
+    </select>
+
     <!--条件查询专家团队-->
     <select id="selectTeamUserCondition" parameterType="com.utils.page.Pagination" resultMap="TeamMap">
         SELECT * FROM team
