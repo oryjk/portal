@@ -239,3 +239,16 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', '0', 'root', '63a9f0ea7bb98050796b649e85481845');
+
+
+-- ----------------------------
+-- Table structure for `team`
+-- ----------------------------
+CREATE TABLE `team` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `photo_url` varchar(200) DEFAULT NULL,
+  `username` varchar(45) NOT NULL,
+  `user_intro` varchar(600) NOT NULL,
+  `skill` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
