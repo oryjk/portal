@@ -20,7 +20,7 @@ import com.categroy.bean.CategroyConstant;
 @Controller
 @RequestMapping("/aboutus")
 public class ContactUsController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ContactUsController.class);
 	
 	@Autowired
 	AboutusService  aboutusService;	

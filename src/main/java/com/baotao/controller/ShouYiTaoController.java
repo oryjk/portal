@@ -27,7 +27,7 @@ import com.baotao.service.BaotaoServiceImpl;
 @Controller
 @RequestMapping("/baotao")
 public class ShouYiTaoController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ShouYiTaoController.class);
 	
 	@Autowired
 	private BaotaoServiceImpl baotaoService;

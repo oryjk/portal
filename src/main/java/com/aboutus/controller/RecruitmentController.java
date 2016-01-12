@@ -21,7 +21,7 @@ import com.categroy.bean.CategroyConstant;
 @RequestMapping("/aboutus")
 public class RecruitmentController {
 	
-private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
+private static final Logger LOGGER = LoggerFactory.getLogger(RecruitmentController.class);
 	
 @Autowired
 AboutusService  aboutusService;

@@ -21,7 +21,7 @@ import com.baotao.controller.JueDangtaoController;
 @Controller
 @RequestMapping("/admin")
 public class CompanyIntroductionAdminController {
-	private static final Logger LOGGER = LoggerFactory.getLogger(JueDangtaoController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CompanyIntroductionAdminController.class);
 	@Autowired
 	AboutusService  aboutusService;
 	
