@@ -85,7 +85,7 @@
         SELECT count(*) FROM news WHERE state=1
         and categroy_id = #{type}
         <include refid="queryItem"/>
-        ORDER BY date DESC LIMIT #{startIndex},#{pageSize}
+        ORDER BY date DESC
     </select>
     <!--新闻查询条件-->
     <sql id="queryItem">

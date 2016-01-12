@@ -18,5 +18,5 @@ public interface TeamMapper extends SqlMapper{
     void updateTeamUser(Team Team);
     List<Team> selectTeamUserCondition(Pagination pagination);
     Integer selectTeamUserConditionCount(Pagination pagination);
-    void insertTeamImage(Media media);
+    Team selectTeamById(int id);
 }

@@ -10,5 +10,5 @@
 <script src="<%=basePath%>resources/core/plugins/layer-v2.1/layer/layer.js"></script>
 
 <link rel="stylesheet" type="text/css" href="<%=basePath%>resources/core/css/main.css">
-<table  class="easyui-datagrid" id="tc" style="width:100%;height:450px"></table>
+<table  class="easyui-datagrid" id="tc" style="width:100%;height:600px"></table>
 <script src="<%=basePath%>resources/core/js/team/team.js"></script>

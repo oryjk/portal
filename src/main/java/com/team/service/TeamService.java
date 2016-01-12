@@ -15,4 +15,5 @@ public interface TeamService {
     void updateTeamUser(Team Team);
     List<Team> selectTeamUserCondition(Pagination pagination);
     Integer selectTeamUserConditionCount(Pagination pagination);
+    Team selectTeamById(int id);
 }

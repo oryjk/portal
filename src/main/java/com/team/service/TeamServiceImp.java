@@ -44,4 +44,8 @@ public class TeamServiceImp implements TeamService{
     public Integer selectTeamUserConditionCount(Pagination pagination){
         return teamMapper.selectTeamUserConditionCount(pagination);
     }
+
+    public Team selectTeamById(int id){
+        return teamMapper.selectTeamById(id);
+    }
 }

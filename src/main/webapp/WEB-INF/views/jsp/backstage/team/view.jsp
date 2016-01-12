@@ -21,12 +21,12 @@
             <i class="icon-home home-icon"></i>
             <a href="#">主页</a>
         </li>
-        <li class="active">新闻咨询</li>
+        <li class="active">专家团队</li>
     </ul><!-- .breadcrumb -->
 </div>
 
 <div class="col-xs-12">
-    <iframe src="<%=basePath%>admin/news" style="border:none;width:100%;height:500px"></iframe>
+    <iframe src="<%=basePath%>admin/team_table" style="border:none;width:100%;height:600px"></iframe>
 </div>
 <div class="col-xs-12">
     <div class="row">
@@ -42,71 +42,46 @@
                 </div>
             </div>
             <div class="space-4"></div>
-            <form class="form-horizontal" role="form">
+            <form class="form-horizontal" role="form" action="team_add">
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">新闻标题</label>
+                    <label class="col-sm-3 control-label no-padding-right">专家</label>
 
                     <div class="col-sm-9">
                             <span class="input-icon">
-                                <input type="text" id="title">
+                                <input type="text" name="username"">
                                 <i class="icon-leaf blue"></i>
                             </span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-3 control-label no-padding-right">新闻类型</label>
-                    <div class="col-sm-9">
-                        <select id="type">
-                            <option value="1">公司新闻</option>
-                            <option value="2">热点新闻</option>
-                            <option value="3">绝当淘</option>
-                            <option value="4">收益淘</option>
-                        </select>
+                    <div class="col-sm-6 col-md-offset-3">
+                        <input type="text" id="imgs" name="photo_url">
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-xs-6 col-md-offset-3">
-                        <div class="row-fluid">
-                            <ul class="ace-thumbnails">
-                                <li>
-                                    <div id="show"></div>
-                                    <div class="tools">
-                                        <a href="#">
-                                            <i class="icon-link"></i>
-                                        </a>
-
-                                        <a href="#">
-                                            <i class="icon-paper-clip"></i>
-                                        </a>
-
-                                        <a href="#">
-                                            <i class="icon-pencil"></i>
-                                        </a>
-
-                                        <a href="#">
-                                            <i class="icon-remove red"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div><!-- PAGE CONTENT ENDS -->
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
 
                 <div class="widget-body">
                     <div class="widget-main">
                         <div>
-                            <label for="form-field-8">新闻内容</label>
-                            <textarea class="form-control" id="content" placeholder="输入内容：15字以上"></textarea>
+                            <label for="form-field-8">特长领域</label>
+                            <textarea class="form-control" name="skill" id="skill" placeholder="">${team.skill}</textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <div>
+                            <label for="form-field-8">专家简介</label>
+                            <textarea class="form-control" name="user_intro" id="user_intro" placeholder="">${team.user_intro}</textarea>
                         </div>
                     </div>
                 </div>
 
                 <div class="clearfix form-actions">
                     <div class="col-md-offset-3 col-md-9">
-                        <button id="submit" class="btn btn-info" type="button">
+                        <button class="btn btn-info" type="submit">
                             <i class="icon-ok bigger-110"></i>
                             提交
                         </button>
@@ -116,7 +91,6 @@
                         </button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
@@ -127,10 +101,6 @@
 </div>
 
 
-
-
-
-<script src="<%=basePath%>resources/core/js/news/newsOperator.js"></script>
 <script>
     $(function(){
         var path = "";
@@ -141,6 +111,7 @@
                 $("#show").empty();
                 $("#show").append("<img src=' <%=basePath%>" + url + " '/>");
                 path = url;
+                $("#imgs").val(path);
             }
         };
         $("#uploadForm").submit(function() {
@@ -152,25 +123,9 @@
             $("#uploadForm").submit();
         });
 
-        $("#submit").click(function(){
-            var title = $("#title").val();
-            var content = $("#content").val();
-            var type = $("#type").val();
-            alert(path)
-            $.post("newsPostAdd",
-                    {
-                        "title":title,
-                        "content":content,
-                        "type":type,
-                        "url":path
-                    },
-                    function(data){
-                        layer.msg(data);
-                        window.location.reload();
-                    });
-        })
     });
 </script>
+
 
 
 
